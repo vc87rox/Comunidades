@@ -1,0 +1,1191 @@
+---
+project:
+  execute-dir: project
+format: 
+  revealjs:
+    code-tools: true
+    code-fold: false
+    transition: none
+    slide-number: c/t
+    width: 1920
+    height: 1080
+    theme: [dark, tema.css]
+    echo: true
+    incremental: false
+    fontsize: 34pt
+editor_options: 
+  chunk_output_type: inline
+---
+
+# Princípios básicos na utilização do R
+<hr>
+::: {.center}
+Vítor de Carvalho Rocha <br>
+Universidade Federal de Santa Catarina <br>
+Laboratório de Ecologia de Anfíbios e Répteis <br>
+[vc87rox@gmail.com]{.yellow}
+:::
+
+<br>
+
+<br>
+
+::: {.center layout-ncol=2}
+
+![](Imagens/LOGO5.jpg){ width="300"}
+
+![](Imagens/ufsc.png){ width="400"}
+:::
+
+# Primeiros passos {style="text-align: center;"}
+
+<hr>
+
+## Baixar o R
+
+<hr>
+
+-   Para baixar o R acesse <https://cran.r-project.org/> <br>
+
+![Página do CRAN](Imagens/CRAN.png){#fig-CRAN width="100%"}
+
+## Baixar o RStudio
+
+<hr>
+
+-   Para baixar o RStudio acesse <https://https://posit.co/download/rstudio-desktop/> <br>
+
+![Página do RStudio](Imagens/RStudio.png){#fig-RStudio width="100%"}
+
+## A interface do RStudio
+
+<hr>
+
+![RStudio](Imagens/RStudio_interface.png){#fig-RStudio_interface width="100%"}
+
+## Operações matemáticas básicas (Calculadora)
+
+<hr>
+
+-   Podemos usar o console do R para executar operações matemáticas
+
+-   Digite [1 + 5]{.yellow} no console e aperte [enter]{.yellow} para executar o comando
+
+```{r}
+1 + 5
+```
+
+. . .
+
+<br>
+
+::: columns
+::: {.column width="50%"}
+Agora tente essas outras operações:<br>
+
+::: center
+5 - 10<br> 15 \* 10<br> 100 / 2<br> 5 \^ 2<br> (2 + 3) \* (5 \* 7)\^2 - (3 - 7)<br>
+:::
+:::
+
+::: {.column width="50%"}
+::: fragment
+```{r}
+5 - 10
+15 * 10
+100 / 2
+5 ^ 2
+(2 + 3) * (5 * 7)^2 - (3 - 7)
+
+```
+:::
+:::
+:::
+
+## Usando o script
+
+<hr>
+
+-   Quando escrevemos no console e executanmos a operação, o texto para edição desaparece
+-   Se queremos manter o registro dos nossos comandos, precisamos anotá-los em um [script]{.yellow}
+-   Para criar um novo script no R: <br>
+
+::: {.fragment}
+
+::: {.incremental}
+1.  Vá até a aba [Arquivo]{.yellow}
+2.  Selecione [novo arquivo]{.yellow}
+3.  Selecione [Script do R]{.yellow}
+:::
+
+:::
+
+<br>
+
+::: {.fragment} 
+
+> Ou pressione as telcas [ctrl + shift + N]{.yellow} 
+
+:::
+
+## Usando o script
+
+<hr>
+
+-   Agora coloque as operações anteriores no script
+
+-   Para executar os comandos:
+
+::: {.incremental}
+
+1.  Clique na linha com o comando desejado
+
+2.  Pressione [ctrl + enter]{.yellow} para enviar o comando pro console, onde o mesmo será executado automaticamente<br> ![Execução de comando](Imagens/Comando.png){#fig-RStudio_comando height="50%"}
+
+:::
+
+## Usando o script
+
+<hr>
+
+-   Para executar múltiplas linhas, basta selecioná-las com o mouse e pressionar o comando de execução
+
+<br>
+
+![Execução de múltiplos comandos](Imagens/Comando_multiplo.png){#fig-RStudio_comando_multiplo width="100%"}
+
+## Separar código de anotação
+
+<hr>
+
+-   Ao escrevemos no script, podemos identificar linhas ou pedaços de códigos que vão ser interpretadas pelo R como [anotações]{.yellow}
+
+-   Para isso utilizamos o símbolo [\#]{.yellow}, conhecido também como jogo da velha, cerquilha ou hashtag
+
+-   Todo conteúdo após o [\#]{.yellow} vira uma anotação e não é executado no terminal
+
+::: fragment
+
+```{r}
+#| eval: false
+
+Valor da bolsa depois de pagar os boletos
+2000 - 3000
+Erro: unexpected symbol em "Valor da"
+```
+
+:::
+
+## Separar código de anotação {auto-animate="true"}
+
+<hr>
+
+-   Ao escrevemos no script, podemos identificar linhas ou pedaços de códigos que vão ser interpretadas pelo R como [anotações]{.yellow}
+
+-   Para isso utilizamos o símbolo [\#]{.yellow}, conhecido também como jogo da velha, cerquilha ou hashtag
+
+-   Todo conteúdo após o [\#]{.yellow} vira uma anotação e não é executado no terminal
+
+```{r}
+# Valor da bolsa depois de pagar os boletos
+2000 - 3000
+```
+
+<br>
+
+::: fragment
+::: {.callout-tip style="font-size: 110%;"}
+## Dica
+
+-   Sempre faça anotações em seu script para ajudar depois a lembrar dos passos das análises ou identificar as etapas do processo.
+
+-   Use o comando [ctrl + shift + C]{.yellow} para anotar ou desanotar múltiplas linhas ao mesmo tempo.
+:::
+:::
+
+## Funções
+
+<hr>
+
+-   Para operações mais complexas podemos utilizar [funções]{.yellow} que vão executar determinado tipo de tarefa
+
+-   O R já vem com várias funções pré-carregadas. Vamos utilizar algumas delas:
+
+::: {.fragment style="font-size: 125%;"}
+```{r}
+# Cálculo de logarítimo neperiano (base e)
+log(10)
+```
+:::
+
+::: {.fragment style="font-size: 125%;"}
+```{r}
+# Exponencial
+exp(4)
+```
+:::
+
+::: {.fragment style="font-size: 125%;"}
+```{r}
+# Raiz quadrada
+sqrt(25)
+```
+:::
+
+## Funções
+
+<hr>
+
+::: fragment
+::: {.callout-tip style="font-size: 105%;"}
+## Dica
+
+-   Para saber mais detalhes do funcionamento de uma função, ou quais argumentos a mesma suporta você pode consultar a página de ajuda da função
+
+::: incremental
+-   A consulta pode ser feita na aba [help]{.yellow} do RStudio
+
+-   Ou basta colocar [?]{.yellow} antes da função (sem incluir argumentos) e executar a linha de comando (`?log`)
+:::
+:::
+:::
+
+## Armazenando informação
+
+<hr>
+
+-   No R, utilizamos [objetos]{.yellow} para armazenar informações
+
+::: incremental
+-   Para atribuir um valor a um objeto nós utilizamos o símbolo [<-]{.yellow}
+
+-   Vamos criar o objeto [x]{.yellow} que vai armazenar o valor [5]{.blue}
+:::
+
+::: fragment
+```{r}
+x <- 5
+```
+:::
+
+## Armazenando informação
+
+<hr>
+
+-   No R, utilizamos [objetos]{.yellow} para armazenar informações
+
+-   Para atribuir um valor a um objeto nós utilizamos o símbolo [<-]{.yellow}
+
+-   Vamos criar o objeto [x]{.yellow} que vai armazenar o valor [5]{.blue}
+
+```{r}
+x <- 5
+x
+```
+
+## Armazenando informação
+
+<hr>
+
+-   Além de números, objetos também podem armazenar caracteres ou resultados de operações
+
+```{r}
+x <- 5
+x
+nome <- "Vítor"
+nome
+resultado <- 5 * 100
+resultado
+```
+
+## Armazenando informação
+
+<hr>
+
+-   Objetos também podem ser usados para realizar operações
+
+```{r}
+resultado / 2
+```
+
+<br>
+
+::: fragment
+::: {.callout-tip style="font-size: 110%;"}
+## Dica
+
+-   Pressione as teclas [alt]{.yellow} mais [-]{.yellow} para inserir `<-` automaticamente na linha
+:::
+:::
+
+## Armazenando informação
+
+<hr>
+
+-   A função concatenar `c()` pode ser utilizada para armazenar mais de um item dentro de um objeto
+
+::: {.fragment}
+```{r}
+resposta <- c(6, 7, 8, 9, 10) # Função concatenar
+resposta
+
+preditor <- c(1, 2, 3, 4, 5)
+preditor
+```
+:::
+
+::: {.fragment}
+```{r}
+nomes <- c("vitor", "caroline", "silvia", "marcelo", "renato")
+nomes
+```
+:::
+
+::: {.fragment}
+```{r}
+dados_total <- c(resposta, preditor)
+dados_total
+```
+:::
+
+## Gráficos simples
+
+<hr>
+
+::: columns
+::: {.column width="40%"}
+-   O R também já vem equipado com a função `plot()` que serve para gerar gráficos
+
+::: fragment
+-   Vamos gerar um gráfico com os objetos [resposta]{.yellow} e [preditor]{.yellow} que criamos anteriormente
+:::
+
+:::
+
+::: {.column width="60%"}
+
+::: fragment
+```{r fig.align='center'}
+#| column: screen
+#| out-width: 100%
+#| eval: false
+
+plot(resposta, preditor)
+```
+:::
+
+::: fragment
+```{r}
+#| echo: false
+#| column: screen
+#| out-width: 100%
+
+plot(resposta, preditor)
+```
+:::
+
+:::
+
+:::
+
+## Gráficos simples
+
+<hr>
+
+::: columns
+::: {.column width="40%"}
+-   O R também já vem equipado com a função `plot()` que serve para gerar gráficos
+-   Vamos gerar um gráfico com os objetos [resposta]{.yellow} e [preditor]{.yellow} que criamos anteriormente
+:::
+
+::: {.column width="60%"}
+```{r fig.align='center'}
+#| column: screen
+#| out-width: 100%
+#| fig-format: svg
+
+plot(y = resposta, 
+     x = preditor)
+```
+:::
+:::
+
+## Gráficos simples
+
+<hr>
+
+::: columns
+::: {.column width="40%"}
+-   A função `plot()` permite que vários parâmetros gráficos possam ser alterados
+-   Podemos usar o argumento<br> `col =` para alterar a cor dos pontos
+:::
+
+::: {.column width="60%"}
+```{r fig.align='center'}
+#| column: screen
+#| out-width: 100%
+#| fig-format: svg
+#| code-line-numbers: "3"
+
+plot(y = resposta, 
+     x = preditor,
+     col = "orange")
+```
+:::
+:::
+
+## Gráficos simples
+
+<hr>
+
+::: columns
+::: {.column width="40%"}
+-   A função `plot()` permite que vários parâmetros gráficos possam ser alterados
+-   Podemos usar o argumento<br> `col =` para alterar a cor dos pontos
+-   O argumento `cex =` para aumentar o tamanho dos pontos
+:::
+
+::: {.column width="60%"}
+```{r fig.align='center'}
+#| column: screen
+#| out-width: 100%
+#| fig-format: svg
+#| code-line-numbers: "4"
+
+plot(y = resposta, 
+     x = preditor,
+     col = "orange",
+     cex = 3)
+```
+:::
+:::
+
+## Gráficos simples
+
+<hr>
+
+::: columns
+::: {.column width="40%"}
+-   `pch =` para mudar o formato do símbolo
+:::
+
+::: {.column width="60%"}
+```{r fig.align='center'}
+#| column: screen
+#| out-width: 100%
+#| fig-format: svg
+#| code-line-numbers: "5"
+
+plot(y = resposta, 
+     x = preditor,
+     col = "orange",
+     cex = 3,
+     pch = 8)
+```
+:::
+:::
+
+## Gráficos simples
+
+<hr>
+
+::: columns
+::: {.column width="40%"}
+-   `pch =` para mudar o formato do símbolo
+
+-   `main =` para adicionar um título
+:::
+
+::: {.column width="60%"}
+```{r fig.align='center'}
+#| column: screen
+#| out-width: 100%
+#| fig-format: svg
+#| code-line-numbers: "6"
+
+plot(y = resposta, 
+     x = preditor,
+     col = "orange",
+     cex = 3,
+     pch = 8,
+     main = "Meu primeiro gráfico")
+```
+:::
+:::
+
+## Gráficos simples
+
+<hr>
+
+::: columns
+::: {.column width="40%"}
+-   `pch =` para mudar o formato do símbolo
+
+-   `main =` para adicionar um título
+
+-   `xlab =` para mudar o nome do eixo x<br> `ylab =` para mudar o nome do eixo y
+:::
+
+::: {.column width="60%"}
+```{r fig.align='center'}
+#| column: screen
+#| out-width: 100%
+#| fig-format: svg
+#| code-line-numbers: "7,8"
+
+plot(y = resposta, 
+     x = preditor,
+     col = "orange",
+     cex = 3,
+     pch = 8,
+     main = "Meu primeiro gráfico",
+     xlab = "Números",
+     ylab = "Valores")
+```
+:::
+:::
+
+# Importação e manipulação de base de dados {style="text-align: center;"}
+
+<hr>
+
+## Diretório base
+
+<hr>
+
+-   Antes de importarmos uma base de dados para o R, é interessante definirmos um [diretório de trabalho padrão]{.yellow}
+-   Nesse caso utilizamos a função `setwd()` para selecionar esse diretório
+
+```{r}
+#| eval: false
+
+setwd("C:/Users/VCROX/Desktop/Analises")
+```
+
+<br>
+
+::: fragment
+-   Ao executar o comando, o R fará com que a pasta [Analises]{.yellow}, localizada no meu desktop, seja o diretório principal
+
+-   Assim, posso chamar qualquer arquivo dentro desta pasta direto para o R
+:::
+
+## Carregando nossa base de dados
+
+<hr>
+
+-   Vamos utilizar a função `read.csv()` para importar nossa base de dados no R, uma vez que a extensão do arquivo é [.csv]{.blue}
+
+-   A base vai ser atribuída a um objeto que vou chamar de [dados_brutos]{.yellow}
+
+```{r}
+#| echo: !expr c(3,4,5)
+
+library(readr)
+setwd("F:/Caatinga/Disciplinas/2024/Comunidades/R básico/Analises")
+dados_brutos <- read.csv("Dados.csv", 
+                         h = T, 
+                         sep = ",")
+```
+
+## Carregando nossa base de dados
+
+<hr>
+
+-   Para certificar que a base foi importada com sucesso posso chamar o objeto em seguida
+
+```{r}
+#| echo: !expr c(3,4,5,6)
+#| column: screen
+#| out-width: 100%
+#| out-hight: 100%
+
+library(readr)
+setwd("F:/Caatinga/Disciplinas/2024/Comunidades/R básico/Analises")
+dados_brutos <- read.csv("Dados.csv", 
+                         h = T, 
+                         sep = ",")
+dados_brutos
+```
+
+
+## Acessando a informação contida em um objeto
+
+<hr>
+
+-   Podemos usar o símbolo de [sifrão (\$)]{.yellow} para chamar uma coluna específica da planilha que acabamos de importar
+
+-   Caso eu queira acessar a informação na coluna que contém o nome das espécies registradas, basta chamar o objeto [dados_brutos]{.yellow} e acrescentar o símbolo [\$]{.yellow} logo após e colocar o nome da coluna desejada (Especie)
+
+::: fragment
+```{r}
+dados_brutos$Especie
+```
+:::
+
+## Acessando a informação contida em um objeto
+
+<hr>
+
+-   Também podemos especificar de qual coluna e linha específica queremos extrair a informação
+
+-   Para isso utilizamos o sitema de coordenadas [\[x, y\]]{.yellow} direto no nosso objeto
+
+-   O número antes da vírgula indica a linha, enquanto que o após indica a coluna em específico
+
+-   Qual a informação contida na vigésima linha da quinta coluna?
+
+::: fragment
+```{r}
+dados_brutos[20, 5]
+```
+:::
+
+## Manipulação da base de dados
+
+<hr>
+
+-   Existem [pacotes]{.yellow} especializados para manipular base de dados no R
+
+-   O [dplyr](https://dplyr.tidyverse.org/) é um deles e apresenta uma gama de funções para facilitar alguns desafios coumente encontrados:
+
+::: center
+-   `mutate()` adiciona novas variáveis a parti das já existentes
+
+-   `select()` seleciona variáveis baseada em seus nomes
+
+-   `filter()` cria filtros baseados em valores das variáveis
+
+-   `summarise()` reduz múltiplos valores para um único sumário
+
+-   `arrange()` organiza a ordem das linhas
+:::
+
+## Instalando pacotes
+
+<hr>
+
+-   O R já vem com uma biblioteca base, mas existem muitos pacotes disponíveis <br> para executar diversas funções
+
+-   Primeiramente, vamos começar instalando o pacote [dplyr]{.yellow} para nos auxliar<br> na manipulação da base de dados
+
+. . .
+
+::: columns
+::: {.column width="60%"}
+-   Utilizamos a função `install.packages()` para instalar um pacote no R, colocando dentro da função o nome do pacote, entre aspas, que desejamos instalar
+:::
+
+::: {.column width="40%"}
+::: fragment
+```{r}
+#| eval: false
+
+install.packages("dplyr")
+```
+:::
+:::
+:::
+
+## Instalando pacotes
+
+<hr>
+
+-   O R já vem com uma biblioteca base, mas existem muitos pacotes disponíveis <br> para executar diversas funções
+
+-   Primeiramente, vamos começar instalando o pacote [dplyr]{.yellow} para nos auxliar<br> na manipulação da base de dados <br>
+
+::: columns
+::: {.column width="60%"}
+-   Utilizamos a função `install.packages()` para instalar um pacote no R, colocando dentro da função o nome do pacote, entre aspas, que desejamos instalar.
+
+-   Depois podemos carregar o pacote usando a função `library()`
+:::
+
+::: {.column width="40%"}
+```{r}
+#| eval: false
+
+install.packages("dplyr")
+```
+```{r}
+#| echo: false
+library(dplyr)
+```
+
+::: fragment
+```{r}
+#| eval: false
+library(dplyr)
+```
+:::
+
+:::
+:::
+
+::: fragment
+> Os pacotes no R só precisam ser instalados uma vez.<br> Depois, basta chamá-los com a função `library()` na próxima vez que precisar
+:::
+
+# Manipulações básicas de dados
+
+<hr>
+
+## Seleção de variáveis
+
+<hr>
+
+-   Vamos selecionar apenas algumas colunas de interesse da nossa base utilizando a função `select()`
+
+-   Para nossas análises vamos precisar da informação das parcelas, das espécies e de suas respectivas abundâncias
+
+. . .
+
+-   Primeiro vamos recuperar os nomes das colunas usando `colnames()`
+
+```{r}
+# Função para extrair nome das colunlas
+colnames(dados_brutos) 
+```
+
+## Seleção de variáveis
+
+<hr>
+
+-   agora usamos `select()` para extrair as colunas de interesse
+
+```{r}
+# Função para extrair nome das colunlas
+colnames(dados_brutos) 
+select(dados_brutos, Parcela, Especie, Abundancia)
+```
+
+## Seleção de variáveis
+
+<hr>
+
+-   Podemos salvar a seleção em um novo objeto para guardar a informação filtrada
+
+```{r}
+#| output-location: fragment
+#| cache: true
+
+# Função para extrair nome das colunlas
+# colnames(dados_brutos) 
+dados <- select(dados_brutos, Parcela, Especie, Abundancia)
+```
+
+## Seleção de variáveis
+
+<hr>
+
+-   Podemos salvar a seleção em um novo objeto para guardar a informação filtrada
+
+```{r}
+#| output-location: fragment
+#| cache: true
+
+# Função para extrair nome das colunlas
+# colnames(dados_brutos) 
+dados <- select(dados_brutos, Parcela, Especie, Abundancia)
+dados
+```
+
+## Operações sequenciais 
+
+<hr>
+
+::: {.incremental}
+-   Agora eu gostaria de saber qual o total de indivíduos encontrados em cada parcela
+
+-   Para obter esse resultado eu preciso:
+
+1. selecionar as minhas colunas de interesse (Parcela e Abundancia)
+2. agrupar pelo tipo de parcela
+3. somar os valores de cada grupo
+:::
+
+## Operações sequenciais 
+
+<hr>
+
+::: fragment
+-   Criar um objeto para cada uma dessas etapas é trabalhoso e nada prático
+-   Podemos usar o comando [\|\> (pipe)]{.yellow} para encadear nossas ações e otimizar o processo de criação de nossos objetos
+:::
+
+::: fragment 
+::: {.callout-tip style="font-size: 120%;"}
+## Dica
+
+Para facilicar, use o atalho [Ctrl + shift + m]{.yellow} para incluir o símbolo do pipe na linha de comando
+
+:::
+:::
+
+
+## Operações sequenciais
+
+<br>
+
+::: columns
+
+::: {.column width="50%"}
+1. selecionar as minhas colunas de interesse (Parcela e Abundancia)
+2. agrupar pelo tipo de parcela
+3. somar os valores de cada grupo
+
+::: fragment
+```{r}
+#| eval: false
+
+dados |> 
+  select(Parcela, Abundancia) |> 
+  group_by(Parcela) |> 
+  summarize_all(sum) 
+```
+:::
+:::
+
+
+
+::: {.column width="50%"}
+::: fragment
+```{r}
+#| echo: false
+#| output-location: ´column-fragment´
+
+dados |> 
+  select(Parcela, Abundancia) |> 
+  group_by(Parcela) |> 
+  summarize_all(sum) 
+```
+:::
+:::
+:::
+
+
+
+## Operações sequenciais
+
+<br>
+
+::: columns
+
+::: {.column width="50%"}
+-   Se eu quiser ordenar as abundâncias por ordem crescente, basta incluir a função `arrange()` na minha sequência de comandos, especificando qual coluna para organizar
+:::
+
+::: {.column width="50%"}
+
+::: fragment
+```{r}
+dados |> 
+  select(Parcela, Abundancia) |> 
+  group_by(Parcela) |> 
+  summarize_all(sum) |> 
+  arrange(Abundancia)
+```
+:::
+
+:::
+
+:::
+
+## Operações sequenciais
+
+<br>
+
+::: columns
+
+::: {.column width="50%"}
+-   Se eu quiser ordenar as abundâncias por ordem crescente, basta incluir a função `arrange()` na minha sequência de comandos, especificando qual coluna para organizar
+-   Para ordem descrescente é necessário incluir a função `desc()` dentro da `arrange()`
+:::
+
+::: {.column width="50%"}
+```{r}
+dados |> 
+  select(Parcela, Abundancia) |> 
+  group_by(Parcela) |> 
+  summarize_all(sum) |> 
+  arrange(desc(Abundancia))
+```
+:::
+
+:::
+
+## Transformação de dados *long/wide*
+
+<hr>
+
+-   Podemos organizar os dados em dois formatos básicos:
+    1. [*Long*]{.yellow}: os dados são discriminados mais detalhadamente ao longo das linhas
+    
+::: fragment
+```{r}
+#| echo: false
+dados
+```
+:::
+
+## Transformação de dados *long/wide*
+
+<hr>
+
+-   Podemos organizar os dados em dois formatos básicos:
+    1. [*Long*]{.yellow}: os dados são discriminados mais detalhadamente ao longo das linhas
+    2. [*Wide*]{.yellow}: os dados são discriminados mais detalhadamente ao longo das colunas
+    
+::: fragment
+```{r}
+#| eval: false
+dados
+```
+
+```{r}
+#| echo: false
+#| cache: true
+
+library(tidyr)
+dados |> 
+  group_by(Parcela, Especie)  |> 
+  summarise_all(sum) |>
+  ungroup() |> 
+  mutate(across(c(1:2), as.factor)) |> 
+  pivot_wider ( names_from = "Especie",
+  values_from = "Abundancia",
+  values_fill = 0)
+```
+:::
+    
+## Transformação de dados *long/wide*
+
+<hr>
+
+::: columns
+
+::: {.column width="50%"}
+-   Nossa base possui formato long
+-   Vamos transpor para o formato wide:
+    1. baixar e carregar o pacote [tidyverse]{.yellow}
+:::
+
+::: {.column width="50%"}
+::: fragment
+```{r}
+#| eval: false
+install.packages("tidyverse")
+library(tidyverse)
+```
+:::
+:::
+
+:::
+
+## Transformação de dados *long/wide*
+
+<hr>
+
+::: columns
+
+::: {.column width="40%" style="font-size: 85%;"}
+-   Nossa base possui formato long
+-   Vamos transpor para o formato wide:
+    1. baixar e carregar o pacote [tidyverse]{.yellow}
+    2. usar a função `pivot_wider()` no objeto [dados]{.blue} <br>
+    para transformar os dados de espécies em [wide]{.yellow}
+:::
+
+::: {.column width="60%" style="font-size: 85%;"}
+::: {.fragment style="font-size: 80%;"}
+```{r style="font-size: 85%;"}
+#| eval: false
+
+install.packages("tidyverse")
+library(tidyverse)
+
+dados |> 
+  group_by(Parcela, Especie)  |> 
+  summarise_all(sum) |>
+  ungroup() |> 
+  mutate(across(c(1:2), as.factor)) |> 
+  pivot_wider (names_from = "Especie",
+               values_from = "Abundancia",
+               values_fill = 0)
+```
+:::
+:::
+:::
+
+::: fragment
+```{r}
+#| echo: false
+ 
+library(tidyverse)
+dados |> 
+  group_by(Parcela, Especie)  |> 
+  summarise_all(sum) |>
+  ungroup() |> 
+  mutate(across(c(1:2), as.factor)) |> 
+  pivot_wider ( names_from = "Especie",
+  values_from = "Abundancia",
+  values_fill = 0) |> 
+  as.data.frame()
+```
+:::
+
+## Agrupar diferentes planilhas (data frames)
+<hr>
+
+::: columns
+
+::: {.column width="50%" style="font-size: 90%;"}
+-   Existem funções para facilitar a combinação de informações de fontes (arquivos/objetos) diferentes
+-   Primeiro, vamos dividir nosso objeto [dados]{.yellow} em dois novos objetos:
+
+::: {.center}
+1. um com as primeiras 300 linhas
+2. outro com as demais 234
+:::
+
+:::
+
+::: {.column width="50%"}
+
+::: fragment
+```{r}
+d1 <- dados[1:300, ]
+d2 <- dados[301:534, ]
+```
+:::
+
+:::
+
+:::
+
+## Agrupar diferentes planilhas (data frames)
+<hr>
+
+::: columns
+
+::: {.column width="50%" style="font-size: 90%;"}
+-   Existem funções para facilitar a combinação de informações de fontes (arquivos/objetos) diferentes
+-   Primeiro, vamos dividir nosso objeto [dados]{.yellow} em dois novos objetos:
+
+::: {.center}
+1. um com as primeiras 300 linhas
+2. outro com as demais 234
+3. agora juntando os dois em um novo <br>
+objeto com a função `rbind()`
+:::
+
+:::
+
+::: {.column width="50%"}
+```{r}
+d1 <- dados[1:300, ]
+d2 <- dados[301:534, ]
+```
+
+::: fragment
+```{r}
+d3 <- rbind(d1, d2)
+```
+
+:::
+
+:::
+
+:::
+
+## Agrupar diferentes planilhas (data frames)
+<hr>
+
+-   De forma similar, podemos agrupar novas colunas em um objeto
+-   A função `cbind()` pode fazer essa junção dos dados
+
+::: fragment
+-   Monte um exemplo similar como feito anteriormente
+
+:::
+
+::: fragment
+```{r}
+d1 <- dados[, 1]
+d2 <- dados[, 2:3]
+d3 <- cbind(d1, d2)
+d3
+```
+
+:::
+
+## Agrupar diferentes planilhas (data frames)
+<hr>
+
+-   Muitas vezes as bases que queremos unir não são diretamente compatíveis
+-   Enquanto uma base possui as abundâncias por espécie nas parcelas, podemos ter uma outra base com os dados abióticos ddas mesmas
+-   Mas, como as bases compartilham algum conjunto de informações em comum, podemos facilmente agrupá-las
+
+
+## grupar diferentes planilhas (data frames)
+<hr>
+
+```{r}
+dados
+```
+
+```{r}
+#| echo: false
+preditoras <- read.csv("F:/Caatinga/Disciplinas/2024/Comunidades/R básico/Analises/Preditoras.csv", 
+                         h = T, 
+                         sep = ",")
+```
+
+
+::: fragment
+
+```{r}
+preditoras
+```
+
+:::
+
+
+## Agrupar diferentes planilhas (data frames)
+<hr>
+
+-   Vamos carregar a planilha com as variáveis preditodas ([Preditoras.csv]{.yellow})
+
+::: fragment
+```{r}
+#| eval: false
+preditoras <- read.csv("Preditoras.csv", 
+                       h = T, 
+                       sep = ",")
+preditoras
+```
+:::
+
+::: fragment
+```{r}
+#| echo: false
+preditoras
+```
+
+:::
+
+## Agrupar diferentes planilhas (data frames)
+<hr>
+
+-   Agora vamos unir o conteúdo do objedo [dados]{.yellow} com o de [preditoras]{.yellow}, utilizando a coluna Parcela como informação comum entre as bases
+
+-   Para isso vamos utilizar a função [left_join()]{.yellow}
+
+::: fragment
+```{r}
+dados2 <- dados |> 
+  left_join(preditoras)
+dados2
+```
+:::
