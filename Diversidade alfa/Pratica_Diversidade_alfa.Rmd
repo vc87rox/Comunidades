@@ -1,0 +1,136 @@
+---
+title: "Diversidade alfa"
+output: html_document
+date: "2024-05-17"
+---
+
+## Diversidade alfa
+
+-   Vamos trabalhar com a base de dados utilizada na prática da introdução ao R
+-   Podemos começar importando o arquivo para o R
+-   Caso ainda não tenha configurado o diretório base para as análises, essa é uma boa hora para fazê-lo
+```{r}
+
+```
+
+-   Em seguida, podeos carregar os pacotos que vamos utilizar ao longo das etapas  das nossas análises
+-   Como eu não lembro exatamente qual função pertence a qual pacote, eu costumo carregar todos
+-   São eles: dplyr, tidyverse, ggplot2, ggstar, ggpubr, ggforce, ggExtra, ggtext, patchwork, directlabels e viridis
+```{r}
+
+```
+
+
+-   Nossa base representa coletas de anfíbios feitas em 96 parcelas, distribuídas em ambientes de floresta ombrófila e floresta de canga na Floresta Nacional de Carajás, uma na estação de seca e outra na chuvosa, com diferentes métodos de coleta
+-   Algumas espécies possuem múltiplas entradas por amostragem
+-   Vamos então somar as abundâncias por espécie por parcela, mantendo todas as outras subdivisões do desenho amostral (Ambiente, Corpo, Metodo e Estacao)
+-   A base apresenta diferentes métodos de coleta, não podemos comparar diretamente os valores de diversidade entre eles
+-   Podemos então utilizar somente os dados de amostragem realizada pelo método da busca ativa (BA)
+-   Como consequência, já podemos descartar a coluna indicativa do Metodo
+-   Apenas uma variável é contínua na nossa base (abundância), vamos aproveitar também e já transformar todas as demais em variável categórica (converter caracter em fator)
+```{r}
+
+```
+
+
+-   Como o tema da aula é diversidade, vamos calcular o valor total de abundância e riqueza da área de estudo (diversidade gama)
+```{r}
+
+```
+
+-   Como estão distribuídas as espécies em ralação às suas abundâncias?
+-   Podemos fazer um gráfico mostrando as espécies da maior para a menor abundância
+```{r}
+
+```
+
+-   Vamos calcular a abundância e riqueza por parcela
+```{r}
+
+```
+
+-   Podemos plotar a variação do numero de espécies no espaço
+-   Primeiro vamos plotar as coordenadas das parcelas para ver sua distribuição espacial
+-   Carregue a base de dados das variáveis preditoras e plote as coordenadas
+```{r}
+
+```
+
+-   Mude o tamanho do ponto em ralação aos valores de riqueza calculado anteriormente para cada parcela
+```{r}
+
+```
+
+
+-   Agora podemos calcular a abundância e riqueza por parcela levando em consideração também as diferentes estações
+```{r}
+
+```
+
+-   Já que temos os valores por estação, podemos calcular a diferença da riqueza observada entre as estações por parcela, plotar os valores espacialmente, e indicar com um gradinte de cores as parcelas que apresentaram maior diferençca dos valores
+```{r}
+
+```
+
+
+-   Podemos nos perguntar então, como que a riqueza e abundância varia entre as estações?
+-   Para facilitar a visualização, podemos fazer boxplots para ver a variação dos dados
+```{r}
+
+```
+
+-   Podemos construir uma figura com os dois gráficos lado a lado para melhor visualização 
+```{r}
+
+```
+
+-   As amostragem nos dois tipos de ambiente (canga e floresta) possui esforço equivalente?
+-   Desafio: quantas parcelas temos distribuídas em cada ambiente?
+```{r}
+
+```
+
+
+-   Vamos então refazer nossos sumários considerando os ambientes separadamente
+-   Mas, como estamos calculando os mesmos índices para ambos, podemos apresentar os resultados de canga e floresta em uma mesma figura
+```{r}
+
+```
+
+-   Sabemos que só podemos comparar a diversidade entre unidades amostrais se elas possuem esforço similar
+-   Também vimos que usar Números de Hill é uma abordagem mais padronizada quando queremos trabalhar com índices de diversidade
+-   O pacote iNEXT (Hsiehet al. 2022) é um dos vários que calculam índices de diversidade 
+-   Sua vantagem é que também é possível gerar curvas de rarefação e extrapolação, bem como calcular a cobertura de amostragem e padronizar o esforço entre as amostragem por um valor de corte
+
+-   Vamos começar intalando e carregando o pacote iNEXT
+```{r}
+
+```
+
+-   Considerando os dois ambientes separadamente, vamos calcular a diversidade observada usando os números de Hill de ordem q = 0, 1 e 2, bem como iremos calcular a cobertura de amostragem e também as curvas de rarefação e extrapolação
+
+-   Passo 1: agrupar nossa base de dados por ambiente e somar os valores de abunância das espécies
+-   Passo 2: inverter a estrutura da base de dados de forma que as especies representem as linhas e o ambiente as colunas
+-   Passo 3: remover a coluna das espécies pois nos cálculos de diversidade a identidade per se de cada espécie não é relevante
+-   Passo 4: usar a finção iNEXT para calcular dos índices de diversidade (0, 1 e 2) e gerar os dados para construção das curvas de rarefação e extrapolação
+```{r}
+
+```
+
+
+-   Passo 5: plotar as curvas para cada índice de cada ambiente (ggiNEXT)
+-   Passo 6: obter os valores de cobertura de amostragem
+```{r}
+
+```
+
+-   Plot personalizado
+```{r}
+
+```
+
+-   Agora vamos fazer os mesmos cáculos mas considerando os valores por ambiente em cada Corpo (A, B e C)
+```{r}
+
+```
+
