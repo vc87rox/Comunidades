@@ -1,0 +1,621 @@
+﻿Parcela,Ambiente,Corpo,Metodo,Estacao,Especie,Abundancia
+A1-P01C,C,A,BA,Chuva,Adenomera kayapo,6
+A1-P01C,C,A,BA,Chuva,Adenomera kayapo,3
+A1-P01C,C,A,BA,Chuva,Allobates carajas,8
+A1-P01C,C,A,BA,Chuva,Boana multifasciata,2
+A1-P01C,C,A,BA,Chuva,Dendropsophus minusculus,12
+A1-P01C,C,A,BA,Chuva,Dendropsophus minutus,21
+A1-P01C,C,A,BA,Chuva,Osteocephalus taurinus,2
+A1-P01C,C,A,BA,Chuva,Physalaemus ephippifer,3
+A1-P01C,C,A,BA,Chuva,Pithecopus hypochondrialis,4
+A1-P01C,C,A,BA,Chuva,Pseudopaludicola canga,28
+A1-P01C,C,A,BA,Chuva,Pseudopaludicola canga,2
+A1-P01C,C,A,BA,Chuva,Pseudopaludicola canga,6
+A1-P01C,C,A,BA,Chuva,Scinax fuscomarginatus,33
+A1-P01C,C,A,BA,Chuva,Scinax ruber,4
+A1-P01C,C,A,BA,Seca,Rhinella mirandaribeiroi,1
+A1-P02C,C,A,BA,Seca,ESO,0
+A1-P02C,C,A,BA,Chuva,ESO,0
+A1-P03C,C,A,BA,Chuva,Adenomera kayapo,1
+A1-P03C,C,A,BA,Chuva,Pristimantis aff. fenestratus,2
+A1-P03C,C,A,BA,Chuva,Scinax fuscomarginatus,1
+A1-P04C,C,A,BA,Chuva,Ameerega flavopicta,1
+A1-P04C,C,A,BA,Chuva,Pithecopus hypochondrialis,3
+A1-P05C,C,A,BA,Chuva,Adenomera kayapo,4
+A1-P05C,C,A,BA,Chuva,Physalaemus ephippifer,1
+A1-P05C,C,A,BA,Chuva,Pithecopus hypochondrialis,4
+A1-P05C,C,A,BA,Chuva,Pseudopaludicola canga,23
+A1-P05C,C,A,BA,Chuva,Pseudopaludicola canga,9
+A1-P03C,C,A,BA,Seca,ESO,0
+A1-P04C,C,A,BA,Seca,ESO,0
+A1-P05C,C,A,BA,Seca,Rhinella marina,1
+A1-P06C,C,A,BA,Chuva,Adenomera kayapo,5
+A1-P06C,C,A,BA,Chuva,Ameerega flavopicta,5
+A1-P06C,C,A,BA,Chuva,Ameerega flavopicta,3
+A1-P06C,C,A,BA,Chuva,Boana multifasciata,1
+A1-P06C,C,A,BA,Chuva,Dendropsophus minutus,1
+A1-P06C,C,A,BA,Chuva,Pristimantis aff. fenestratus,2
+A1-P07C,C,A,BA,Chuva,Adenomera andreae,1
+A1-P07C,C,A,BA,Chuva,Boana raniceps,1
+A1-P07C,C,A,BA,Chuva,Dendropsophus minusculus,31
+A1-P07C,C,A,BA,Chuva,Dendropsophus minusculus,4
+A1-P07C,C,A,BA,Chuva,Dendropsophus minutus,5
+A1-P07C,C,A,BA,Chuva,Leptodactylus paraensis,2
+A1-P07C,C,A,BA,Chuva,Physalaemus ephippifer,1
+A1-P07C,C,A,BA,Chuva,Physalaemus ephippifer,1
+A1-P07C,C,A,BA,Chuva,Pithecopus hypochondrialis,5
+A1-P07C,C,A,BA,Chuva,Pseudopaludicola canga,1
+A1-P07C,C,A,BA,Chuva,Scinax fuscomarginatus,11
+A1-P06C,C,A,BA,Seca,ESO,0
+A1-P07C,C,A,BA,Seca,Pithecopus hypochondrialis,1
+A1-P07C,C,A,BA,Seca,Pseudopaludicola canga,1
+A1-P07C,C,A,BA,Seca,Pseudopaludicola canga,1
+A1-P07C,C,A,BA,Seca,Pseudopaludicola canga,20
+A1-P08C,C,A,BA,Chuva,Boana multifasciata,2
+A1-P08C,C,A,BA,Chuva,Dendropsophus microcephalus,8
+A1-P08C,C,A,BA,Chuva,Dendropsophus microcephalus,1
+A1-P08C,C,A,BA,Chuva,Dendropsophus minutus,12
+A1-P08C,C,A,BA,Chuva,Leptodactylus paraensis,1
+A1-P08C,C,A,BA,Chuva,Pithecopus hypochondrialis,1
+A1-P08C,C,A,BA,Chuva,Pithecopus hypochondrialis,7
+A1-P08C,C,A,BA,Chuva,Pithecopus hypochondrialis,2
+A1-P08C,C,A,BA,Chuva,Pseudopaludicola canga,10
+A1-P08C,C,A,BA,Chuva,Scinax fuscomarginatus,1
+A1-P08C,C,A,BA,Chuva,Scinax nebulosus,3
+A1-P08C,C,A,BA,Chuva,Scinax ruber,3
+A1-P08C,C,A,BA,Chuva,Scinax ruber,3
+A1-P08C,C,A,BA,Chuva,Trachycephalus typhonius,1
+A1-P08C,C,A,BA,Seca,Dendropsophus minutus,2
+A1-P08C,C,A,BA,Seca,Scinax ruber,1
+A1-P08C,C,A,BA,Seca,Trachycephalus typhonius,1
+A1-P08C,C,A,BA,Seca,Trachycephalus typhonius,2
+A1-P09C,C,A,BA,Chuva,Dendropsophus microcephalus,5
+A1-P09C,C,A,BA,Chuva,Dendropsophus minutus,10
+A1-P09C,C,A,BA,Chuva,Leptodactylus paraensis,1
+A1-P09C,C,A,BA,Chuva,Pithecopus hypochondrialis,6
+A1-P09C,C,A,BA,Chuva,Pseudopaludicola canga,7
+A1-P09C,C,A,BA,Chuva,Scinax fuscomarginatus,3
+A1-P09C,C,A,BA,Chuva,Scinax ruber,5
+A1-P09C,C,A,BA,Chuva,Scinax ruber,3
+A1-P09C,C,A,BA,Seca,Dendropsophus minutus,3
+A1-P09C,C,A,BA,Seca,Pithecopus hypochondrialis,8
+A1-P09C,C,A,BA,Seca,Trachycephalus typhonius,1
+A1-P10C,C,A,BA,Chuva,Dendropsophus minutus,1
+A1-P10C,C,A,BA,Chuva,Dendropsophus minutus,1
+A1-P10C,C,A,BA,Chuva,Pithecopus hypochondrialis,4
+A1-P10C,C,A,BA,Chuva,Pseudopaludicola canga,8
+A1-P10C,C,A,BA,Chuva,Pseudopaludicola canga,2
+A1-P10C,C,A,BA,Chuva,Pseudopaludicola canga,3
+A1-P10C,C,A,BA,Chuva,Pseudopaludicola canga,2
+A1-P10C,C,A,BA,Chuva,Scinax ruber,2
+A1-P10C,C,A,BA,Seca,Osteocephalus taurinus,1
+A1-P10C,C,A,BA,Seca,Pithecopus hypochondrialis,1
+A1-P11FL,F,A,BA,Chuva,Rhaebo guttatus,1
+A1-P11FL,F,A,BA,Seca,Adenomera andreae,1
+A1-P12FL,F,A,BA,Chuva,Adenomera andreae,1
+A1-P12FL,F,A,BA,Chuva,Osteocephalus taurinus,1
+A1-P12FL,F,A,BA,Chuva,Pithecopus hypochondrialis,1
+A1-P12FL,F,A,BA,Seca,Osteocephalus taurinus,1
+A1-P13FL,F,A,BA,Chuva,Pristimantis aff. fenestratus,1
+A1-P13FL,F,A,BA,Seca,Allobates carajas,2
+A1-P13FL,F,A,BA,Seca,Allobates carajas,7
+A1-P13FL,F,A,BA,Seca,Ameerega flavopicta,1
+A1-P13FL,F,A,BA,Seca,Osteocephalus taurinus,2
+A1-P13FL,F,A,BA,Seca,Pristimantis aff. fenestratus,1
+A1-P13FL,F,A,BA,Seca,Pristimantis aff. fenestratus,10
+A1-P13FL,F,A,BA,Seca,Proceratophrys concavitympanum,1
+A1-P13FL,F,A,BA,Seca,Proceratophrys concavitympanum,2
+A1-P14FL,F,A,BA,Seca,Allobates carajas,1
+A1-P14FL,F,A,BA,Seca,Pipa arrabali,1
+A1-P14FL,F,A,BA,Seca,Pristimantis aff. fenestratus,2
+A1-P14FL,F,A,BA,Seca,Pristimantis aff. fenestratus,3
+A1-P14FL,F,A,BA,Chuva,ESO,0
+A1-P15FL,F,A,BA,Chuva,ESO,0
+A2-P16FL,F,A,BA,Chuva,ESO,0
+A2-P17FL,F,A,BA,Chuva,ESO,0
+A1-P18FL,F,A,AIQ,Chuva,Adenomera andreae,1
+A1-P18FL,F,A,BA,Chuva,Adenomera andreae,2
+A1-P18FL,F,A,AIQ,Chuva,Ameerega flavopicta,1
+A1-P18FL,F,A,AIQ,Seca,Adenomera andreae,1
+A1-P18FL,F,A,AIQ,Seca,Adenomera andreae,1
+A2-P16FL,F,A,BA,Chuva,Hyalinobatrachium iaspidiense,2
+A2-P16FL,F,A,BA,Chuva,Pithecopus hypochondrialis,1
+A2-P16FL,F,A,AIQ,Seca,Adenomera andreae,1
+A2-P16FL,F,A,AIQ,Seca,Adenomera andreae,1
+A2-P16FL,F,A,AIQ,Seca,Ameerega flavopicta,1
+A1-P15FL,F,A,BA,Seca,ESO,0
+A2-P16FL,F,A,BA,Seca,Ameerega flavopicta,2
+A2-P16FL,F,A,BA,Seca,Pithecopus hypochondrialis,1
+A2-P16FL,F,A,AIQ,Seca,Rhinella margaritifera,1
+A2-P17FL,F,A,AIQ,Chuva,Adenomera kayapo,1
+A2-P17FL,F,A,AIQ,Chuva,Ameerega flavopicta,1
+A2-P17FL,F,A,BA,Chuva,Pithecopus hypochondrialis,1
+A2-P17FL,F,A,AIQ,Seca,Adenomera andreae,1
+A2-P17FL,F,A,AIQ,Seca,Adenomera andreae,1
+A2-P17FL,F,A,AIQ,Seca,Adenomera andreae,1
+A1-P18FL,F,A,BA,Chuva,ESO,0
+A2-P19FL,F,A,BA,Chuva,Allobates carajas,1
+A2-P19FL,F,A,BA,Chuva,Boana raniceps,1
+A2-P19FL,F,A,BA,Chuva,Osteocephalus taurinus,1
+A2-P19FL,F,A,AIQ,Seca,Adenomera andreae,1
+A2-P19FL,F,A,AIQ,Seca,Proceratophrys concavitympanum,1
+A2-P20FL,F,A,BA,Chuva,Ameerega flavopicta,1
+A2-P20FL,F,A,BA,Chuva,Boana boans,1
+A2-P20FL,F,A,AIQ,Seca,Adenomera andreae,1
+A2-P20FL,F,A,AIQ,Seca,Adenomera andreae,1
+A2-P20FL,F,A,AIQ,Seca,Adenomera andreae,1
+A2-P17FL,F,A,BA,Seca,ESO,0
+A1-P18FL,F,A,BA,Seca,ESO,0
+A2-P19FL,F,A,BA,Seca,ESO,0
+A2-P20FL,F,A,BA,Seca,Allobates carajas,49
+A2-P20FL,F,A,BA,Seca,Allobates carajas,50
+A2-P20FL,F,A,AIQ,Seca,Ameerega flavopicta,1
+A2-P20FL,F,A,AIQ,Seca,Ameerega flavopicta,2
+A2-P20FL,F,A,BA,Seca,Ameerega flavopicta,1
+A2-P20FL,F,A,BA,Seca,Ameerega flavopicta,5
+A2-P20FL,F,A,BA,Seca,Ameerega flavopicta,7
+A2-P20FL,F,A,BA,Seca,Pristimantis aff. fenestratus,4
+A2-P20FL,F,A,BA,Seca,Pristimantis aff. fenestratus,14
+A2-P20FL,F,A,AIQ,Seca,Rhinella marina,1
+A2-P20FL,F,A,AIQ,Seca,Rhinella marina,1
+A2-P20FL,F,A,AIQ,Seca,Rhinella marina,1
+A2-P20FL,F,A,AIQ,Seca,Rhinella marina,1
+A2-P21C,C,A,BA,Chuva,ESO,0
+A2-P22C,C,A,BA,Chuva,Adenomera kayapo,1
+A2-P22C,C,A,BA,Chuva,Ameerega flavopicta,6
+A2-P22C,C,A,BA,Chuva,Dendropsophus minutus,1
+A2-P22C,C,A,BA,Chuva,Pithecopus hypochondrialis,2
+A2-P22C,C,A,BA,Chuva,Pristimantis aff. fenestratus,1
+A2-P23C,C,A,BA,Chuva,Adenomera kayapo,6
+A2-P23C,C,A,BA,Chuva,Allobates carajas,3
+A2-P23C,C,A,BA,Chuva,Boana multifasciata,3
+A2-P23C,C,A,BA,Chuva,Dendropsophus minusculus,19
+A2-P23C,C,A,BA,Chuva,Dendropsophus minutus,2
+A2-P23C,C,A,BA,Chuva,Dendropsophus minutus,16
+A2-P23C,C,A,BA,Chuva,Dendropsophus minutus,6
+A2-P23C,C,A,BA,Chuva,Leptodactylus paraensis,1
+A2-P23C,C,A,BA,Chuva,Pithecopus hypochondrialis,7
+A2-P23C,C,A,BA,Chuva,Pristimantis aff. fenestratus,2
+A2-P23C,C,A,BA,Chuva,Pseudopaludicola canga,23
+A2-P23C,C,A,BA,Chuva,Pseudopaludicola canga,18
+A2-P23C,C,A,BA,Chuva,Scinax fuscomarginatus,31
+A2-P21C,C,A,BA,Seca,ESO,0
+A2-P22C,C,A,BA,Seca,ESO,0
+A2-P23C,C,A,BA,Seca,Leptodactylus fuscus,1
+A2-P23C,C,A,BA,Seca,Leptodactylus fuscus,6
+A2-P23C,C,A,BA,Seca,Leptodactylus paraensis,2
+A2-P23C,C,A,BA,Seca,Pseudopaludicola canga,14
+A2-P23C,C,A,BA,Seca,Pseudopaludicola canga,24
+A2-P24C,C,A,BA,Chuva,Pithecopus hypochondrialis,4
+A2-P25C,C,A,BA,Chuva,Ameerega flavopicta,1
+A2-P25C,C,A,BA,Chuva,Ameerega flavopicta,15
+A2-P25C,C,A,BA,Chuva,Boana multifasciata,3
+A2-P25C,C,A,BA,Chuva,Dendropsophus minutus,1
+A2-P25C,C,A,BA,Chuva,Leptodactylus paraensis,1
+A2-P25C,C,A,BA,Chuva,Physalaemus ephippifer,1
+A2-P25C,C,A,BA,Chuva,Pithecopus hypochondrialis,7
+A2-P25C,C,A,BA,Chuva,Pristimantis aff. fenestratus,3
+A2-P25C,C,A,BA,Chuva,Pseudopaludicola canga,26
+A2-P25C,C,A,BA,Chuva,Pseudopaludicola canga,7
+A2-P25C,C,A,BA,Chuva,Pseudopaludicola canga,28
+A2-P25C,C,A,BA,Chuva,Pseudopaludicola canga,1
+A2-P26C,C,A,BA,Chuva,Ameerega flavopicta,1
+A2-P26C,C,A,BA,Chuva,Pithecopus hypochondrialis,4
+A2-P26C,C,A,BA,Chuva,Pseudopaludicola canga,10
+A2-P26C,C,A,BA,Chuva,Pseudopaludicola canga,18
+A2-P26C,C,A,BA,Chuva,Pseudopaludicola canga,9
+A2-P26C,C,A,BA,Chuva,Pseudopaludicola canga,1
+A2-P27C,C,A,BA,Chuva,Ameerega flavopicta,5
+A2-P27C,C,A,BA,Chuva,Ameerega flavopicta,1
+A2-P27C,C,A,BA,Chuva,Leptodactylus paraensis,1
+A2-P27C,C,A,BA,Chuva,Physalaemus ephippifer,1
+A2-P27C,C,A,BA,Chuva,Pithecopus hypochondrialis,3
+A2-P27C,C,A,BA,Chuva,Pseudopaludicola canga,3
+A2-P27C,C,A,BA,Chuva,Pseudopaludicola canga,1
+A2-P28C,C,A,BA,Chuva,Allobates carajas,8
+A2-P28C,C,A,BA,Chuva,Allobates carajas,1
+A2-P28C,C,A,BA,Chuva,Boana multifasciata,2
+A2-P28C,C,A,BA,Chuva,Dendropsophus leucophyllatus,4
+A2-P28C,C,A,BA,Chuva,Dendropsophus minusculus,10
+A2-P28C,C,A,BA,Chuva,Dendropsophus minutus,2
+A2-P28C,C,A,BA,Chuva,Dendropsophus minutus,13
+A2-P28C,C,A,BA,Chuva,Leptodactylus paraensis,3
+A2-P28C,C,A,BA,Chuva,Pithecopus hypochondrialis,9
+A2-P28C,C,A,BA,Chuva,Pseudopaludicola canga,13
+A2-P28C,C,A,BA,Chuva,Pseudopaludicola canga,3
+A2-P28C,C,A,BA,Chuva,Pseudopaludicola canga,5
+A2-P28C,C,A,BA,Chuva,Scinax fuscomarginatus,17
+A2-P28C,C,A,BA,Chuva,Scinax ruber,1
+A2-P28C,C,A,BA,Chuva,Scinax ruber,2
+A2-P24C,C,A,BA,Seca,ESO,0
+A2-P25C,C,A,BA,Seca,ESO,0
+A2-P26C,C,A,BA,Seca,ESO,0
+A2-P27C,C,A,BA,Seca,ESO,0
+A2-P28C,C,A,BA,Seca,Dendropsophus minutus,6
+A2-P28C,C,A,BA,Seca,Leptodactylus paraensis,1
+A2-P28C,C,A,BA,Seca,Pithecopus hypochondrialis,5
+A2-P28C,C,A,BA,Seca,Pseudopaludicola canga,1
+A2-P28C,C,A,BA,Seca,Pseudopaludicola canga,1
+A2-P29C,C,A,BA,Chuva,Pseudopaludicola canga,1
+A2-P29C,C,A,BA,Chuva,Pseudopaludicola canga,1
+A2-P29C,C,A,BA,Chuva,Pseudopaludicola canga,1
+A2-P30C,C,A,BA,Chuva,ESO,0
+A2-P31FL,F,A,BA,Chuva,Proceratophrys concavitympanum,1
+A2-P31FL,F,A,BA,Chuva,Rhaebo guttatus,1
+A2-P29C,C,A,BA,Seca,ESO,0
+A2-P30C,C,A,BA,Seca,ESO,0
+A2-P31FL,F,A,BA,Seca,Adenomera andreae,1
+A2-P31FL,F,A,BA,Seca,Allobates carajas,8
+A2-P31FL,F,A,BA,Seca,Allobates carajas,8
+A2-P31FL,F,A,BA,Seca,Ameerega flavopicta,1
+A2-P31FL,F,A,BA,Seca,Ameerega flavopicta,3
+A2-P31FL,F,A,BA,Seca,Ameerega flavopicta,12
+A2-P31FL,F,A,BA,Seca,Osteocephalus taurinus,1
+A2-P31FL,F,A,BA,Seca,Pristimantis aff. fenestratus,6
+A2-P31FL,F,A,BA,Seca,Pristimantis aff. fenestratus,38
+A2-P32FL,F,A,BA,Seca,Allobates carajas,8
+A2-P32FL,F,A,BA,Seca,Allobates carajas,29
+A2-P32FL,F,A,BA,Seca,Ameerega flavopicta,2
+A2-P32FL,F,A,BA,Seca,Ameerega flavopicta,4
+A2-P32FL,F,A,BA,Chuva,ESO,0
+A3-P33C,C,A,BA,Chuva,Boana multifasciata,2
+A3-P33C,C,A,BA,Chuva,Pithecopus hypochondrialis,7
+A3-P34C,C,A,BA,Chuva,Leptodactylus paraensis,1
+A3-P34C,C,A,BA,Chuva,Pithecopus hypochondrialis,5
+A3-P34C,C,A,BA,Chuva,Rhinella marina,1
+A3-P34C,C,A,BA,Chuva,Scinax ruber,1
+A3-P35C,C,A,BA,Chuva,Boana raniceps,1
+A3-P35C,C,A,BA,Chuva,Dendropsophus minusculus,3
+A3-P35C,C,A,BA,Chuva,Dendropsophus minutus,13
+A3-P35C,C,A,BA,Chuva,Leptodactylus fuscus,2
+A3-P35C,C,A,BA,Chuva,Leptodactylus paraensis,2
+A3-P35C,C,A,BA,Chuva,Pithecopus hypochondrialis,1
+A3-P35C,C,A,BA,Chuva,Pseudopaludicola canga,14
+A3-P35C,C,A,BA,Chuva,Pseudopaludicola canga,50
+A3-P35C,C,A,BA,Chuva,Pseudopaludicola canga,12
+A3-P35C,C,A,BA,Chuva,Pseudopaludicola canga,61
+A3-P35C,C,A,BA,Chuva,Scinax fuscomarginatus,9
+A3-P35C,C,A,BA,Chuva,Scinax ruber,5
+A3-P35C,C,A,BA,Chuva,Scinax ruber,1
+A3-P33C,C,A,BA,Seca,ESO,0
+A3-P34C,C,A,BA,Seca,ESO,0
+A3-P35C,C,A,BA,Seca,Leptodactylus fuscus,1
+A3-P35C,C,A,BA,Seca,Leptodactylus fuscus,1
+A3-P35C,C,A,BA,Seca,Pseudopaludicola canga,10
+A3-P36C,C,A,BA,Chuva,ESO,0
+A3-P37C,C,A,BA,Chuva,Adenomera kayapo,1
+A3-P37C,C,A,BA,Chuva,Adenomera kayapo,2
+A3-P37C,C,A,BA,Chuva,Ameerega flavopicta,1
+A3-P37C,C,A,BA,Chuva,Pithecopus hypochondrialis,13
+A3-P37C,C,A,BA,Chuva,Pseudopaludicola canga,1
+A3-P37C,C,A,BA,Chuva,Pseudopaludicola canga,1
+A3-P38C,C,A,BA,Chuva,Ameerega flavopicta,1
+A3-P38C,C,A,BA,Chuva,Ameerega flavopicta,1
+A3-P38C,C,A,BA,Chuva,Leptodactylus paraensis,1
+A3-P38C,C,A,BA,Chuva,Pithecopus hypochondrialis,5
+A3-P38C,C,A,BA,Chuva,Pseudopaludicola canga,1
+A3-P38C,C,A,BA,Chuva,Pseudopaludicola canga,12
+A3-P38C,C,A,BA,Chuva,Pseudopaludicola canga,7
+A3-P38C,C,A,BA,Chuva,Pseudopaludicola canga,9
+A3-P38C,C,A,BA,Chuva,Pseudopaludicola canga,2
+A3-P39C,C,A,BA,Chuva,Leptodactylus paraensis,1
+A3-P36C,C,A,BA,Seca,ESO,0
+A3-P37C,C,A,BA,Seca,ESO,0
+A3-P38C,C,A,BA,Seca,ESO,0
+A3-P39C,C,A,BA,Seca,Leptodactylus paraensis,1
+A3-P39C,C,A,BA,Seca,Pristimantis aff. fenestratus,4
+A3-P40C,C,A,BA,Chuva,ESO,0
+A3-P41C,C,A,BA,Chuva,Adenomera kayapo,2
+A3-P41C,C,A,BA,Chuva,Adenomera kayapo,2
+A3-P41C,C,A,BA,Chuva,Dendropsophus minusculus,15
+A3-P41C,C,A,BA,Chuva,Physalaemus ephippifer,2
+A3-P41C,C,A,BA,Chuva,Pithecopus hypochondrialis,9
+A3-P41C,C,A,BA,Chuva,Pseudopaludicola canga,7
+A3-P40C,C,A,BA,Seca,ESO,0
+A3-P41C,C,A,BA,Seca,Pristimantis aff. fenestratus,1
+A3-P41C,C,A,BA,Seca,Pristimantis aff. fenestratus,2
+A3-P42C,C,A,BA,Chuva,ESO,0
+A3-P43FL,F,A,BA,Chuva,Adenomera andreae,1
+A3-P44FL,F,A,BA,Chuva,Adenomera kayapo,1
+A3-P42C,C,A,BA,Seca,ESO,0
+A3-P43FL,F,A,BA,Seca,ESO,0
+A3-P44FL,F,A,BA,Seca,ESO,0
+A3-P45FL,F,A,BA,Seca,Allobates carajas,1
+A3-P45FL,F,A,BA,Seca,Pristimantis aff. fenestratus,9
+A3-P45FL,F,A,BA,Chuva,ESO,0
+A3-P46FL,F,A,BA,Chuva,Pristimantis aff. fenestratus,1
+A3-P46FL,F,A,BA,Seca,Adenomera andreae,1
+A3-P46FL,F,A,BA,Seca,Adenomera andreae,2
+A3-P46FL,F,A,BA,Seca,Ameerega flavopicta,2
+A3-P46FL,F,A,BA,Seca,Ameerega flavopicta,2
+A3-P46FL,F,A,BA,Seca,Osteocephalus taurinus,1
+A3-P46FL,F,A,BA,Seca,Pristimantis aff. fenestratus,30
+A3-P47FL,F,A,BA,Seca,Pristimantis aff. fenestratus,1
+A3-P47FL,F,A,BA,Seca,Scinax ruber,1
+A3-P48FL,F,A,BA,Seca,Scinax ruber,2
+A3-P47FL,F,A,BA,Chuva,ESO,0
+A3-P48FL,F,A,BA,Chuva,ESO,0
+B1-P49C,C,B,BA,Chuva,ESO,0
+B1-P50C,C,B,BA,Chuva,ESO,0
+B1-P51C,C,B,BA,Chuva,Rhinella mirandaribeiroi,1
+B1-P51C,C,B,BA,Chuva,Rhinella mirandaribeiroi,1
+B1-P49C,C,B,BA,Seca,ESO,0
+B1-P50C,C,B,BA,Seca,ESO,0
+B1-P51C,C,B,BA,Seca,Leptodactylus paraensis,1
+B1-P52C,C,B,BA,Chuva,Ameerega flavopicta,1
+B1-P52C,C,B,BA,Chuva,Ameerega flavopicta,1
+B1-P52C,C,B,BA,Chuva,Ameerega flavopicta,1
+B1-P52C,C,B,BA,Chuva,Dendropsophus marmoratus,3
+B1-P52C,C,B,BA,Chuva,Leptodactylus paraensis,1
+B1-P53C,C,B,BA,Chuva,Pithecopus hypochondrialis,1
+B1-P54C,C,B,BA,Chuva,Leptodactylus paraensis,1
+B1-P55C,C,B,BA,Chuva,Adenomera kayapo,3
+B1-P55C,C,B,BA,Chuva,Pithecopus hypochondrialis,4
+B1-P55C,C,B,BA,Chuva,Pristimantis aff. fenestratus,3
+B1-P56C,C,B,BA,Chuva,Allobates carajas,2
+B1-P56C,C,B,BA,Chuva,Dendropsophus minusculus,1
+B1-P56C,C,B,BA,Chuva,Dendropsophus minusculus,1
+B1-P56C,C,B,BA,Chuva,Dendropsophus minutus,1
+B1-P56C,C,B,BA,Chuva,Dendropsophus minutus,1
+B1-P56C,C,B,BA,Chuva,Dendropsophus minutus,1
+B1-P56C,C,B,BA,Chuva,Pithecopus hypochondrialis,2
+B1-P56C,C,B,BA,Chuva,Pseudopaludicola canga,24
+B1-P56C,C,B,BA,Chuva,Pseudopaludicola canga,7
+B1-P56C,C,B,BA,Chuva,Pseudopaludicola canga,16
+B1-P56C,C,B,BA,Chuva,Scinax fuscomarginatus,3
+B1-P57C,C,B,BA,Chuva,Adenomera kayapo,1
+B1-P57C,C,B,BA,Chuva,Pithecopus hypochondrialis,2
+B1-P58C,C,B,BA,Chuva,Adenomera kayapo,1
+B1-P58C,C,B,BA,Chuva,Ameerega flavopicta,1
+B1-P58C,C,B,BA,Chuva,Leptodactylus paraensis,2
+B1-P58C,C,B,BA,Chuva,Pithecopus hypochondrialis,2
+B1-P52C,C,B,BA,Seca,ESO,0
+B1-P53C,C,B,BA,Seca,ESO,0
+B1-P54C,C,B,BA,Seca,ESO,0
+B1-P55C,C,B,BA,Seca,ESO,0
+B1-P56C,C,B,BA,Seca,ESO,0
+B1-P57C,C,B,BA,Seca,ESO,0
+B1-P58C,C,B,BA,Seca,Leptodactylus paraensis,4
+B1-P59FL,F,B,BA,Seca,Allobates carajas,1
+B1-P59FL,F,B,BA,Seca,Allobates carajas,2
+B1-P59FL,F,B,BA,Seca,Ameerega flavopicta,6
+B1-P59FL,F,B,BA,Seca,Osteocephalus taurinus,2
+B1-P59FL,F,B,BA,Seca,Pristimantis aff. fenestratus,10
+B1-P59FL,F,B,BA,Seca,Pristimantis aff. fenestratus,11
+B1-P59FL,F,B,BA,Chuva,ESO,0
+B1-P60FL,F,B,BA,Chuva,Boana cinerascens,1
+B1-P60FL,F,B,BA,Chuva,Hyalinobatrachium iaspidiense,2
+B1-P60FL,F,B,BA,Chuva,Pristimantis aff. fenestratus,1
+B1-P60FL,F,B,BA,Chuva,Pristimantis aff. fenestratus,1
+B1-P60FL,F,B,BA,Seca,Allobates carajas,1
+B1-P60FL,F,B,BA,Seca,Allobates carajas,6
+B1-P60FL,F,B,BA,Seca,Osteocephalus taurinus,3
+B1-P60FL,F,B,BA,Seca,Pipa arrabali,1
+B1-P60FL,F,B,BA,Seca,Pristimantis aff. fenestratus,1
+B1-P60FL,F,B,BA,Seca,Pristimantis aff. fenestratus,13
+B1-P61FL,F,B,BA,Chuva,Pristimantis aff. fenestratus,1
+B1-P61FL,F,B,BA,Seca,Osteocephalus taurinus,1
+B1-P62FL,F,B,BA,Chuva,Adenomera andreae,2
+B1-P62FL,F,B,BA,Seca,Boana cinerascens,1
+B1-P62FL,F,B,BA,Seca,Boana cinerascens,2
+B1-P62FL,F,B,BA,Seca,Osteocephalus taurinus,1
+B1-P62FL,F,B,BA,Seca,Osteocephalus taurinus,1
+B1-P62FL,F,B,BA,Seca,Osteocephalus taurinus,2
+B1-P62FL,F,B,BA,Seca,Pristimantis aff. fenestratus,1
+B1-P62FL,F,B,BA,Seca,Pristimantis aff. fenestratus,3
+B1-P62FL,F,B,BA,Seca,Rhinella margaritifera,1
+B1-P62FL,F,B,BA,Seca,Scinax fuscomarginatus,1
+B1-P63FL,F,B,BA,Seca,Ameerega flavopicta,2
+B1-P63FL,F,B,BA,Seca,Ameerega flavopicta,5
+B1-P63FL,F,B,BA,Seca,Dendropsophus minutus,1
+B1-P63FL,F,B,BA,Seca,Pipa arrabali,1
+B1-P63FL,F,B,BA,Seca,Pristimantis aff. fenestratus,1
+B1-P63FL,F,B,BA,Seca,Pristimantis aff. fenestratus,2
+B1-P63FL,F,B,BA,Seca,Pristimantis aff. fenestratus,26
+B1-P63FL,F,B,BA,Seca,Proceratophrys concavitympanum,1
+B1-P63FL,F,B,BA,Seca,Proceratophrys concavitympanum,2
+B1-P63FL,F,B,BA,Seca,Scinax ruber,1
+B1-P63FL,F,B,BA,Chuva,ESO,0
+B1-P64FL,F,B,BA,Chuva,ESO,0
+B2-P65C,C,B,BA,Chuva,ESO,0
+B2-P65C,C,B,BA,Chuva,Ameerega flavopicta,1
+B2-P65C,C,B,BA,Chuva,Pristimantis aff. fenestratus,1
+B2-P66C,C,B,BA,Chuva,ESO,0
+B2-P67C,C,B,BA,Chuva,Dendropsophus minutus,1
+B2-P67C,C,B,BA,Chuva,Dendropsophus minutus,10
+B2-P67C,C,B,BA,Chuva,Leptodactylus paraensis,1
+B2-P67C,C,B,BA,Chuva,Pithecopus hypochondrialis,8
+B2-P67C,C,B,BA,Chuva,Pithecopus hypochondrialis,2
+B2-P67C,C,B,BA,Chuva,Scinax fuscomarginatus,6
+B1-P64FL,F,B,BA,Seca,ESO,0
+B2-P65C,C,B,BA,Seca,ESO,0
+B2-P66C,C,B,BA,Seca,ESO,0
+B2-P67C,C,B,BA,Seca,Dendropsophus minutus,25
+B2-P67C,C,B,BA,Seca,Leptodactylus fuscus,1
+B2-P67C,C,B,BA,Seca,Leptodactylus fuscus,3
+B2-P67C,C,B,BA,Seca,Leptodactylus paraensis,4
+B2-P68C,C,B,BA,Chuva,ESO,0
+B2-P69C,C,B,BA,Chuva,Pithecopus hypochondrialis,3
+B2-P70C,C,B,BA,Chuva,Leptodactylus paraensis,2
+B2-P70C,C,B,BA,Chuva,Pithecopus hypochondrialis,6
+B2-P70C,C,B,BA,Chuva,Pristimantis aff. fenestratus,1
+B2-P71C,C,B,BA,Chuva,ESO,0
+B2-P72C,C,B,BA,Chuva,Adenomera kayapo,1
+B2-P73C,C,B,BA,Chuva,Ameerega flavopicta,1
+B2-P73C,C,B,BA,Chuva,Leptodactylus fuscus,2
+B2-P73C,C,B,BA,Chuva,Leptodactylus paraensis,1
+B2-P73C,C,B,BA,Chuva,Pithecopus hypochondrialis,12
+B2-P73C,C,B,BA,Chuva,Pseudopaludicola canga,1
+B2-P68C,C,B,BA,Seca,ESO,0
+B2-P69C,C,B,BA,Seca,ESO,0
+B2-P70C,C,B,BA,Seca,ESO,0
+B2-P71C,C,B,BA,Seca,ESO,0
+B2-P72C,C,B,BA,Seca,ESO,0
+B2-P73C,C,B,BA,Seca,Leptodactylus paraensis,1
+B2-P74C,C,B,BA,Chuva,Pithecopus hypochondrialis,4
+B2-P75FL,F,B,AIQ,Chuva,Adenomera andreae,1
+B2-P75FL,F,B,AIQ,Seca,Adenomera andreae,3
+B2-P75FL,F,B,BA,Chuva,ESO,0
+B2-P76FL,F,B,BA,Chuva,Adenomera andreae,1
+B2-P76FL,F,B,BA,Chuva,Adenomera andreae,3
+B2-P76FL,F,B,BA,Chuva,Adenomera andreae,5
+B2-P76FL,F,B,AIQ,Chuva,Pristimantis aff. fenestratus,1
+B2-P76FL,F,B,AIQ,Chuva,Rhinella marina,1
+B2-P76FL,F,B,AIQ,Chuva,Rhinella marina,1
+B2-P76FL,F,B,AIQ,Seca,Adenomera andreae,1
+B2-P76FL,F,B,AIQ,Seca,Adenomera andreae,2
+B2-P76FL,F,B,AIQ,Seca,Adenomera andreae,3
+B2-P76FL,F,B,AIQ,Seca,Adenomera andreae,3
+B2-P77FL,F,B,BA,Chuva,Adenomera andreae,7
+B2-P77FL,F,B,AIQ,Chuva,Rhaebo guttatus,1
+B2-P77FL,F,B,AIQ,Chuva,Rhinella margaritifera,1
+B2-P77FL,F,B,AIQ,Chuva,Rhinella marina,3
+B2-P77FL,F,B,AIQ,Chuva,Rhinella marina,3
+B2-P77FL,F,B,AIQ,Chuva,Rhinella marina,1
+B2-P77FL,F,B,AIQ,Chuva,Rhinella marina,1
+B2-P77FL,F,B,AIQ,Seca,Adenomera andreae,1
+B2-P77FL,F,B,AIQ,Seca,Adenomera andreae,1
+B2-P77FL,F,B,AIQ,Seca,Ameerega flavopicta,1
+B2-P78FL,F,B,AIQ,Chuva,Ctenophryne geayi,1
+B2-P78FL,F,B,AIQ,Chuva,Rhinella marina,1
+B2-P78FL,F,B,AIQ,Seca,Adenomera andreae,1
+B2-P78FL,F,B,AIQ,Seca,Adenomera andreae,1
+B2-P78FL,F,B,AIQ,Seca,Adenomera andreae,1
+B2-P78FL,F,B,AIQ,Seca,Adenomera andreae,1
+B2-P78FL,F,B,AIQ,Seca,Adenomera andreae,2
+B2-P78FL,F,B,AIQ,Seca,Adenomera andreae,1
+B2-P78FL,F,B,AIQ,Seca,Adenomera andreae,1
+B2-P79FL,F,B,AIQ,Chuva,Rhinella margaritifera,1
+B2-P79FL,F,B,AIQ,Chuva,Rhinella margaritifera,1
+B2-P79FL,F,B,AIQ,Chuva,Rhinella marina,1
+B2-P79FL,F,B,AIQ,Seca,Adenomera andreae,1
+B2-P79FL,F,B,AIQ,Seca,Adenomera andreae,1
+B2-P74C,C,B,BA,Seca,ESO,0
+B2-P75FL,F,B,BA,Seca,ESO,0
+B2-P76FL,F,B,BA,Seca,ESO,0
+B2-P77FL,F,B,BA,Seca,ESO,0
+B2-P78FL,F,B,BA,Seca,ESO,0
+B2-P79FL,F,B,BA,Seca,Adenomera andreae,1
+B2-P79FL,F,B,AIQ,Seca,Allobates carajas,1
+B2-P79FL,F,B,AIQ,Seca,Allobates carajas,1
+B2-P79FL,F,B,BA,Seca,Osteocephalus taurinus,1
+B2-P79FL,F,B,BA,Seca,Osteocephalus taurinus,1
+B2-P79FL,F,B,BA,Seca,Pristimantis aff. fenestratus,1
+B2-P79FL,F,B,BA,Seca,Pristimantis aff. fenestratus,1
+B2-P79FL,F,B,AIQ,Seca,Proceratophrys concavitympanum,1
+B2-P79FL,F,B,AIQ,Seca,Proceratophrys concavitympanum,1
+B2-P79FL,F,B,BA,Seca,Proceratophrys concavitympanum,5
+B2-P78FL,F,B,BA,Chuva,ESO,0
+B2-P79FL,F,B,BA,Chuva,ESO,0
+B2-P80FL,F,B,BA,Chuva,Adenomera andreae,2
+B2-P80FL,F,B,BA,Chuva,Pristimantis aff. fenestratus,1
+B2-P80FL,F,B,BA,Seca,Adenomera andreae,1
+B2-P80FL,F,B,BA,Seca,Adenomera andreae,1
+B2-P80FL,F,B,BA,Seca,Ameerega flavopicta,1
+B2-P80FL,F,B,BA,Seca,Ameerega flavopicta,1
+B2-P80FL,F,B,BA,Seca,Osteocephalus taurinus,2
+B2-P80FL,F,B,BA,Seca,Pristimantis aff. fenestratus,1
+B2-P80FL,F,B,BA,Seca,Pristimantis aff. fenestratus,1
+B2-P80FL,F,B,BA,Seca,Pristimantis aff. fenestratus,1
+B2-P80FL,F,B,BA,Seca,Pristimantis aff. fenestratus,3
+B2-P80FL,F,B,BA,Seca,Pristimantis aff. fenestratus,18
+C-P81C,C,B,BA,Chuva,ESO,0
+C-P82C,C,C,BA,Chuva,Adenomera kayapo,1
+C-P82C,C,C,BA,Chuva,Physalaemus ephippifer,1
+C-P83C,C,C,BA,Chuva,ESO,0
+C-P84C,C,C,BA,Chuva,Boana raniceps,2
+C-P84C,C,C,BA,Chuva,Dendropsophus minutus,2
+C-P84C,C,C,BA,Chuva,Leptodactylus fuscus,1
+C-P84C,C,C,BA,Chuva,Pithecopus hypochondrialis,2
+C-P84C,C,C,BA,Chuva,Pseudopaludicola canga,3
+C-P84C,C,C,BA,Chuva,Pseudopaludicola canga,12
+C-P84C,C,C,BA,Chuva,Pseudopaludicola canga,3
+C-P81C,C,C,BA,Seca,ESO,0
+C-P82C,C,C,BA,Seca,ESO,0
+C-P83C,C,C,BA,Seca,ESO,0
+C-P84C,C,C,BA,Seca,Pithecopus hypochondrialis,3
+C-P85C,C,C,BA,Chuva,Dendropsophus minutus,4
+C-P85C,C,C,BA,Chuva,Leptodactylus paraensis,2
+C-P85C,C,C,BA,Chuva,Pithecopus hypochondrialis,4
+C-P85C,C,C,BA,Chuva,Scinax fuscomarginatus,7
+C-P85C,C,C,BA,Seca,Dendropsophus minutus,1
+C-P85C,C,C,BA,Seca,Dendropsophus minutus,19
+C-P85C,C,C,BA,Seca,Leptodactylus paraensis,13
+C-P86C,C,C,BA,Chuva,Dendropsophus melanargyreus,35
+C-P86C,C,C,BA,Chuva,Dendropsophus minutus,40
+C-P86C,C,C,BA,Chuva,Dendropsophus minutus,3
+C-P86C,C,C,BA,Chuva,Leptodactylus fuscus,1
+C-P86C,C,C,BA,Chuva,Pithecopus hypochondrialis,10
+C-P86C,C,C,BA,Chuva,Pseudopaludicola canga,4
+C-P86C,C,C,BA,Chuva,Pseudopaludicola canga,28
+C-P86C,C,C,BA,Chuva,Pseudopaludicola canga,41
+C-P86C,C,C,BA,Chuva,Trachycephalus typhonius,2
+C-P86C,C,C,BA,Chuva,Trachycephalus typhonius,5
+C-P86C,C,C,BA,Seca,Boana boans,1
+C-P86C,C,C,BA,Seca,Dendropsophus minutus,6
+C-P86C,C,C,BA,Seca,Leptodactylus paraensis,2
+C-P86C,C,C,BA,Seca,Pithecopus hypochondrialis,2
+C-P87C,C,C,BA,Chuva,ESO,0
+C-P88C,C,C,BA,Chuva,Pseudopaludicola canga,1
+C-P89C,C,C,BA,Chuva,Dendropsophus minutus,1
+C-P89C,C,C,BA,Chuva,Pithecopus hypochondrialis,6
+C-P89C,C,C,BA,Chuva,Pithecopus hypochondrialis,2
+C-P89C,C,C,BA,Chuva,Pseudopaludicola canga,1
+C-P89C,C,C,BA,Chuva,Trachycephalus typhonius,1
+C-P90C,C,C,BA,Chuva,Rhaebo guttatus,1
+C-P87C,C,C,BA,Seca,ESO,0
+C-P88C,C,C,BA,Seca,ESO,0
+C-P89C,C,C,BA,Seca,ESO,0
+C-P90C,C,C,BA,Seca,ESO,0
+C-P91FL,F,C,BA,Seca,Rhinella margaritifera,1
+C-P91FL,F,C,BA,Chuva,ESO,0
+C-P92FL,F,C,BA,Chuva,Adenomera kayapo,1
+C-P92FL,F,C,BA,Chuva,Pristimantis aff. fenestratus,1
+C-P92FL,F,C,AIQ,Chuva,Rhinella marina,1
+C-P92FL,F,C,AIQ,Chuva,Rhinella marina,2
+C-P92FL,F,C,AIQ,Seca,Adenomera andreae,1
+C-P93FL,F,C,BA,Chuva,Adenomera kayapo,2
+C-P93FL,F,C,BA,Chuva,Adenomera kayapo,1
+C-P93FL,F,C,BA,Chuva,Leptodactylus paraensis,1
+C-P93FL,F,C,BA,Chuva,Pristimantis aff. fenestratus,1
+C-P93FL,F,C,AIQ,Chuva,Rhinella margaritifera,1
+C-P93FL,F,C,AIQ,Chuva,Rhinella margaritifera,1
+C-P93FL,F,C,AIQ,Chuva,Rhinella marina,2
+C-P93FL,F,C,AIQ,Chuva,Rhinella marina,1
+C-P93FL,F,C,AIQ,Chuva,Rhinella marina,1
+C-P93FL,F,C,BA,Chuva,Rhinella marina,1
+C-P93FL,F,C,BA,Chuva,Rhinella marina,1
+C-P93FL,F,C,AIQ,Seca,Adenomera andreae,1
+C-P94FL,F,C,BA,Chuva,Adenomera andreae,1
+C-P94FL,F,C,BA,Chuva,Adenomera andreae,1
+C-P94FL,F,C,BA,Chuva,Leptodactylus paraensis,2
+C-P94FL,F,C,BA,Chuva,Pithecopus hypochondrialis,1
+C-P94FL,F,C,AIQ,Chuva,Rhinella marina,1
+C-P94FL,F,C,AIQ,Seca,Adenomera andreae,1
+C-P92FL,F,C,BA,Seca,ESO,0
+C-P93FL,F,C,BA,Seca,ESO,0
+C-P94FL,F,C,BA,Seca,Adenomera andreae,2
+C-P95FL,F,C,BA,Chuva,Adenomera andreae,5
+C-P95FL,F,C,AIQ,Chuva,Leptodactylus rhodomystax,1
+C-P95FL,F,C,AIQ,Chuva,Proceratophrys concavitympanum,1
+C-P95FL,F,C,AIQ,Chuva,Proceratophrys concavitympanum,1
+C-P95FL,F,C,AIQ,Chuva,Rhinella marina,1
+C-P95FL,F,C,AIQ,Chuva,Rhinella marina,1
+C-P95FL,F,C,AIQ,Chuva,Rhinella marina,1
+C-P95FL,F,C,AIQ,Seca,Adenomera andreae,1
+C-P95FL,F,C,BA,Seca,Adenomera andreae,1
+C-P95FL,F,C,AIQ,Seca,Ameerega flavopicta,1
+C-P95FL,F,C,AIQ,Seca,Proceratophrys concavitympanum,1
+C-P95FL,F,C,AIQ,Seca,Proceratophrys concavitympanum,1
+C-P95FL,F,C,BA,Seca,Scinax fuscomarginatus,1
+C-P95FL,F,C,BA,Seca,Scinax fuscomarginatus,1
+C-P96FL,F,C,BA,Chuva,Allobates carajas,3
+C-P96FL,F,C,BA,Chuva,Proceratophrys concavitympanum,1
+C-P96FL,F,C,AIQ,Chuva,Rhinella marina,1
+C-P96FL,F,C,BA,Seca,Adenomera andreae,1
+C-P96FL,F,C,AIQ,Seca,Allobates carajas,1
+C-P96FL,F,C,BA,Seca,Allobates carajas,1
+C-P96FL,F,C,BA,Seca,Allobates carajas,1
+C-P96FL,F,C,BA,Seca,Allobates carajas,2
+C-P96FL,F,C,BA,Seca,Osteocephalus taurinus,1
+C-P96FL,F,C,BA,Seca,Pristimantis aff. fenestratus,1
