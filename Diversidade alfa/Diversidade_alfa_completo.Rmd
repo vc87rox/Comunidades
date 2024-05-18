@@ -1,0 +1,439 @@
+---
+title: "Diversidade alfa"
+output: html_document
+date: "2024-05-16"
+---
+
+## Diversidade alfa
+
+-   Vamos trabalhar com a base de dados utilizada na prática da introdução ao R
+-   Podemos começar importando o arquivo para o R
+-   Caso ainda não tenha configurado o diretório base para as análises, essa é uma boa hora para fazê-lo
+
+```{r}
+dados_brutos <- read.csv("F:/Caatinga/Disciplinas/2024/Comunidades/Diversidade alfa/Dados.csv",
+                         h = T,
+                         sep = ",")
+```
+
+-   Em seguida, podeos carregar os pacotos que vamos utilizar ao longo das etapas  das nossas análises
+-   Como eu não lembro exatamente qual função pertence a qual pacote, eu costumo carregar todos
+-   São eles: dplyr, tidyverse, ggplot2, ggstar, ggpubr, ggforce, ggExtra, ggtext, patchwork, directlabels e viridis
+
+```{r}
+library(dplyr)
+library(tidyverse)
+library(ggplot2)
+library(ggstar)
+library(ggpubr)
+library(ggforce)
+library(ggExtra)
+library(ggtext)
+library(patchwork)
+library(directlabels)
+library(viridis)
+```
+
+
+-   Nossa base representa coletas de anfíbios feitas em 96 parcelas, distribuídas em ambientes de floresta ombrófila e floresta de canga na Floresta Nacional de Carajás, uma na estação de seca e outra na chuvosa, com diferentes métodos de coleta
+-   Algumas espécies possuem múltiplas entradas por amostragem
+-   Vamos então somar as abundâncias por espécie por parcela, mantendo todas as outras subdivisões do desenho amostral (Ambiente, Corpo, Metodo e Estacao)
+-   A base apresenta diferentes métodos de coleta, não podemos comparar diretamente os valores de diversidade entre eles
+-   Podemos então utilizar somente os dados de amostragem realizada pelo método da busca ativa (BA)
+-   Como consequência, já podemos descartar a coluna indicativa do Metodo
+-   Apenas uma variável é contínua na nossa base (abundância), vamos aproveitar também e já transformar todas as demais em variável categórica (converter caracter em fator)
+```{r}
+dados <- dados_brutos |> 
+  group_by(Parcela, Ambiente, Corpo, Metodo, Estacao, Especie) |> 
+  summarize_all(sum) |>  
+  ungroup() |> 
+  filter(Metodo == "BA") |> 
+  select(-Metodo) |> 
+  mutate(across(c(1:5), as.factor))
+```
+
+
+-   Como o tema da aula é diversidade, vamos calcular o valor total de abundância e riqueza da área de estudo (diversidade gama)
+```{r}
+dados |> 
+  select(Especie, Abundancia) |> 
+  group_by(Especie) |> 
+  summarize_all(sum) |> 
+  ungroup() |> 
+  mutate(Riqueza = 1) |> 
+  select(-Especie) |> 
+  summarize_all(sum)
+```
+-   Como estão distribuídas as espécies em ralação às suas abundâncias?
+-   Podemos fazer um gráfico mostrando as espécies da maior para a menor abundância
+```{r}
+dados |> 
+  select(Especie, Abundancia) |> 
+  group_by(Especie) |> 
+  summarize_all(sum) |> 
+  ungroup() |> 
+  arrange(desc(Abundancia)) |> 
+  ggplot( aes(x = Especie,
+              y = Abundancia)) +
+  geom_bar(position = "dodge", stat = "identity")
+
+dados |> 
+  select(Especie, Abundancia) |> 
+  group_by(Especie) |> 
+  summarize_all(sum) |> 
+  ungroup() |> 
+  arrange(desc(Abundancia)) |> 
+  ggplot( aes(x = reorder(Especie, -Abundancia),
+              y = Abundancia)) +
+  geom_bar(position = "dodge", stat = "identity")
+```
+
+-   Vamos calcular a abundância e riqueza por parcela
+
+```{r}
+dados |> 
+  select(Parcela, Especie, Abundancia) |> 
+  group_by(Parcela, Especie) |> 
+  summarize_all(sum) |> 
+  #ungroup() |> 
+  mutate(Riqueza = 1) |> 
+  select(-Especie) |> 
+  summarize_all(sum)
+```
+
+-   Podemos plotar a variação do numero de espécies no espaço
+-   Primeiro vamos plotar as coordenadas das parcelas para ver sua distribuição espacial
+-   Carregue a base de dados das variáveis preditoras e plote as coordenadas
+
+```{r}
+preditoras <- read.csv("F:/Caatinga/Disciplinas/2024/Comunidades/Diversidade alfa/Preditoras.csv",
+                         h = T,
+                         sep = ",")
+preditoras |> 
+  select(Parcela, x, y) |> 
+  ggplot(aes(x = x,
+             y = y)) + 
+  geom_point()
+```
+
+-   Mude o tamanho do ponto em ralação aos valores de riqueza calculado anteriormente para cada parcela
+```{r}
+dados |> 
+  select(Parcela, Especie, Abundancia) |> 
+  group_by(Parcela, Especie) |> 
+  summarize_all(sum) |> 
+  #ungroup() |> 
+  mutate(Riqueza = 1) |> 
+  select(-Especie) |> 
+  summarize_all(sum) |> 
+  left_join(preditoras[, 1:3]) |> 
+  ggplot(aes(x = x,
+             y = y)) + 
+  geom_point(aes(size = Riqueza))
+```
+
+
+-   Agora podemos calcular a abundância e riqueza por parcela levando em consideração também as diferentes estações
+
+```{r}
+dados |> 
+  select(Parcela, Estacao, Especie, Abundancia) |> 
+  group_by(Parcela, Estacao, Especie) |> 
+  summarize_all(sum) |> 
+  #ungroup() |> 
+  mutate(Riqueza = 1) |> 
+  select(-Especie) |> 
+  summarize_all(sum)
+```
+
+-   Já que temos os valores por estação, podemos calcular a diferença da riqueza observada entre as estações por parcela, plotar os valores espacialmente, e indicar com um gradinte de cores as parcelas que apresentaram maior diferençca dos valores
+
+```{r}
+dados |> 
+  select(Parcela, Estacao, Especie, Abundancia) |> 
+  group_by(Parcela, Estacao, Especie) |> 
+  summarize_all(sum) |> 
+  mutate(Riqueza = 1) |> 
+  select(-Especie) |> 
+  summarize_all(sum) |> 
+  ungroup() |> 
+  select(-Abundancia) |> 
+  pivot_wider(names_from = Estacao,
+              values_from = Riqueza,
+              values_fill = 0) |> 
+  mutate(Diferenca = (Chuva - Seca)/Chuva) |> 
+  left_join(preditoras[, 1:3]) |> 
+  ggplot(aes(x = x,
+             y = y,
+             color = Diferenca)) + 
+  geom_point() +
+  #geom_point(aes(size = Diferenca)) +
+  scale_color_viridis(option = "B", direction = -1)
+
+dados |> 
+  select(Parcela, Estacao, Especie, Abundancia) |> 
+  group_by(Parcela, Estacao, Especie) |> 
+  summarize_all(sum) |> 
+  mutate(Riqueza = 1) |> 
+  select(-Especie) |> 
+  summarize_all(sum) |> 
+  ungroup() |> 
+  select(-Abundancia) |> 
+  pivot_wider(names_from = Estacao,
+              values_from = Riqueza,
+              values_fill = 0) |> 
+  mutate(Diferenca = (Chuva - Seca)/Chuva) |> 
+  left_join(preditoras[, 1:3]) |> 
+  ggplot(aes(x = x,
+             y = y,
+             color = Diferenca)) + 
+  #geom_point() +
+  geom_point(aes(size = Diferenca*(-1))) +
+  scale_color_viridis(option = "B", direction = -1)
+
+
+```
+
+
+-   Podemos nos perguntar então, como que a riqueza e abundância varia entre as estações?
+-   Para facilitar a visualização, podemos fazer boxplots para ver a variação dos dados
+```{r}
+dados |> 
+  select(Parcela, Estacao, Especie, Abundancia) |> 
+  group_by(Parcela, Estacao, Especie) |> 
+  summarize_all(sum) |> 
+  #ungroup() |> 
+  mutate(Riqueza = 1) |> 
+  select(-Especie) |> 
+  summarize_all(sum) |> 
+  ggplot(aes(y = Abundancia, 
+             x = Estacao, 
+             fill = Estacao)) +
+  geom_boxplot(alpha = 0.8)
+
+dados |> 
+  select(Parcela, Estacao, Especie, Abundancia) |> 
+  group_by(Parcela, Estacao, Especie) |> 
+  summarize_all(sum) |> 
+  #ungroup() |> 
+  mutate(Riqueza = 1) |> 
+  select(-Especie) |> 
+  summarize_all(sum) |> 
+  ggplot(aes(y = Riqueza, 
+             x = Estacao, 
+             fill = Estacao)) +
+  geom_boxplot(alpha = 0.8)
+```
+
+-   Podemos construir uma figura com os dois gráficos lado a lado para melhor visualização 
+
+```{r}
+f1a <- 
+  dados |> 
+  select(Parcela, Estacao, Especie, Abundancia) |> 
+  group_by(Parcela, Estacao, Especie) |> 
+  summarize_all(sum) |> 
+  #ungroup() |> 
+  mutate(Riqueza = 1) |> 
+  select(-Especie) |> 
+  summarize_all(sum) |> 
+  ggplot(aes(y = Abundancia, 
+             x = Estacao, 
+             fill = Estacao)) +
+  geom_boxplot(alpha = 0.8)
+
+f1b <- 
+  dados |> 
+  select(Parcela, Estacao, Especie, Abundancia) |> 
+  group_by(Parcela, Estacao, Especie) |> 
+  summarize_all(sum) |> 
+  #ungroup() |> 
+  mutate(Riqueza = 1) |> 
+  select(-Especie) |> 
+  summarize_all(sum) |> 
+  ggplot(aes(y = Riqueza, 
+             x = Estacao, 
+             fill = Estacao)) +
+  geom_boxplot(alpha = 0.8)
+
+f1 <- f1a|f1b
+f1
+```
+
+-   As amostragem nos dois tipos de ambiente (canga e floresta) possui esforço equivalente?
+-   Desafio: quantas parcelas temos distribuídas em cada ambiente?
+```{r}
+dados |> 
+  filter(Estacao == "Seca") |>
+  select(Parcela, Ambiente) |> 
+  distinct() |> 
+  mutate(Esforco = 1) |> 
+  select(-Parcela) |> 
+  group_by(Ambiente) |> 
+  summarize_all(sum)
+```
+
+
+-   Vamos então refazer nossos sumários considerando os ambientes separadamente
+-   Mas, como estamos calculando os mesmos índices para ambos, podemos apresentar os resultados de canga e floresta em uma mesma figura
+
+```{r}
+dados |> 
+  select(Parcela, Ambiente, Estacao, Especie, Abundancia) |> 
+  group_by(Parcela, Ambiente, Estacao, Especie) |> 
+  summarize_all(sum) |> 
+  #ungroup() |> 
+  mutate(Riqueza = 1) |> 
+  select(-Especie) |> 
+  summarize_all(sum) |> 
+  ggplot(aes(y = Abundancia, 
+             x = Ambiente, 
+             fill = Estacao)) +
+  geom_boxplot(alpha = 0.8)
+```
+
+-   Sabemos que só podemos comparar a diversidade entre unidades amostrais se elas possuem esforço similar
+-   Também vimos que usar Números de Hill é uma abordagem mais padronizada quando queremos trabalhar com índices de diversidade
+-   O pacote iNEXT (Hsiehet al. 2022) é um dos vários que calculam índices de diversidade 
+-   Sua vantagem é que também é possível gerar curvas de rarefação e extrapolação, bem como calcular a cobertura de amostragem e padronizar o esforço entre as amostragem por um valor de corte
+
+-   Vamos começar intalando e carregando o pacote iNEXT
+```{r}
+library(iNEXT)
+```
+
+-   Considerando os dois ambientes separadamente, vamos calcular a diversidade observada usando os números de Hill de ordem q = 0, 1 e 2, bem como iremos calcular a cobertura de amostragem e também as curvas de rarefação e extrapolação
+
+-   Passo 1: agrupar nossa base de dados por ambiente e somar os valores de abunância das espécies
+-   Passo 2: inverter a estrutura da base de dados de forma que as especies representem as linhas e o ambiente as colunas
+-   Passo 3: remover a coluna das espécies pois nos cálculos de diversidade a identidade per se de cada espécie não é relevante
+-   Passo 4: usar a finção iNEXT para calcular dos índices de diversidade (0, 1 e 2) e gerar os dados para construção das curvas de rarefação e extrapolação
+```{r}
+q012_amb <- 
+  dados |> 
+  select(Especie, Ambiente, Abundancia) |>
+  group_by(Especie, Ambiente) |>
+  summarize_all(sum) |>
+  ungroup() |>
+  pivot_wider(names_from = Ambiente,
+              values_from = Abundancia,
+              values_fill = 0) |>
+  select(-Especie) |>
+  as.data.frame() |>
+  iNEXT(q = c(0,1,2), datatype = "abundance", nboot = 99)
+```
+
+
+-   Passo 5: plotar as curvas para cada índice de cada ambiente (ggiNEXT)
+-   Passo 6: obter os valores de cobertura de amostragem
+```{r}
+ggiNEXT(q012_amb, 
+        facet.var = "Order.q", 
+        color.var = "Assemblage")
+
+ggiNEXT(q012_amb, 
+        facet.var = "Assemblage", 
+        color.var = "Order.q")
+
+ggiNEXT(q012_amb, 
+        type = 2, 
+        facet.var = "Order.q",
+        color.var = "Assemblage")
+
+ggiNEXT(q012_amb, 
+        type = 3, 
+        facet.var = "Order.q",
+        color.var = "Assemblage")
+```
+
+-   Plot personalizado
+```{r}
+q012_amb_data <- 
+  q012_amb |> 
+  fortify( type = 1) |> 
+  mutate(Assemblage = recode(Assemblage,
+                          "C" = "Canga",
+                          "F" = "Floresta ombrófila")) |> 
+  mutate_if(is.character, as.factor)
+  
+
+point <- q012_amb_data[which(q012_amb_data$Method == "Observed"), ]
+line <- q012_amb_data[which(q012_amb_data$Method != "Observed"), ]
+line$Method <- factor(line$Method,
+                         c("Rarefaction", "Extrapolation"),
+                         c("Rarefação", "Extrapolação"))
+
+qlabs <- c("*<sup>0</sup>D*", "*<sup>1</sup>D*", "*<sup>2</sup>D*")
+names(qlabs) <- c("0", "1", "2")
+
+q012_amb_data |> 
+  ggplot(aes(x = x, 
+             y = y,
+             colour = Assemblage)) +
+  geom_ribbon(aes(ymin = y.lwr, 
+                  ymax = y.upr,
+                  fill = Assemblage,
+                  colour = NULL), 
+              alpha = 0.3) +
+  geom_line(aes(linetype = Method,
+                colour = Assemblage), 
+            lwd = 1, 
+            data = line) +
+  geom_point(aes(shape = Assemblage, 
+                 fill = Assemblage, 
+                 colour = Assemblage),
+             size = 2.5,
+             data = q012_amb_data[which(q012_amb_data$Method == "Observed"),]) +
+  labs(title = "**Diversidade de anfíbios calculada pelos Números de Hill**", 
+       x = "**Número de indivíduos**", 
+       y = "**Número equivalente de espécies**") +
+  coord_cartesian(expand=F, 
+                  clip = "off", 
+                  ylim = c(0, 35)) +
+  scale_shape_manual(values = c(22, 21)) + 
+  scale_color_manual(values = c("#d8e219", "#7AD151FF")) +
+  scale_fill_manual(values = c( "#d8e219", "#7AD151FF")) +
+  theme_pubr() +
+  theme(plot.title = element_markdown(hjust = 0, 
+                                      size = 10),
+        plot.title.position = "plot",
+        legend.position = "right",
+        legend.title = element_blank(),
+        legend.text = element_markdown(size = 8),
+        axis.text.x = element_markdown(colour = "black", 
+                                       size = 8),
+        axis.text.y = element_markdown(colour = "black", 
+                                       size = 8),
+        axis.title.x = element_markdown(size = 8),
+        axis.title.y = element_markdown(size = 8),
+        strip.text = element_markdown(size = 10),
+        legend.margin = margin(t = -10)) +
+  removeGrid() +
+  facet_wrap(vars(Order.q),
+             labeller = labeller(Order.q = qlabs))
+```
+
+-   Agora vamos fazer os mesmos cáculos mas considerando os valores por ambiente em cada Corpo (A, B e C)
+
+```{r}
+q012_corpo_amb <- 
+  dados |> 
+  select(Especie, Ambiente, Corpo, Abundancia) |>
+  group_by(Especie, Corpo, Ambiente) |>
+  summarize_all(sum) |>
+  ungroup() |>
+  pivot_wider(names_from = c(Ambiente, Corpo),
+              values_from = Abundancia,
+              values_fill = 0) |>
+  select(-Especie) |>
+  as.data.frame() |>
+  iNEXT(q = c(0,1,2), datatype = "abundance", nboot = 99)
+
+q012_corpo_amb$iNextEst$coverage_based
+
+ggiNEXT(q012_corpo_amb,  
+        color.var = "Assemblage") +
+  facet_grid(Assemblage ~ Order.q)
+```
+
+-   O padrão da função iNEXT é calcular as extrapolações para o dobro do valor observado, seja número de amostra ou número de indivíduos
