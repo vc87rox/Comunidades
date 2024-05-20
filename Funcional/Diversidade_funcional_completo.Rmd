@@ -1,0 +1,482 @@
+---
+title: "Diversidade funcional"
+output: html_document
+date: "2024-05-20"
+---
+
+```{r}
+setwd("F:/Caatinga/Disciplinas/2024/Comunidades/Funcional")
+plantas_dat <- ecodados::fundiv_frenette2012a_comu
+write.csv(plantas_dat, "plantas_dat.csv")
+
+ambie_fren_dat <- ecodados::fundiv_frenette2012a_amb
+ambie_plantas_dat <- ecodados::fundiv_frenette2012a_amb
+write.csv(ambie_plantas_dat, "ambie_plantas_dat.csv")
+
+trait_fren_dat <- ecodados::fundiv_frenette2012a_trait
+trait_plantas_dat <- ecodados::fundiv_frenette2012a_trait
+write.csv(trait_plantas_dat, "trait_plantas_dat.csv")
+
+
+trait_dat      <- ecodados::fundiv_barbaro2009a_trait
+besouro_trait_dat <- ecodados::fundiv_barbaro2009a_trait
+write.csv(besouro_trait_dat, "besouro_trait_dat.csv")
+
+comun_dat      <- ecodados::fundiv_barbaro2009a_comu
+besouro_comun_dat      <- ecodados::fundiv_barbaro2009a_comu
+write.csv(besouro_comun_dat, "besouro_comun_dat.csv")
+
+ambie_dat      <- ecodados::fundiv_barbaro2009a_amb
+besouro_ambie_dat      <- ecodados::fundiv_barbaro2009a_amb
+write.csv(besouro_ambie_dat, "besouro_ambie_dat.csv")
+
+trait_baselga  <- ecodados::trait_baselga
+write.csv(trait_baselga, "trait_baselga.csv")
+
+comm_baselga   <- ecodados::comm_baselga
+write.csv(comm_baselga, "comm_baselga.csv")
+
+anuros_comm    <- ecodados::anuros_comm
+
+
+traits         <- ecodados::traits
+
+
+env            <- ecodados::env
+
+
+```
+
+
+
+
+## Diversidade funcional
+
+-   Vamos trabalhar com uma base de dados que possui quatro atributos foliares de 34 espécies de plantas ao longo de um gradiente de aridez (Frenette-Dussault et al. 2012)
+
+-   Primeiro passo então é carregar nossa base de dados. Lembre-se de descrever o caminho do arquivo caso ainda não tenha salvo o diretório padrão para as análises.
+```{r}
+setwd("F:/Caatinga/Disciplinas/2024/Comunidades/Funcional/")
+trait_planta_dat <- read.csv("trait_plantas_dat.csv", 
+                             h = T)
+#Nomear as linhas da tabela com a informação da coluna X
+rownames(trait_planta_dat) <- trait_planta_dat$X
+#Remover a coluna X da base de dados
+trait_planta_dat <- trait_planta_dat[,-1]
+```
+
+
+-   Como os atributos foram medidos em escalas diferentes, primeiro precisamos padronizá-los para que os valores maiores não sejam mais representativos que os menores
+```{r}
+#Função decostand do pacote vegan
+library(vegan)
+trait_pad <- decostand(trait_planta_dat, "standardize")
+```
+
+-   Agora faremos uma exploração da vairação da diversidade funcional ordenando as espécies dado os atributos medidos. Que espécies são mais similares?
+-   Com os dados padronizados podemos fazer uma Análise de Componentes Principais (PCA). A PCA é indicada para dados com variáveis contínuas 
+
+```{r}
+#PCA
+pca_traits_cont <- rda(trait_pad)
+biplot(pca_traits_cont)
+```
+
+-   Alternativamente, podemos calcular a distância euclidiana (diferença) das espécies baseando-se nos atributos padronizados e fazer uma Análises de Coordenadas Principais (PCoA). A PCoA pode ser utilizada com variáveis categóricas e contínumas, uma vez que a função precisa que você entre com uma matriz de distância (pacote ape)
+```{r}
+euclid_dis <- vegdist(trait_pad, "euclidean")
+
+library(ape)
+pcoa_traits_cont <- pcoa(euclid_dis, correction = "cailliez") 
+```
+
+-   Vamos salvar os dois primeiros eixos da PCoA para fazer um gráfico
+```{r}
+eixos_cont <- as.data.frame(pcoa_traits_cont$vectors[, 1:2]) 
+```
+
+-   Agora geramos um gráfico com os valores da ordenação
+```{r}
+library(ggplot2)
+library(ggrepel)
+
+eixos_cont |> 
+  ggplot(aes(x = Axis.1, 
+             y = Axis.2)) + 
+    geom_point(pch = 21, 
+               size = 4, 
+               color = "black", 
+               alpha = 0.7, 
+               fill = "red2") + 
+    geom_text_repel(aes(Axis.1, 
+                        Axis.2, 
+                        label = rownames(eixos_cont))) +
+    geom_hline(yintercept = 0, 
+               linetype = 2) + 
+    geom_vline(xintercept = 0, 
+               linetype = 2) +
+    labs(x = "PCO 1", 
+         y = "PCO 2", 
+         itle = "Dados contínuos")
+```
+
+-   Agora vamos utilizar uma outra base que contém atributos funcionais categóricos de besouros distribuídos na Europa (Barbaro and Van Halder 2009).
+-   Carregar a base com os dados dos besouros
+```{r}
+library(readr)
+trait_dat <- read.csv("F:/Caatinga/Disciplinas/2024/Comunidades/Funcional/besouro_trait_dat.csv",
+                      h = T)
+```
+
+-   Agora vamos selecionar apenas as variáveis categóricas da base
+```{r}
+library(dplyr)
+trait_cat <- trait_dat  |>  
+  select_if(is.character)
+
+rownames(trait_cat) <- trait_dat$X
+trait_cat <- trait_cat |> 
+  select(-X)
+```
+
+-   Como os dados são categóricos, não podemos calcular a distância Euclidiana entre as espécies. Para isso vamos utilizar a distância de Gower (função gowdis)
+```{r}
+library(FD)
+dist_categ <- gowdis(trait_cat)
+```
+
+-   Com os valores de distância podemos então calcular novamente a PCoA e avaliar a similaridade entre as espécies dados os atributos categóricos
+```{r}
+pcoa_traits_cat <- pcoa(dist_categ, 
+                        correction = "cailliez") 
+```
+
+-   Agora vamos selecionar novamente os dois primeiros eixos e gerar um plot com a ordenação das espécies
+
+```{r}
+eixos_cat <-   as.data.frame(pcoa_traits_cat$vectors[,1:2]) 
+  
+plot1 <- eixos_cat |> 
+  ggplot(aes(x = Axis.1, 
+             y = Axis.2)) + 
+    geom_point(pch = 21, 
+               size = 4, 
+               alpha = 0.7, 
+               color = "black", 
+               fill = "cyan4") + 
+    geom_text_repel(aes(Axis.1, 
+                        Axis.2, 
+                        label = rownames(eixos_cat))) +
+    geom_hline(yintercept = 0, 
+               linetype = 2) + 
+    geom_vline(xintercept = 0, 
+               linetype = 2) +
+    labs(x = "PCO 1", 
+         y = "PCO 2", 
+         title = "Dados categóricos")
+plot1
+```
+
+
+-   Também podemos usar atributos categóricos e contínuos para avaliar as diferenciações entre as espécies
+-   Vamos continuar utilizando a base dos besouros
+-   Algumas das variáveis são categóricas ordinais
+-   Vamos modificar as variáveis "regio" e "body" em ordinais e salvar em um objeto separado
+-   No novo objeto vamos dar o nome das colunas igual a base original
+
+```{r}
+trait_ord <- trait_dat |> 
+  select(regio, body) |> 
+  mutate_all(as.ordered)
+
+rownames(trait_ord) <- row.names(trait_cat)
+```
+
+-   Precisamos agora juntar as duas bases em um novo objeto em uma lista "ktab"
+```{r}
+ktab_list <- ktab.list.df(list(trait_cat, trait_ord))
+```
+
+-   Por fim, vamos calular a distância entre as espécies baseando-se nos atributos com a função dist.ktab
+```{r}
+dist_mist <- dist.ktab(ktab_list, 
+                       type = c("N", "O"))
+```
+
+-   Agora podemos fazer a PCoA e plotar a ordenação
+```{r}
+pcoa_traits_mist <- pcoa(dist_mist, 
+                         correction = "cailliez")
+eixos_mist <- as.data.frame(pcoa_traits_mist$vectors[,1:2]) 
+
+plot2 <- eixos_mist |> 
+  ggplot( aes(x = Axis.1, 
+              y = Axis.2)) + 
+    geom_point(pch = 21, 
+               size = 4,
+               alpha = 0.7, 
+               color = "black", 
+               fill = "darkorange") + 
+    geom_text_repel(aes(Axis.1, 
+                        Axis.2, 
+                        label = rownames(eixos_mist)))+
+    geom_hline(yintercept = 0, 
+               linetype = 2) + 
+    geom_vline(xintercept = 0, 
+               linetype = 2) + 
+    labs(x = "PCO 1", 
+         y = "PCO 2", 
+         title = "Dados mistos")
+```
+
+-   Vamos juntar os dois gráficos, usando somente variáveis categóricas e o outro com categóricas e ordinais em uma única figura
+```{r}
+library(patchwork)
+plot <- plot1|plot2
+plot
+```
+
+
+## Riqueza funcional
+
+-   Valores de riqueza funcional podem indicar o espaço do nicho usado pela assembleia
+-   Podemos calcular a riqueza funcional com o uso de dendrogramas (Diversidade Funcional - FD) e do polígono convexo ( Riqueza Funcional - FRic)
+-   Para isso vamos continuar utilizando a base de dados dos besouros
+-   Mas agora, vamos também carregar as informações da composição das assembleias
+```{r}
+besouro_comun_dat <- read.csv("F:/Caatinga/Disciplinas/2024/Comunidades/Funcional/besouro_comun_dat.csv") |> 
+  select(-X)
+```
+
+-   A função dbFD do pacote FD calcula várias métricas de diversidade funcional
+-   Para isso é necessário incluir uma matriz de distância dos atributos das espécies e a informação da composição de cada assembleia
+
+-   Crie um objeto contendo os calculos de diversidade funcional das assembleias de besouros, usando os dados dos atributos categóricos e ordinais
+```{r}
+div_besouro <- dbFD(dist_mist, besouro_comun_dat)
+```
+
+-   Extraia os valores de riqueza de espécies da base
+```{r}
+div_besouro$nbsp
+```
+
+-   Extraia os valores da riqueza funcional e coloque em um objeto (FRic)
+```{r}
+fric <- dbFD(dist_mist, besouro_comun_dat)$FRic
+```
+
+-   Valores de FRic varia entre 0 e 1, onde valores próximos a 1 indicam que uma determinada comunidade tem riqueza funcional tão alta quanto a riqueza funcional de todas as comunidades juntas
+
+-   Vamos calcular agora o valor da diversidade funcional (FD)
+```{r}
+# Primeiro precisamos criar um dendrograma com os dados de distância funcional das espécies (função hclust)
+dend <- hclust(dist_mist, "average")
+
+# Depois transformamos o dendrograma em um objeto de casse "phlo" (função as.phylo do pacote ape)
+library(ape)
+tree_dend <- as.phylo(dend)
+plot(tree_dend)
+
+# Por fim, calculamos o valor da diversidade funcional usando a função pd do pacote picante
+library(picante)
+FD <- pd(besouro_comun_dat, tree_dend)$PD
+FD
+```
+
+
+## Divergência funcional
+
+-   Duas métricas podem representar as divergências funcionais entre as assembleias
+-   Divergência funcional (Fdiv): método convex hull
+-   Dispersão funcional (FDis): espaço multidimensional com a PCoA
+-   Ambos valores representam  distância média das espécies para o centro de gravidade ou centroide do espaço funcional, ponderado pela abundância relativa das espécies
+-   A divergência funcional mede então o grau de diferenciação em que a distribuição da abundância maximiza a divergência entre os atributos funcionais
+
+-   Cálculo da Divergência funcional
+```{r}
+dbFD(dist_mist, besouro_comun_dat)$FDiv
+```
+
+-   Cálculo da Dispersão funcional
+```{r}
+dbFD(dist_mist, besouro_comun_dat)$FDis
+```
+
+
+-   Um ponto importante é que a Divergência funcional e a Dispersão funcional só podem ser calculadas se a assembleia possuir pelo menos três espécies
+-   Os valores de Divergência funcional variam de 0 a 1, sendo que aproximam de zero indicam que a espécie mais abundante está muito próxima do valor do atributo médio da comunidade, ao passo que valores próximos a 1 indicam que a espécie mais abundante está muito distante (ou seja, é muito diferente) do valor médio da comunidade
+
+
+## Regularidade funcional (eveness)
+-   Mede o quão regular é a distribuição das abundâncias dos valores dos atributos funcionais
+-   Para isso utiliza-se do método do Minimum Spanning Tree (MST) para conectar todas espécies no espaço funcional
+-   o valor final da regularidade funcional (FEve) vai variar de 0 (máxima irregularidade da distribuição da abundância ou distância funcional das espécies) a 1 (máxima regularidade)
+-   A diminuição do valor de FEve em direção a zero indica que uma redução da regularidade da distribuição da abundância ou distância funcional entre as espécies
+
+-   Vamos calcular a regularidade funcional das assembleias de besouros
+```{r}
+dbFD(dist_mist, besouro_comun_dat)$FEve
+```
+
+## Composição funcional
+
+-   O interesse da investigação pode estar relacionado a quanto um gradiente ambiental pode influenciar a expressão (abundância ou densidade) de um dado atributo funcional
+-   Podemos calcular então a média ponderada de um dado atributo na comunidade (CWM)
+-   Vamos utilizar a função functcomp e usar as matrizes de abundância de espécies e valores de atributos para calcular o CWM das bases de dados baselga
+```{r}
+trait_baselga <- read.csv("F:/Caatinga/Disciplinas/2024/Comunidades/Funcional/trait_baselga.csv")
+rownames(trait_baselga) <- trait_baselga$X
+trait_baselga <- trait_baselga[, -1]
+
+comm_baselga <- read.csv("F:/Caatinga/Disciplinas/2024/Comunidades/Funcional/comm_baselga.csv")
+rownames(comm_baselga) <- comm_baselga$X
+comm_baselga <- comm_baselga[, -1]
+
+cwm_ex <- functcomp(trait_baselga, as.matrix(comm_baselga))
+```
+
+
+-   Agora vamos avaliar como que a aridez pode influenciar a divergência e a regularidade funcional das plantas
+-   Para isso utlizaremos a base com as 34 espécies de plantas
+-   Podemos ter duas predições:
+  1. locais mais áridos possuem menor divergência funcional de plantas (FDis)
+  2. locais mais úmidos possuem menor regularidade funcional de plantas (FEve)
+
+- Passo 1: calcular a distância funcional
+
+```{r}
+trait_pad <- decostand(trait_planta_dat, "standardize")
+euclid_dis <- vegdist(trait_pad, "euclidean")
+```
+
+## Passo 2: calcular a Divergência funcional (FDis) e Regularidade
+Funcional (FEve)
+```{r}
+plantas_dat <- read.csv("F:/Caatinga/Disciplinas/2024/Comunidades/Funcional/plantas_dat.csv") |> 
+  select(-X)
+
+fdis <- dbFD(euclid_dis, plantas_dat)$FDis # Fdis=0 em locais com somente uma espécie
+feve <- dbFD(euclid_dis, plantas_dat)$FEve
+```
+
+## Passo 3: Utilizar um modelo linear para comparar o efeito da aridez sobre FDis (predição 1) e FEve (predição 2)
+
+# Combinar dados ambientais mais o de diversidade funcional em um data.frame
+```{r}
+ambie_fren_dat <- read.csv("F:/Caatinga/Disciplinas/2024/Comunidades/Funcional/ambie_plantas_dat.csv")
+lm_dat <- data.frame(aridez = ambie_fren_dat$Aridity, fdis = fdis, feve = feve)
+```
+
+
+# Modelo 1
+```{r}
+mod1 <- lm(fdis ~ aridez, data = lm_dat)
+summary(mod1)
+```
+
+# Conclusão: a aridez não tem efeito sobre a divergência funcional
+
+
+# Modelo 2
+```{r}
+mod2 <- lm(feve ~ aridez, data = lm_dat)
+summary(mod2)
+```
+
+
+## Passo 4: gráfico para visualizar os dois resultados  
+-   Gráfico modelo 1.
+```{r}
+plot_pred1 <- ggplot(lm_dat, aes(x = aridez, y = fdis)) + 
+    geom_point(pch = 21, size = 4, alpha = 0.7, color = "black", fill="darkorange") +
+    labs(x = "Aridez", y = "Divergência Funcional (FDis)")
+```
+
+-   Gráfico modelo 2
+```{r}
+plot_pred2 <- ggplot(lm_dat, aes(x = aridez, y = feve)) + 
+    geom_point(pch=21, size=4, alpha = 0.7, color = "black", fill="cyan4") + 
+    labs(x = "Aridez", y = "Regularidade Funcional (FEve)")
+```
+
+## Visualização dos dois gráficos em um único plor
+
+```{r}
+plot_pred1|plot_pred2
+```
+
+
+## Exemplo 2
+
+-    Agora vamos avaliar como que o pastejo pode determinar a ocorrência das espécies de plantas com diferentes atributos funcionais
+-   Para isso vamos utilizar a mesma base de dados do exemplo anterior mas utilizaremos o CWM
+
+-   1. Calcular o CWM
+```{r}
+comun_planta_dat <- read.csv("F:/Caatinga/Disciplinas/2024/Comunidades/Funcional/plantas_dat.csv") |> 
+  select(-X)
+
+
+cwm_fren <- functcomp(trait_pad, as.matrix(comun_planta_dat))
+```
+
+-   2. Calcular a distância funcional
+```{r}
+cwm_dis <- vegdist(cwm_fren, "euclidean")
+```
+
+-   3. testar se a composição funcional varia entre as áreas com uma PERMANOVA
+```{r}
+perman_fren <- adonis2(cwm_fren ~ Grazing, 
+                      data = ambie_fren_dat)
+```
+
+-   4. comparar a variação dentro de cada grupo com Betadisper 
+```{r}
+betad_fren <- betadisper(cwm_dis, ambie_fren_dat$Grazing)
+permutest(betad_fren)
+```
+
+
+-   5. Calcular a PCoA
+```{r}
+cwm_pcoa <- pcoa(D = cwm_dis, 
+                 correction = "cailliez")
+pcoa_eixos <- cwm_pcoa$vectors[, 1:2]
+pcoa_dat <- data.frame(pastagem = ambie_fren_dat$Grazing, 
+                       pcoa_eixos)
+```
+
+-   6. definir os grupos ("HULL") para serem categorizados no gráfico 
+```{r}
+grp.Grazed <- pcoa_dat[pcoa_dat$pastagem == "Grazed", ][chull(pcoa_dat[pcoa_dat$pastagem == "Grazed", 
+                                                                       c("Axis.1", "Axis.2")]), ]
+grp.Ungrazed <- pcoa_dat[pcoa_dat$pastagem == "Ungrazed", ][chull(pcoa_dat[pcoa_dat$pastagem == "Ungrazed", 
+                                                                           c("Axis.1", "Axis.2")]), ]
+hull_cwm <- rbind(grp.Grazed, 
+                  grp.Ungrazed)
+```
+
+-   7. Gráfico biplot
+```{r}
+# % de explicação do eixo 1
+100 * (cwm_pcoa$values[, 1]/cwm_pcoa$trace)[1] 
+
+# % de explicação do eixo 2
+100 * (cwm_pcoa$values[, 1]/cwm_pcoa$trace)[2] 
+
+ggplot(pcoa_dat, aes(x = Axis.1, y = Axis.2, color = pastagem, shape = pastagem)) + 
+  geom_point(size = 4, alpha = 0.7) + 
+  geom_polygon(data = hull_cwm, aes(fill = pastagem, group = pastagem), alpha = 0.3) + 
+  scale_color_manual(values = c("darkorange", "cyan4")) +
+  scale_fill_manual(values = c("darkorange", "cyan4")) +
+  labs(x = "PCO 1 (53.6%)", y = "PCO 2 (24.6%)")
+```
+
+
+
+
+
+
+
