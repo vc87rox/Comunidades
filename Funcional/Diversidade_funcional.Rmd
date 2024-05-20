@@ -1,0 +1,289 @@
+---
+title: "Diversidade funcional"
+output: html_document
+date: "2024-05-20"
+---
+
+
+## Diversidade funcional
+
+-   Vamos trabalhar com uma base de dados que possui quatro atributos foliares de 34 espécies de plantas ao longo de um gradiente de aridez (Frenette-Dussault et al. 2012)
+
+-   Primeiro passo então é carregar nossa base de dados
+```{r}
+
+```
+
+
+-   Como os atributos foram medidos em escalas diferentes, primeiro precisamos padronizá-los para que os valores maiores não sejam mais representativos que os menores
+```{r}
+
+```
+
+-   Agora faremos uma exploração da vairação da diversidade funcional ordenando as espécies dado os atributos medidos. Que espécies são mais similares?
+-   Com os dados padronizados podemos fazer uma Análise de Componentes Principais (PCA). A PCA é indicada para dados com variáveis contínuas 
+
+```{r}
+
+```
+
+-   Alternativamente, podemos calcular a distância euclidiana (diferença) das espécies baseando-se nos atributos padronizados e fazer uma Análises de Coordenadas Principais (PCoA). A PCoA pode ser utilizada com variáveis categóricas e contínumas, uma vez que a função precisa que você entre com uma matriz de distância (pacote ape)
+```{r}
+
+```
+
+-   Vamos salvar os dois primeiros eixos da PCoA para fazer um gráfico
+```{r}
+ 
+```
+
+-   Agora geramos um gráfico com os valores da ordenação
+```{r}
+
+```
+
+-   Agora vamos utilizar uma outra base que contém atributos funcionais categóricos de besouros distribuídos na Europa (Barbaro and Van Halder 2009).
+-   Carregar a base com os dados dos besouros
+```{r}
+
+```
+
+-   Agora vamos selecionar apenas as variáveis categóricas da base
+```{r}
+
+```
+
+-   Como os dados são categóricos, não podemos calcular a distância Euclidiana entre as espécies. Para isso vamos utilizar a distância de Gower (função gowdis)
+```{r}
+
+```
+
+-   Com os valores de distância podemos então calcular novamente a PCoA e avaliar a similaridade entre as espécies dados os atributos categóricos
+```{r}
+
+```
+
+-   Agora vamos selecionar novamente os dois primeiros eixos e gerar um plot com a ordenação das espécies
+
+```{r}
+
+
+```
+
+
+-   Também podemos usar atributos categóricos e contínuos para avaliar as diferenciações entre as espécies
+-   Vamos continuar utilizando a base dos besouros
+-   Algumas das variáveis são categóricas ordinais
+-   Vamos modificar as variáveis "regio" e "body" em ordinais e salvar em um objeto separado
+-   No novo objeto vamos dar o nome das colunas igual a base original
+
+```{r}
+
+```
+
+-   Agora vamos criar um novo objeto com as demais variáveis
+```{r}
+
+```
+
+-   Precisamos agora juntar as duas bases em um novo objeto em uma lista "ktab"
+```{r}
+
+```
+
+-   Por fim, vamos calular a distância entre as espécies baseando-se nos atributos com a função dist.ktab
+```{r}
+
+```
+
+-   Agora podemos fazer a PCoA e plotar a ordenação
+```{r}
+
+```
+-   Vamos juntar os dois gráficos, usando somente variáveis categóricas e o outro com categóricas e ordinais em uma única figura
+```{r}
+
+```
+
+## Riqueza funcional
+
+-   Valores de riqueza funcional podem indicar o espaço do nicho usado pela assembleia
+-   Podemos calcular a riqueza funcional com o uso de dendrogramas (Diversidade Funcional - FD) e do polígono convexo ( Riqueza Funcional - FRic)
+-   Para isso vamos continuar utilizando a base de dados dos besouros
+-   Mas agora, vamos também carregar as informações da composição das assembleias
+```{r}
+
+```
+
+-   A função dbFD do pacote FD calcula várias métricas de diversidade funcional
+-   Para isso é necessário incluir uma matriz de distância dos atributos das espécies e a informação da composição de cada assembleia
+
+-   Crie um objeto contendo os calculos de diversidade funcional das assembleias de besouros, usando os dados dos atributos categóricos e ordinais
+```{r}
+
+```
+
+-   Extraia os valores de riqueza de espécies da base
+```{r}
+
+```
+
+-   Extraia os valores da riqueza funcional e coloque em um objeto (FRic)
+```{r}
+
+```
+
+-   Valores de FRic varia entre 0 e 1, onde valores próximos a 1 indicam que uma determinada comunidade tem riqueza funcional tão alta quanto a riqueza funcional de todas as comunidades juntas
+
+-   Vamos calcular agora o valor da diversidade funcional (FD)
+```{r}
+
+```
+
+## Divergência funcional
+
+-   Duas métricas podem representar as divergências funcionais entre as assembleias
+-   Divergência funcional (Fdiv): método convex hull
+-   Dispersão funcional (FDis): espaço multidimensional com a PCoA
+-   Ambos valores representam  distância média das espécies para o centro de gravidade ou centroide do espaço funcional, ponderado pela abundância relativa das espécies
+-   A divergência funcional mede então o grau de diferenciação em que a distribuição da abundância maximiza a divergência entre os atributos funcionais
+
+-   Cálculo da Divergência funcional
+```{r}
+
+```
+
+-   Cálculo da Dispersão funcional
+```{r}
+
+```
+
+
+-   Um ponto importante é que a Divergência funcional e a Dispersão funcional só podem ser calculadas se a assembleia possuir pelo menos três espécies
+-   Os valores de Divergência funcional variam de 0 a 1, sendo que aproximam de zero indicam que a espécie mais abundante está muito próxima do valor do atributo médio da comunidade, ao passo que valores próximos a 1 indicam que a espécie mais abundante está muito distante (ou seja, é muito diferente) do valor médio da comunidade
+
+
+## Regularidade funcional (eveness)
+-   Mede o quão regular é a distribuição das abundâncias dos valores dos atributos funcionais
+-   Para isso utiliza-se do método do Minimum Spanning Tree (MST) para conectar todas espécies no espaço funcional
+-   o valor final da regularidade funcional (FEve) vai variar de 0 (máxima irregularidade da distribuição da abundância ou distância funcional das espécies) a 1 (máxima regularidade)
+-   A diminuição do valor de FEve em direção a zero indica que uma redução da regularidade da distribuição da abundância ou distância funcional entre as espécies
+
+-   Vamos calcular a regularidade funcional das assembleias de besouros
+```{r}
+
+```
+
+## Composição funcional
+
+-   O interesse da investigação pode estar relacionado a quanto um gradiente ambiental pode influenciar a expressão (abundância ou densidade) de um dado atributo funcional
+-   Podemos calcular então a média ponderada de um dado atributo na comunidade (CWM)
+-   Vamos utilizar a função functcomp e usar as matrizes de abundância de espécies e valores de atributos para calcular o CWM das bases de dados baselga
+```{r}
+
+```
+
+-   Agora vamos avaliar como que a aridez pode influenciar a divergência e a regularidade funcional das plantas
+-   Para isso utlizaremos a base com as 34 espécies de plantas
+-   Podemos ter duas predições:
+  1. locais mais áridos possuem menor divergência funcional de plantas (FDis)
+  2. locais mais úmidos possuem menor regularidade funcional de plantas (FEve)
+
+- Passo 1: calcular a distância funcional
+
+```{r}
+
+```
+
+## Passo 2: calcular a Divergência funcional (FDis) e Regularidade
+Funcional (FEve)
+```{r}
+
+```
+
+## Passo 3: Utilizar um modelo linear para comparar o efeito da aridez sobre FDis (predição 1) e FEve (predição 2)
+# Combinar dados em um data.frame.
+```{r}
+
+```
+
+
+# Modelo 1
+```{r}
+
+```
+
+# Conclusão: a aridez não tem efeito sobre a divergência funcional
+
+
+# Modelo 2
+```{r}
+
+```
+
+
+## Passo 4: gráfico para visualizar os dois resultados  
+-   Gráfico modelo 1.
+```{r}
+
+```
+
+-   Gráfico modelo 2
+```{r}
+
+```
+
+## Visualização dos dois gráficos em um único plor
+
+```{r}
+
+```
+
+
+## Exemplo 2
+
+-    Agora vamos avaliar como que o pastejo pode determinar a ocorrência das espécies de plantas com diferentes atributos funcionais
+-   Para isso vamos utilizar a mesma base de dados do exemplo anterior mas utilizaremos o CWM
+
+-   1. Calcular o CWM
+```{r}
+
+```
+
+-   2. Calcular a distância funcional
+```{r}
+
+```
+
+-   3. testar se a composição funcional varia entre as áreas com uma PERMANOVA
+```{r}
+
+```
+
+-   4. comparar a variação dentro de cada grupo com Betadisper 
+```{r}
+
+```
+
+
+-   5. Calcular a PCoA
+```{r}
+
+```
+
+-   6. definir os grupos ("HULL") para serem categorizados no gráfico 
+```{r}
+
+```
+
+-   7. Gráfico biplot
+```{r}
+
+```
+
+
+
+
+
+
+
