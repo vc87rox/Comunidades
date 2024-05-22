@@ -1,0 +1,867 @@
+---
+title: "JSDM"
+output: html_document
+date: "2024-05-22"
+---
+
+Carregar a base dados_anfibios
+```{r}
+dados <- read.table("dados_anfibios.txt", h = T)
+```
+
+
+# Modificando a base de dados do formato long para wide
+```{r}
+library(dplyr)
+
+anfibios <- dados |>
+  filter(Grupo == "A",
+         Metodo == "BA") |> 
+  pivot_wider(names_from = Especie, 
+              values_from = Abundancia) |> 
+  mutate_all( ~replace_na(., 0)) |>
+  arrange(Parcela) |> 
+  select(-Corpo,
+         -Metodo,
+         -Grupo,
+         -Estacao) |> 
+  group_by(Parcela, Ambiente, Compartimento) |> 
+  summarise_all(sum) |> 
+  ungroup() |> 
+  mutate(across(c(1:3), as.character),
+         across(c(1:3), as.factor))
+```
+
+#Objetos para incluir nos modelos
+```{r}
+y <- anfibios |> 
+  select(1, 4:35) |> 
+  column_to_rownames(var = "Parcela")
+
+X <- anfibios |> 
+  select(c(1:3))
+sDesign <- data.frame(Site = X$Parcela)
+```
+
+#Modelos irrestritos da composição de anfíbios (2 variáveis latentes)
+```{r}
+library(gllvm)
+
+a_comp <- gllvm(y,
+                studyDesign = sDesign, 
+                family = "negative.binomial", 
+                method = "EVA",
+                num.lv = 2, 
+                seed = 666)
+```
+
+#Modelos restritos incluindo as variáveis ambientais (Compartimento + Ambiente)
+```{r}
+a_comp_X <- gllvm(y, X,
+                  formula = ~ Compartimento + Ambiente,
+                  studyDesign = sDesign,
+                  family = "negative.binomial", 
+                  method = "EVA",
+                  num.lv = 2, 
+                  seed = 666)
+```
+
+#Modelo inclindo apenas o compartimento
+```{r}
+a_comp_A <- gllvm(y, X,
+                  formula = ~ Ambiente,
+                  studyDesign = sDesign,
+                  family = "negative.binomial", 
+                  method = "EVA",
+                  num.lv = 2, 
+                  seed = 666)
+```
+
+#modelo incluindo apenas o ambiente
+```{r}
+a_comp_C <- gllvm(y, X,
+                  formula = ~ Compartimento,
+                  studyDesign = sDesign, 
+                  family = "negative.binomial", 
+                  method = "EVA",
+                  num.lv = 2, 
+                  seed = 666)
+```
+
+#Seleção de modelos usando AICc
+```{r}
+fit_table <- dredge(a_comp_X, 
+                    rank = "AICc")
+```
+
+
+modificação da função original ordiplot para gerar as ordenações a partir dos GLLVMs
+```{r}
+ordiplot.gllvm2 <- function(object, biplot = FALSE, ind.spp = NULL, alpha = 0.5, main = NULL, which.lvs = c(1, 2), predict.region = FALSE, level =0.95,
+                           jitter = FALSE, jitter.amount = 0.2, s.colors = 1, s.cex = 1.2, symbols = FALSE, cex.spp = 0.7, spp.colors = "blue", arrow.scale = 0.8, arrow.spp.scale = 0.8, arrow.ci = TRUE, arrow.lty = "solid", spp.arrows = NULL, spp.arrows.lty = "dashed", cex.env = 0.7, lab.dist = 0.1, lwd.ellips = 0.5, col.ellips = 4, lty.ellips = 1, type = NULL, rotate = TRUE, ...) {
+  if (!any(class(object) %in% "gllvm"))
+    stop("Class of the object isn't 'gllvm'.")
+  if(isFALSE(object$sd) & !isFALSE(predict.region)){
+    warning("No standard errors present in model. Seting predict.region to FALSE.\n")
+    predict.region <- FALSE
+  }
+  
+  if(is.null(spp.arrows)){
+    if(object$quadratic!=FALSE){
+      spp.arrows <- TRUE
+    }else{
+      spp.arrows <- FALSE
+    }
+  }
+  
+  if(is.null(object$num.lvcor)) object$num.lvcor=0 # For now.
+  # stop("Prediction intervals don't yet correspond with type. Need to talk to Jenni about this. Also fix spp.arrows
+  #      when they are too small")
+  
+  arrow.scale <- abs(arrow.scale)
+  a <- jitter.amount
+  Nlv <- n <- NROW(object$y)
+  
+  if(object$num.lv+object$num.lv.c+object$num.lvcor>0) try(Nlv <- NROW(object$lvs), silent = TRUE)
+  
+  p <- NCOL(object$y)
+  num.lv <- object$num.lv
+  num.lv.c <- object$num.lv.c 
+  num.RR <- object$num.RR
+  quadratic <- object$quadratic
+  gr_par_list <- list(...)
+  # If both scales are not given, use MASS::eqscplot
+  if(("ylim" %in% names(gr_par_list)) & ("xlim" %in% names(gr_par_list))){
+    plotfun <- plot
+  } else {
+    plotfun <- MASS::eqscplot
+  }
+  
+  if (!is.null(ind.spp)) {
+    ind.spp <- min(c(p, ind.spp))
+  } else {
+    ind.spp <- p
+  }
+  if(length(spp.colors)==1){
+    spp.colors <- rep(spp.colors,p)
+  }else if(length(spp.colors)!=p){
+    stop("spp.colors needs to be of length p or 1.")
+  }
+  if ((num.lv+(num.lv.c+num.RR)) == 0)
+    stop("No latent variables to plot.")
+  
+  if (is.null(rownames(object$params$theta)))
+    rownames(object$params$theta) = paste("V", 1:p)
+  
+  if((num.lv.c+num.RR)==0&is.null(type)){
+    type <- "residual"
+  }else if(is.null(type)){
+    if(num.lv.c==0&num.RR>0){
+      type <- "marginal"
+    }else if(num.lv.c>0){
+      type <- "conditional"  
+    }
+  }
+  
+  # This must be done, otherwise the scale of the ordination is non informative if the scale of params$theta () differ drastically:
+  if(type == "residual"|num.lv>0){
+    # First create an index for the columns with unconstrained LVs
+    sigma.lv <- NULL
+    if(num.lv.c>0&type=="residual"){
+      # to have similar scaling to unconstrained LVs
+      sigma.lv <- object$params$sigma.lv[1:num.lv.c]
+    }else if(num.lv.c>0){
+      #here the LVs get scaled with sigma.lv not theta
+      sigma.lv <- c(sigma.lv, rep(1,num.lv.c))
+    }
+    # constrained LVs never have a scale parameter so always get 1
+    sigma.lv <- c(sigma.lv, rep(1,num.RR))
+    
+    # unconstrained LVs always get their species parameters scaled, never LVs
+    if(num.lv>0){
+      sigma.lv <- c(sigma.lv, object$params$sigma.lv[(num.lv.c+1):(num.lv.c+num.lv)])
+    }
+    # scaling for quadratic coefficients
+    if(quadratic!=FALSE){
+      sigma.lv <- c(sigma.lv, sigma.lv^2)
+    }
+    
+    # Do the scaling
+    sigma.lv <- diag(sigma.lv, length(sigma.lv))
+    object$params$theta <- object$params$theta%*%sigma.lv
+    
+    #remove unconstrained LVs species loadings if type=="marginal"
+    if(type=="marginal"&num.lv>0){
+      if(quadratic!=FALSE)object$params$theta <- object$params$theta[,-c( (num.lv.c+num.RR+1):(num.lv.c+num.RR+num.lv) +num.RR+num.lv.c+num.lv),drop=F]
+      object$params$theta <- object$params$theta[,-c( (num.lv.c+num.RR+1):(num.lv.c+num.RR+num.lv) ),drop=F]
+    }
+    #remove constrined LVs species loadings if type=="residual"
+    if(type=="residual"&num.RR>0){
+      if(quadratic!=FALSE)object$params$theta <- object$params$theta[,-c( (num.lv.c+1):(num.lv.c+num.RR) +num.RR+num.lv.c+num.lv),drop=F]
+      object$params$theta <- object$params$theta[,-c((num.lv.c+1):(num.lv.c+num.RR) ),drop=F]
+    }
+  }
+  
+  lv <- getLV(object, type = type)
+  
+  if ((num.lv+(num.lv.c+num.RR)) == 1|ncol(lv) == 1) {
+    if(num.lv==1){
+      plot(1:Nlv, lv, ylab = "LV1", xlab = "Row index", type="n") 
+      if (symbols) {
+        points(lv, col = s.colors, ...)
+      } else {
+        if(is.null(row.names(lv))){
+          text(lv, label = 1:Nlv, cex = s.cex, col = s.colors)
+        }else{
+          text(lv, label = row.names(lv), cex = s.cex, col = s.colors)
+        }
+        
+      }
+    }
+    if((num.lv.c+num.RR)==1){
+      plot(1:Nlv, lv, ylab = "CLV1", xlab = "Row index", type="n") 
+      if (symbols) {
+        points(lv, col = s.colors, ...)
+      } else {
+        if(is.null(row.names(lv))){
+          text(lv, label = 1:Nlv, cex = s.cex, col = s.colors)
+        }else{
+          text(lv, label = row.names(lv), cex = s.cex, col = s.colors)
+        }      
+      }
+    }    
+  }
+  
+  if ((num.lv+num.lv.c+num.RR) > 1 & ncol(lv) > 1) {
+    #unconstrained ordination always gets unscaled LVs, for correct prediction intervals.
+    #prediction intervals don't yet account for the scaling of the residual term in 
+    #num.lv.c
+    if(rotate){
+      do_svd <- svd(lv)
+      
+      if(type!="residual"){
+        do_svd$v <- svd(getLV(object, type = type))$v
+      }
+      # do_svd <- svd(lv)
+      # do_svd <- svd(object$lvs)
+      svd_rotmat_sites <- do_svd$v
+      svd_rotmat_species <- do_svd$v
+    } else {
+      svd_rotmat_sites <- diag(ncol(lv))
+      svd_rotmat_species <- diag(ncol(lv))
+    }    
+    
+    
+    
+    
+    choose.lvs <- lv
+    if(quadratic == FALSE){choose.lv.coefs <- object$params$theta}else{choose.lv.coefs<-optima(object,sd.errors=F)}  
+    
+    #A check if species scores are within the range of the LV
+    ##If spp.arrows=TRUE plots those that are not in range as arrows
+    if(spp.arrows && biplot){
+      lvth <- max(abs(choose.lvs))
+      idx <- choose.lv.coefs>(-lvth)&choose.lv.coefs<lvth
+      if(!all(apply(idx,2,any))){
+        stop(paste("For", colnames(idx)[!apply(idx,2,any)], "all optima seem to be outside the observed range of the LV. Please reconsider your model, or set  `spp.arrows = FALSE` ."))
+      }
+    }else{
+      idx <- matrix(TRUE,ncol=num.lv+num.lv.c+num.RR,nrow=p)
+    }
+    
+    bothnorms <- vector("numeric",ncol(choose.lv.coefs))
+    for(i in 1:ncol(choose.lv.coefs)){
+      bothnorms[i] <- sqrt(sum(choose.lvs[,i]^2)) * sqrt(sum(choose.lv.coefs[idx[,i],i]^2))
+    }
+    
+    # bothnorms <- sqrt(colSums(choose.lvs^2)) * sqrt(colSums(choose.lv.coefs^2)) 
+    ## Standardize both to unit norm then scale using bothnorms. Note alpha = 0.5 so both have same norm. Otherwise "significance" becomes scale dependent
+    scaled_cw_sites <- t(t(choose.lvs) / sqrt(colSums(choose.lvs^2)) * (bothnorms^alpha)) 
+    # scaled_cw_species <- t(t(choose.lv.coefs) / sqrt(colSums(choose.lv.coefs^2)) * (bothnorms^(1-alpha))) 
+    scaled_cw_species <- choose.lv.coefs
+    for(i in 1:ncol(scaled_cw_species)){
+      scaled_cw_species[,i] <- choose.lv.coefs[,i] / sqrt(sum(choose.lv.coefs[idx[,i],i]^2)) * (bothnorms[i]^(1-alpha)) 
+    }
+    
+    # Under development, need to be adjusted for more complex cases
+    Bload<-(svd_rotmat_species)
+    Bload<-diag((bothnorms^(1-alpha))/sqrt(colSums(choose.lv.coefs^2)), length(bothnorms))%*%Bload
+    #
+    
+    choose.lvs <- scaled_cw_sites%*%svd_rotmat_sites
+    choose.lv.coefs <- scaled_cw_species%*%svd_rotmat_species
+    # 
+    # if(spp.arrows){
+    #   idx <- choose.lv.coefs>matrix(apply(choose.lvs,2,min),ncol=ncol(choose.lv.coefs),nrow=nrow(choose.lv.coefs),byrow=T)&choose.lv.coefs<matrix(apply(choose.lvs,2,max),ncol=ncol(choose.lv.coefs),nrow=nrow(choose.lv.coefs),byrow=T)
+    # }else{
+    #   idx <- matrix(TRUE,ncol=num.lv+num.lv.c+num.RR,nrow=p)
+    # }
+    # 
+    B<-(diag((bothnorms^alpha)/sqrt(colSums(getLV(object,type = type)^2)), length(bothnorms))%*%svd_rotmat_sites)  
+    
+    # testcov <- object$lvs %*% t(object$params$theta)
+    # do.svd <- svd(testcov, num.lv, num.lv)
+    # choose.lvs <- do.svd$u * matrix( do.svd$d[1:num.lv] ^ alpha,
+    #     nrow = n, ncol = num.lv, byrow = TRUE )
+    # choose.lv.coefs <- do.svd$v * matrix(do.svd$d[1:num.lv] ^ (1 - alpha),
+    #     nrow = p, ncol = num.lv, byrow = TRUE )
+    # if(type=="conditional" & num.RR>0 & (num.lv+num.lv.c)==0){
+    #   type <- "marginal"
+    #   warning("still need to adjust this, not clean.")
+    # }
+    
+    if (!biplot) {
+      if(is.null(main)&!is.null(type)){
+        main <- paste("Ordination (type='", type, "')",sep="")
+      }
+      plotfun(choose.lvs[, which.lvs],
+              xlab = paste("Variável latente", which.lvs[1]), 
+              ylab = paste("Variável latente", which.lvs[2]),
+              main = main , type = "n", ... )
+      
+      if (predict.region %in% c(TRUE, "sites")) {
+        if(length(col.ellips)!=Nlv){ col.ellips =rep(col.ellips,Nlv)}
+        if (object$method == "LA") {
+          if((type%in%c("marginal","residual")&(num.lv.c+num.RR)>0)){#have to recalculate prediction errors
+            object$prediction.errors$lvs <- sdrandom(object$TMBfn, object$Hess$cov.mat.mod, object$Hess$incl,ignore.u = F, type = type)$A
+          }
+          for (i in 1:Nlv) {
+            covm <- (t(B)%*%object$prediction.errors$lvs[i,,]%*%B)[which.lvs,which.lvs];
+            ellipse( choose.lvs[i, which.lvs], covM = covm, rad = sqrt(qchisq(level, df=num.lv+num.lv.c+num.RR)), col = col.ellips[i], lwd = lwd.ellips, lty = lty.ellips)
+          }        
+        } else {
+          
+          sdb<-CMSEPf(object, type = type)$A
+          
+          #If not marginal add variational covariances
+          if(type!="residual"){
+            #variational covariances but add 0s for RRR
+            # A <- array(0,dim=c(n,num.lv.c+num.RR+num.lv,num.lv.c+num.RR+num.lv))
+            # A[,-c((num.lv.c+1):(num.lv.c+num.RR)),-c((num.lv.c+1):(num.lv.c+num.RR))] <- object$A
+            A <- array(0,dim=c(Nlv,(num.lv*ifelse(type=="marginal",0,1)+num.lv.c+num.RR*ifelse(type!="residual",1,0)),(num.lv*ifelse(type=="marginal",0,1)+num.lv.c+num.RR*ifelse(type!="residual",1,0))))
+            if(type!="marginal"&num.RR>0)A[,-c((num.lv.c+1):(num.lv.c+num.RR)),-c((num.lv.c+1):(num.lv.c+num.RR))] <- object$A
+            if(type!="marginal"&num.RR==0) A <- object$A
+          } else {A<-object$A}
+          
+          if((object$num.lvcor > 1) && (object$Lambda.struc %in% c("diagU","UNN","UU"))) { #Not used at the moment, under development
+            A<-array(diag(object$A[,,1]), dim = c(nrow(object$A[,,1]), object$num.lvcor,object$num.lvcor))
+            for (i in 1:dim(A)[1]) {
+              A[i,,]<-A[i,,]*object$AQ
+            }
+          } else if((object$num.lvcor > 0) & (object$corP$cstruc[2] !="diag")) {#Not used at the moment, under development
+            A<-array(0, dim = c(nrow(object$A[,,1]), object$num.lvcor,object$num.lvcor))
+            for (i in 1:object$num.lvcor) {
+              A[,i,i]<- diag(object$A[,,i])
+            }
+          }
+          
+          #If conditional scale variational covariances for concurrent ordination by sigma
+          if(type=="conditional" & num.lv.c>0){
+            S <- diag(1:(num.lv*ifelse(type=="marginal",0,1)+num.lv.c+num.RR*ifelse(type!="residual",1,0)))
+            diag(S)[1:num.lv.c] <- object$params$sigma.lv[1:num.lv.c]
+            # if((num.lv.c+num.lv)==1){
+            #   A<-A*object$params$sigma.lv
+            # }else{}            
+            for(i in 1:Nlv){
+              A[i,,]<-S%*%A[i,,]%*%S
+            }  
+          }
+          
+          object$A<-sdb+A 
+          if((num.RR+num.lv.c)>0&object$randomB!=FALSE&type!="residual"){
+            A <- object$A
+            if(object$randomB=="P"|object$randomB=="single"){
+              covsB <- as.matrix(Matrix::bdiag(lapply(seq(dim(object$Ab.lv)[1]), function(k) object$Ab.lv[k , ,])))
+            }else if(object$randomB=="LV"){
+              covsB <- as.matrix(Matrix::bdiag(lapply(seq(dim(object$Ab.lv)[1]), function(q) object$Ab.lv[q , ,])))
+            }
+            
+            for(i in 1:Nlv){
+              Q <- as.matrix(Matrix::bdiag(replicate(num.RR+num.lv.c,object$lv.X[i,,drop=F],simplify=F)))
+              temp <- Q%*%covsB%*%t(Q) #variances and single dose of covariances
+              temp[col(temp)!=row(temp)] <- 2*temp[col(temp)!=row(temp)] ##should be double the covariance
+              A[i,1:(num.RR+num.lv.c),1:(num.RR+num.lv.c)] <- A[i,1:(num.RR+num.lv.c),1:(num.RR+num.lv.c)] + temp
+            }
+            object$A <- A
+            
+          }
+          
+          r=0
+          for (i in 1:Nlv) {
+            if(!object$TMB && object$Lambda.struc == "diagonal"){
+              covm <- (t(B)%*%diag(object$A[i,1:num.lv+r])%*%B)[which.lvs,which.lvs];
+              # covm <- diag(object$A[i,which.lvs+r]);
+            } else {
+              covm <- (t(B)%*%object$A[i,1:(num.lv*ifelse(type=="marginal",0,1)+num.lv.c+num.RR*ifelse(type!="residual",1,0))+r,1:(num.lv*ifelse(type=="marginal",0,1)+num.lv.c+num.RR*ifelse(type!="residual",1,0))+r]%*%B)[which.lvs,which.lvs];
+              # covm <- object$A[i,which.lvs+r,which.lvs+r];
+            }
+            ellipse( choose.lvs[i, which.lvs], covM = covm, rad = sqrt(qchisq(level, df=num.lv+num.RR+num.lv.c)), col = col.ellips[i], lwd = lwd.ellips, lty = lty.ellips)
+          }
+        }
+      }
+      
+      
+      if (!jitter)
+        if (symbols) {
+          points(choose.lvs[, which.lvs], col = s.colors, ...)
+        } else {
+          if(is.null(row.names(lv))){
+            text(choose.lvs[, which.lvs], label = 1:Nlv, cex = s.cex, col = s.colors)
+          }else{
+            text(choose.lvs[, which.lvs], label = row.names(lv), cex = s.cex, col = s.colors)
+          }
+        }
+      if (jitter)
+        if (symbols) {
+          points(choose.lvs[, which.lvs][, 1] + runif(Nlv,-a,a), choose.lvs[, which.lvs][, 2] + runif(Nlv,-a,a), col =
+                   s.colors, ...)
+        } else {
+          if(is.null(row.names(lv))){
+            text(
+              (choose.lvs[, which.lvs][, 1] + runif(n,-a,a)),
+              (choose.lvs[, which.lvs][, 2] + runif(n,-a,a)),
+              label = 1:Nlv, cex = s.cex, col = s.colors )          
+          }else{
+            text(
+              (choose.lvs[, which.lvs][, 1] + runif(n,-a,a)),
+              (choose.lvs[, which.lvs][, 2] + runif(n,-a,a)),
+              label = row.names(lv), cex = s.cex, col = s.colors )          
+          }
+        }
+    }
+    
+    if (biplot) {
+      if(quadratic==F)largest.lnorms <- order(apply(object$params$theta ^ 2, 1, sum), decreasing = TRUE)[1:ind.spp]
+      if(quadratic!=F)largest.lnorms <- order(apply(object$params$theta[,1:((num.lv.c+num.RR)+num.lv)] ^ 2, 1, sum)+2*apply(object$params$theta[,-c(1:((num.lv.c+num.RR)+num.lv))] ^ 2, 1, sum) , decreasing = TRUE)[1:ind.spp]
+      if(is.null(main)&!is.null(type)){
+        main <- paste("Ordination (type='", type, "')",sep="")
+      }
+      plotfun(
+        rbind(choose.lvs[, which.lvs], choose.lv.coefs[apply(idx,1,all), which.lvs]),
+        xlab = paste("Latent variable", which.lvs[1]), 
+        ylab = paste("Latent variable", which.lvs[2]),
+        main = main, type = "n", ... )
+      
+      if (predict.region %in% c(TRUE, "sites")) {
+        if(length(col.ellips)!=Nlv){ col.ellips =rep(col.ellips,n)}
+        if (object$method == "LA") {
+          if((type%in%c("marginal","residual")&(num.lv.c+num.RR)>0)){#have to recalculate prediction errors
+            object$prediction.errors$lvs <- sdrandom(object$TMBfn, object$Hess$cov.mat.mod, object$Hess$incl,ignore.u = F, type = type)$A
+          }
+          
+          for (i in 1:Nlv) {
+            covm <- (t(B)%*%object$prediction.errors$lvs[i,,]%*%B)[which.lvs,which.lvs];
+            ellipse( choose.lvs[i, which.lvs], covM = covm, rad = sqrt(qchisq(level, df=num.lv+num.lv.c+num.RR)), col = col.ellips[i], lwd = lwd.ellips, lty = lty.ellips)
+          }
+        } else {
+          
+          sdb<-CMSEPf(object, type = type)$A
+          
+          #If not marginal add variational covariances
+          if(type!="residual" & (object$num.lvcor == 0) ){
+            #variational covariances but add 0s for RRR
+            A <- array(0,dim=c(Nlv,(num.lv*ifelse(type=="marginal",0,1)+num.lv.c+num.RR*ifelse(type!="residual",1,0)),(num.lv*ifelse(type=="marginal",0,1)+num.lv.c+num.RR*ifelse(type!="residual",1,0))))
+            if(type!="marginal"&num.RR>0)A[,-c((num.lv.c+1):(num.lv.c+num.RR)),-c((num.lv.c+1):(num.lv.c+num.RR))] <- object$A
+            if(type!="marginal"&num.RR==0) A <- object$A
+          } else {A<-object$A}
+          # if(num.RR>0){
+          # A <- array(0,dim=c(Nlv,num.lv.c+num.RR+num.lv,num.lv.c+num.RR+num.lv))
+          # A[,-c((num.lv.c+1):(num.lv.c+num.RR)),-c((num.lv.c+1):(num.lv.c+num.RR))] <- object$A
+          # } else 
+          if((object$num.lvcor > 1) && (object$Lambda.struc %in% c("diagU","UNN","UU"))) {#Not used at the moment, under development
+            A<-array(diag(object$A[,,1]), dim = c(nrow(object$A[,,1]), object$num.lvcor,object$num.lvcor))
+            for (i in 1:dim(A)[1]) {
+              A[i,,]<-A[i,,]*object$AQ
+            }
+          } else if((object$num.lvcor > 0) & (object$corP$cstruc[2] !="diag")) {#Not used at the moment, under development
+            A<-array(0, dim = c(nrow(object$A[,,1]), object$num.lvcor,object$num.lvcor))
+            for (i in 1:object$num.lvcor) {
+              A[,i,i]<- diag(object$A[,,i])
+            }
+          } 
+          
+          #If conditional scale variational covariances for concurrent ordination by sigma
+          if(type=="conditional" & num.lv.c>0){
+            S <- diag(1:(num.lv*ifelse(type=="marginal",0,1)+num.lv.c+num.RR*ifelse(type!="residual",1,0)))
+            diag(S)[1:num.lv.c] <- object$params$sigma.lv[1:num.lv.c]
+            
+            for(i in 1:Nlv){
+              A[i,,]<-S%*%A[i,,]%*%S
+            }  
+          }
+          
+          object$A<-sdb+A 
+          if((num.RR+num.lv.c)>0&object$randomB!=FALSE&type!="residual"){
+            A <- object$A
+            if(object$randomB=="P"|object$randomB=="single"){
+              covsB <- as.matrix(Matrix::bdiag(lapply(seq(dim(object$Ab.lv)[1]), function(k) object$Ab.lv[k , ,])))
+            }else if(object$randomB=="LV"){
+              covsB <- as.matrix(Matrix::bdiag(lapply(seq(dim(object$Ab.lv)[1]), function(q) object$Ab.lv[q , ,])))
+            }
+            
+            for(i in 1:Nlv){
+              Q <- as.matrix(Matrix::bdiag(replicate(num.RR+num.lv.c,object$lv.X[i,,drop=F],simplify=F)))
+              temp <- Q%*%covsB%*%t(Q) #variances and single dose of covariances
+              temp[col(temp)!=row(temp)] <- 2*temp[col(temp)!=row(temp)] ##should be double the covariance
+              A[i,1:(num.RR+num.lv.c),1:(num.RR+num.lv.c)] <- A[i,1:(num.RR+num.lv.c),1:(num.RR+num.lv.c)] + temp
+            }
+            object$A <- A
+          }
+          
+          r=0
+          for (i in 1:Nlv) {
+            if(!object$TMB && object$Lambda.struc == "diagonal"){
+              covm <- (t(B)%*%diag(object$A[i,1:num.lv+r])%*%B)[which.lvs,which.lvs];
+              # covm <- diag(object$A[i,which.lvs+r]);
+            } else {
+              covm <- (t(B)%*%object$A[i,1:(num.lv*ifelse(type=="marginal",0,1)+num.lv.c+num.RR*ifelse(type!="residual",1,0))+r,1:(num.lv*ifelse(type=="marginal",0,1)+num.lv.c+num.RR*ifelse(type!="residual",1,0))+r]%*%B)[which.lvs,which.lvs];
+              # covm <- (t(B)%*%object$A[i,1:(num.lv+num.lv.c+num.RR)+r,1:(num.lv+num.RR+num.lv.c)+r]%*%B)[which.lvs,which.lvs];
+              # covm <- object$A[i,which.lvs+r,which.lvs+r];
+            }
+            ellipse( choose.lvs[i, which.lvs], covM = covm, rad = sqrt(qchisq(level, df=num.lv+num.RR+num.lv.c)), col = col.ellips[i], lwd = lwd.ellips, lty = lty.ellips)
+          }
+        }
+      }
+      
+      if (predict.region %in% c("species")) {
+        if(length(col.ellips)!=p){ col.ellips2 =rep(col.ellips[1],p)}
+        # col.ellips2=rep("grey",p)
+        
+        covMload<-object$sd$theta%*%( diag(object$params$sigma.lv, length(object$params$sigma.lv)) ); #diag(covMT)=1
+        diag(covMload)<-object$sd$sigma.lv
+        covMload <- array(apply(covMload^2, 1, diag), dim = c(ncol(object$sd$theta),ncol(object$sd$theta),nrow(object$sd$theta)))
+        
+        for (i in (largest.lnorms[1:ind.spp])) {
+          if(any(diag(covMload[,,i])==0)) diag(covMload[,,i])[diag(covMload[,,i])==0]=0.01
+          covmL <- (t(Bload)%*%covMload[,,i]%*%Bload)[which.lvs,which.lvs];
+          ellipse( choose.lv.coefs[i, which.lvs], covM = covmL, rad = sqrt(qchisq(level, df=num.lv+num.RR+num.lv.c)), col = col.ellips2[i], lwd = lwd.ellips, lty = lty.ellips)
+        }
+        
+      }
+      
+      if (!jitter){
+        if (symbols) {
+          points(choose.lvs[, which.lvs], col = s.colors, ...)
+        } else {
+          if(is.null(row.names(lv))){
+            text(choose.lvs[, which.lvs], label = 1:Nlv, cex = s.cex, col = s.colors)
+          }else{
+            text(choose.lvs[, which.lvs], label = row.names(lv), cex = s.cex, col = s.colors)
+          }        
+        }
+        text(
+          matrix(choose.lv.coefs[largest.lnorms[1:ind.spp],which.lvs,drop=F][apply(idx[largest.lnorms[1:ind.spp],which.lvs,drop=F],1,function(x)all(x)),], nrow = sum(apply(!idx[largest.lnorms[1:ind.spp],which.lvs],1,function(x)!any(x)))),
+          label = rownames(object$params$theta)[largest.lnorms[1:ind.spp]][apply(idx[largest.lnorms[1:ind.spp],which.lvs,drop=F],1,function(x)all(x))],
+          col = spp.colors[largest.lnorms][1:ind.spp][apply(idx[largest.lnorms[1:ind.spp],which.lvs,drop=F],1,function(x)all(x))], cex = cex.spp )
+      }
+      if (jitter){
+        if (symbols) {
+          points(choose.lvs[, which.lvs[1]] + runif(Nlv,-a,a), (choose.lvs[, which.lvs[2]] + runif(Nlv,-a,a)), col =
+                   s.colors, ...)
+        } else {
+          if(is.null(row.names(lv))){
+            text(
+              (choose.lvs[, which.lvs[1]] + runif(n,-a,a)),
+              (choose.lvs[, which.lvs[2]] + runif(n,-a,a)),
+              label = 1:Nlv, cex = s.cex, col = s.colors )
+          }else{
+            text(
+              (choose.lvs[, which.lvs[1]] + runif(n,-a,a)),
+              (choose.lvs[, which.lvs[2]] + runif(n,-a,a)),
+              label = row.names(lv), cex = s.cex, col = s.colors )
+          }          
+        }
+        text(
+          matrix(choose.lv.coefs[largest.lnorms[1:ind.spp],which.lvs,drop=F][apply(idx[largest.lnorms[1:ind.spp],which.lvs,drop=F],1,function(x)all(x)),], nrow = sum(apply(!idx[largest.lnorms[1:ind.spp],which.lvs],1,function(x)!any(x)))),
+          label = rownames(object$params$theta)[largest.lnorms[1:ind.spp]][apply(idx[largest.lnorms[1:ind.spp],which.lvs,drop=F],1,function(x)all(x))],
+          col = spp.colors[largest.lnorms][1:ind.spp][apply(idx[largest.lnorms[1:ind.spp],which.lvs,drop=F],1,function(x)all(x))], cex = cex.spp )
+      }
+      
+      ##Here add arrows for species with optima outside of range LV
+      # if(quadratic!=FALSE){
+      if(spp.arrows){
+        marg<-par("usr")
+        Xlength<-sum(abs(marg[1:2]))/2
+        Ylength<-sum(abs(marg[3:4]))/2
+        origin<- c(mean(marg[1:2]),mean(marg[3:4]))
+        
+        
+        #scores_to_plot <- choose.lv.coefs[largest.lnorms[!apply(idx[largest.lnorms,which.lvs,drop=F],1,all)],which.lvs,drop=F]
+        scores_to_plot <- choose.lv.coefs[largest.lnorms[1:ind.spp],which.lvs][apply(idx[largest.lnorms[1:ind.spp],which.lvs],1,function(x)!all(x)),,drop=F]
+        if(nrow(scores_to_plot)>0){
+          ends <- t(t(t(t(scores_to_plot)-origin)/sqrt((scores_to_plot[,1]-origin[1])^2+(scores_to_plot[,2]-origin[2])^2)*min(Xlength,Ylength)))*arrow.spp.scale
+          
+          units = par(c('usr', 'pin'))
+          xi = with(units, pin[1L]/diff(usr[1:2]))
+          yi = with(units, pin[2L]/diff(usr[3:4]))
+          # idx <- sqrt((xi * diff(c(origin[1],ends[,1]+origin[1])))**2 + (yi * diff(c(origin[2],ends[,2]+origin[2])))**2) >.001
+          idx2 <-  apply(ends,1,function(x)if(all(abs(x)<0.001)){FALSE}else{TRUE})
+          if(any(!idx2)){
+            for(i in which(!idx2)){
+              cat("The effect for", paste(row.names(scores_to_plot)[i],collapse=",", sep = " "), "was too small to draw an arrow. \n")  
+            }
+            ends <- ends[idx2,]
+            scores_to_plot <- scores_to_plot[idx2,]
+          }
+          
+          if(nrow(ends)>0){
+            arrows(origin[1],origin[2],ends[,1]+origin[1],ends[,2]+origin[2],col=spp.colors[largest.lnorms][1:ind.spp][!apply(idx[largest.lnorms[1:ind.spp],which.lvs,drop=F],1,function(x)all(x))][idx2], cex = cex.spp, length = 0.1, lty=spp.arrows.lty)
+            text(x=ends[,1]*(1+lab.dist)+origin[1],y=ends[,2]*(1+lab.dist)+origin[2],labels = row.names(scores_to_plot),col=spp.colors[largest.lnorms][1:ind.spp][!apply(idx[largest.lnorms[1:ind.spp],which.lvs,drop=F],1,function(x)all(x))], cex = cex.spp)
+          }
+        }
+      }
+    }
+    
+    #Only draw arrows when no unconstrained LVs are present currently: diffcult otherwise due to rotation
+    #Could alternatively post-hoc regress unconstrained LVs..but then harder to distinguish which is post-hoc in the plot..
+    #still add special clause for num.RR=ncol(lv.X) & num.lv>0, since then LVs are uncorrelated with predictors and we can add arrows anyway
+    if(num.lv==0&(num.lv.c+num.RR)>0&type!="residual"|(num.lv.c+num.RR)>0&num.lv>0&type=="marginal"){
+      LVcoef <- (object$params$LvXcoef%*%svd_rotmat_sites)[,which.lvs]
+      
+      if(!is.logical(object$sd)&arrow.ci){
+        if(object$randomB==FALSE){
+          covB <- object$Hess$cov.mat.mod
+          colnames(covB) <- row.names(covB) <- names(object$TMBfn$par)[object$Hess$incl]
+          covB <- covB[row.names(covB)=="b_lv",colnames(covB)=="b_lv"]
+        }else{
+          if(object$method=="LA"){
+            covB <- sdrandom(object$TMBfn, object$Hess$cov.mat.mod, object$Hess$incl,ignore.u = F, type = "residual", return.covb=T)
+            covB <- covB[colnames(covB)=="b_lv",colnames(covB)=="b_lv"]
+          }else{
+            covB <- CMSEPf(object, type = "residual",return.covb = T)
+            covB <- covB[colnames(covB)=="b_lv",colnames(covB)=="b_lv"]
+            
+            if(object$randomB=="P"|object$randomB=="single"){
+              covB <- covB + as.matrix(Matrix::bdiag(lapply(seq(dim(object$Ab.lv)[1]), function(k) object$Ab.lv[k , ,])))
+            }else if(object$randomB=="LV"){
+              covB <- covB + as.matrix(Matrix::bdiag(lapply(seq(dim(object$Ab.lv)[1]), function(q) object$Ab.lv[q , ,])))
+            }
+            
+          }
+        }
+        rotSD <- matrix(0,ncol=num.RR+num.lv.c,nrow=ncol(object$lv.X)) 
+        #using svd_rotmat_sites instead of B so that uncertainty of the predictors is not affected by the scaling using alpha and sigma.lv
+        for(i in 1:ncol(object$lv.X)){
+          rotSD[i,] <- sqrt(abs(diag(t(svd_rotmat_sites[1:(num.lv.c+num.RR),1:(num.lv.c+num.RR)])%*%covB[seq(i,(num.RR+num.lv.c)*ncol(object$lv.X),by=ncol(object$lv.X)),seq(i,(num.RR+num.lv.c)*ncol(object$lv.X),by=ncol(object$lv.X))]%*%svd_rotmat_sites[1:(num.lv.c+num.RR),1:(num.lv.c+num.RR)])))
+        }
+        rotSD <- rotSD[,which.lvs]
+        cilow <- LVcoef+qnorm( (1 - 0.95) / 2)*rotSD
+        ciup <-LVcoef+qnorm(1- (1 - 0.95) / 2)*rotSD
+        lty <- rep(arrow.lty,ncol(object$lv.X))
+        col <- rep("red", ncol(object$lv.X))
+        lty[sign(cilow[,1])!=sign(ciup[,1])|sign(cilow[,2])!=sign(ciup[,2])] <- "solid"
+        col[sign(cilow[,1])!=sign(ciup[,1])|sign(cilow[,2])!=sign(ciup[,2])] <- hcl(0, 100, 80)#rgb(1,0,0,alpha=0.3)
+        
+      }else{
+        lty <- rep("solid",ncol(object$lv.X))
+        col<-rep("red",ncol(object$lv.X))
+      }
+      
+      #account for variance of the predictors
+      LVcoef <- LVcoef/apply(object$lv.X,2,sd)
+      marg<-par("usr")
+      
+      origin<- c(mean(marg[1:2]),mean(marg[3:4]))
+      Xlength<-sum(abs(marg[1:2]))/2
+      Ylength<-sum(abs(marg[3:4]))/2
+      
+      ends <- LVcoef/max(abs(LVcoef))*min(Xlength,Ylength)*arrow.scale
+      
+      #double check if all arrows are long enough to draw
+      units = par(c('usr', 'pin'))
+      xi = with(units, pin[1L]/diff(usr[1:2]))
+      yi = with(units, pin[2L]/diff(usr[3:4]))
+      # idx <- sqrt((xi * diff(c(origin[1],ends[,1]+origin[1])))**2 + (yi * diff(c(origin[2],ends[,2]+origin[2])))**2) >.001
+      idx <-  apply(ends,1,function(x)if(all(abs(x)<0.001)){FALSE}else{TRUE})
+      if(any(!idx)){
+        for(i in which(!idx)){
+          cat("The effect for", paste(row.names(LVcoef)[i],collapse=",", sep = " "), "was too small to draw an arrow. \n")  
+        }
+        ends <- ends[idx,,drop=F]
+        LVcoef <- LVcoef[idx,,drop=F]
+      }
+      if(nrow(ends)>0){
+        arrows(x0=origin[1],y0=origin[2],x1=ends[,1]+origin[1],y1=ends[,2]+origin[2],col=col,length=0.1,lty=lty)
+        text(x=origin[1]+ends[,1]*(1+lab.dist),y=origin[2]+ends[,2]*(1+lab.dist),labels = row.names(LVcoef),col=col, cex = cex.env)}
+    }else if(num.lv>0&(num.lv.c+num.RR)>0){warning("Cannot add arrows to plot, when num.lv>0 and with reduced rank constraints.")}
+  }
+  
+}
+
+```
+
+#Gráficos das ordenaçoes dos modelos restritos e irrestritos para a composição de anfíbios
+
+##Parâmetros visuais para gerar os gráficos
+```{r}
+pchr1 = NULL
+pchr1[X$Compartimento == "A1"] = 16
+pchr1[X$Compartimento == "A2"] = 16
+pchr1[X$Compartimento == "A3"] = 16
+pchr1[X$Compartimento == "B1"] = 16
+pchr1[X$Compartimento == "B2"] = 16
+pchr1[X$Compartimento == "C"] = 16
+cores1 = NULL
+cores1[X$Compartimento == "A1"] = "#440154FF"
+cores1[X$Compartimento == "A2"] = "#414487FF"
+cores1[X$Compartimento == "A3"] = "#2A788EFF"
+cores1[X$Compartimento == "B1"] = "#22A884FF"
+cores1[X$Compartimento == "B2"] = "#7AD151FF"
+cores1[X$Compartimento == "C"] = "#FDE725FF"
+
+pchr2 = NULL
+pchr2[X$Ambiente == "C"] = 16
+pchr2[X$Ambiente == "F"] = 16
+cores2 = NULL
+cores2[X$Ambiente == "C"] = "#FDE725FF"
+cores2[X$Ambiente == "F"] = "#238A8DFF"
+```
+
+#Gerar os gráficos
+
+# modelo irrestrito identificancdo os subcompartientos
+```{r}
+ordiplot.gllvm2(a_comp, biplot = F, 
+                ylim = c(-6, 6), 
+                xlim = c(-6, 6),
+                symbols = T, 
+                pch = pchr1, 
+                s.colors = cores1,
+                main = "A") 
+legend("topleft", 
+       cex = 0.6,
+       legend = c("A1", "A2", "A3", "B1", "B2", "C"), 
+       pch=16, 
+       bty = "n", 
+       col = viridis(6), 
+       trace = T)
+```
+
+# modelo irrestrito identificancdo os ambientes
+```{r}
+ordiplot.gllvm2(a_comp, 
+                biplot = F, 
+                ylim = c(-6, 6), 
+                xlim = c(-6, 6),
+                symbols = T, 
+                pch = pchr2, 
+                s.colors = cores2,
+                main = "B")
+legend("topleft", cex = 0.6,
+       legend = c("Canga", "Floresta"), 
+       pch = 16, 
+       bty = "n", 
+       col = c("#FDE725FF", "#238A8DFF"), 
+       trace = T)
+```
+
+# modelo restrito identificancdo os subcompartientos
+```{r}
+ordiplot.gllvm2(a_comp_X, 
+                biplot = F, 
+                ylim = c(-6, 6), 
+                xlim = c(-6, 6),
+                symbols = T, 
+                pch = pchr1, 
+                s.colors = cores1,
+                main = "C") 
+```
+
+# modelo restrito identificancdo os ambientes
+```{r}
+ordiplot.gllvm2(a_comp_X, 
+                biplot = F, 
+                ylim = c(-6, 6), 
+                xlim = c(-6, 6),
+                symbols = T, 
+                pch = pchr2,
+                s.colors = cores2,
+                main = "D")
+```
+
+
+#Plotar os gráfico e salvar como imagem no diretório de trabalho salvo
+```{r}
+png(file="Fig1_19.png", width=160, height = 140, units="mm", res = 400)
+par(mfrow = c(2,2))
+
+# modelo irrestrito identificancdo os subcompartientos
+ordiplot.gllvm2(a_comp, biplot = F, 
+                ylim = c(-6, 6), 
+                xlim = c(-6, 6),
+                symbols = T, 
+                pch = pchr1, 
+                s.colors = cores1,
+                main = "A") 
+legend("topleft", 
+       cex = 0.6,
+       legend = c("A1", "A2", "A3", "B1", "B2", "C"), 
+       pch=16, 
+       bty = "n", 
+       col = viridis(6), 
+       trace = T)
+
+# modelo irrestrito identificancdo os ambientes
+ordiplot.gllvm2(a_comp, 
+                biplot = F, 
+                ylim = c(-6, 6), 
+                xlim = c(-6, 6),
+                symbols = T, 
+                pch = pchr2, 
+                s.colors = cores2,
+                main = "B")
+legend("topleft", cex = 0.6,
+       legend = c("Canga", "Floresta"), 
+       pch = 16, 
+       bty = "n", 
+       col = c("#FDE725FF", "#238A8DFF"), 
+       trace = T)
+
+# modelo restrito identificancdo os subcompartientos
+ordiplot.gllvm2(a_comp_X, 
+                biplot = F, 
+                ylim = c(-6, 6), 
+                xlim = c(-6, 6),
+                symbols = T, 
+                pch = pchr1, 
+                s.colors = cores1,
+                main = "C") 
+# modelo restrito identificancdo os ambientes
+ordiplot.gllvm2(a_comp_X, 
+                biplot = F, 
+                ylim = c(-6, 6), 
+                xlim = c(-6, 6),
+                symbols = T, 
+                pch = pchr2,
+                s.colors = cores2,
+                main = "D")
+dev.off()
+```
+
+# Visualizar correlação entre as espécies
+
+## Modelo irrestrito
+```{r}
+library(corrplot)
+
+cr <-  getResidualCor(a_comp)
+corrplot(cr, diag = FALSE, type = "lower", method = "square", tl.srt = 25)
+```
+
+## Visualização em ordenação
+```{r}
+ordiplot(a_comp, biplot = TRUE)
+abline(h = 0, v = 0, lty=2)
+```
+
+## Visualizar correlação em função das variaveis ambientais
+```{r}
+gllvm::coefplot(a_comp_X, mfrow = c(2,3), cex.ylab = 0.8)
+```
+## Matriz de correlação após inclusao das variaveis ambientais
+```{r}
+crx <- getResidualCor(a_comp_X)
+corrplot(crx, diag = FALSE, type = "lower", method = "square", tl.srt = 25)
+```
+
+
