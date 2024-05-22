@@ -1,0 +1,310 @@
+---
+title: "Diversidade beta"
+output: html_document
+date: "2024-05-22"
+---
+
+-   Carregar as base de dados 
+```{r}
+composicao_especies <- read.table("composicao.txt", h = T)
+preditoras <- read.table("preditoras.txt", h = T)  
+```
+
+-   Somar os valores de abundancia por ponto, dar nome as linhas da base de composção igual a coluna ponto e em seguida remover a coluna ponto da base
+```{r}
+library(dplyr)
+composicao_especies <- 
+  composicao_especies |> 
+  group_by(ponto) |> 
+  summarize_all(sum) |> 
+  as.data.frame()
+rownames(composicao_especies) <- composicao_especies$ponto
+composicao_especies <- composicao_especies[, -1]
+```
+
+
+-   Criar novo objeto transformando os dados em presença e ausencia usando a função decostand do paote vegan
+```{r}
+library(vegan)
+composicao_pa <- decostand(composicao_especies, method = "pa")
+```
+
+-   Calcular a diversidade beta com dados de presença e ausencia usando a função beta.pair do pacote betapart
+```{r}
+library(betapart)
+beta_pa <- beta.pair(composicao_pa, 
+                     index.family = "sorensen")
+```
+
+-   Montar um data frame com os resultados de cada valor de dissimilaridade, dando nome às colunas (Sorensen, Substituição, Aninhamento)
+```{r}
+data.frame_pa <- data.frame(round(as.numeric(beta_pa$beta.sor), 2),
+                            round(as.numeric(beta_pa$beta.sim), 2),
+                            round(as.numeric(beta_pa$beta.sne), 2))
+colnames(data.frame_pa) <- c("Sorensen", "Substituição", "Aninhamento")
+```
+
+-   Agora calcule a dissimilaridade da elevação entre os pontos usando a base de dados de preditoras
+```{r}
+ele_dis <- vegdist(preditoras$alt, method = "euclidean")
+dados_ele <- as.numeric(ele_dis)
+```
+
+-   Junte os dois objetos (diversidade beta e elevação) em um novo data frame
+```{r}
+dados_dis <- data.frame(dados_ele, data.frame_pa)
+```
+
+-   Agora podemos avaliar a relação entre as partições da diversidade beta e as diferenças de elevação usando modelos lineares
+```{r}
+m1_sor <- lm(Sorensen ~ dados_ele, data = dados_dis)
+summary(m1_sor)
+
+m2_sub <- lm(Substituição ~ dados_ele, data = dados_dis)
+summary(m2_sub)
+
+m3_ani <- lm(Aninhamento ~ dados_ele, data = dados_dis)
+summary(m3_ani)
+```
+
+-   Plote os gráficos das três relações em uma unica figura
+```{r}
+library(ggplot2)
+f1a <- ggplot(data = dados_dis, aes(x = dados_ele,
+                                    y = Sorensen)) + 
+    geom_point(size = 4, 
+               shape = 21, 
+               fill = "#440154FF") +
+    geom_smooth(method = lm, 
+                se = FALSE, 
+                color = "black") +
+    labs(x = "Diferença elevação (m)", 
+         y = "Diversidade beta\n total")
+
+f1b <- ggplot(data = dados_dis, aes(x = dados_ele,
+                                    y = Substituição)) + 
+    geom_point(size = 4, 
+               shape = 21, 
+               fill = "#21908CFF") +
+    geom_smooth(method = lm, 
+                se = FALSE, 
+                color = "black") +
+    labs(x = "Diferença elevação (m)", 
+         y = "Componente de\n substituição")
+
+f1c <- ggplot(data = dados_dis, aes(x = dados_ele,
+                                    y = Aninhamento)) + 
+    geom_point(size = 4, 
+               shape = 21, 
+               fill = "#FDE725FF") +
+    geom_smooth(method = lm, 
+                se = FALSE, 
+                color = "black") +
+    labs(x = "Diferença elevação (m)", 
+         y = "Componente de\n aninhamento")
+
+library(patchwork)
+f1a|f1b|f1c
+```
+
+-   Agora podemos fazer as mesmas análises utilizando os dadoa de abundância. Pra isso vamos utilizar a função beta.pair.abund e salvar os valores em um objeto. Lembrando que como os dados são de abundância, vamos calcular usando o índice de bray-curtis
+```{r}
+resultado_ab <- beta.pair.abund(composicao_especies, index.family = "bray")
+```
+
+-   Faça um data frame com os resultados alterando os nomes das colunas para Bray, Balanceada, Gradiente e junte os valores de diferençda de elevação gerado anteriormente
+```{r}
+data.frame_ab <- data.frame(round(as.numeric(resultado_ab$beta.bray), 2),
+                            round(as.numeric(resultado_ab$beta.bray.bal), 2),
+                            round(as.numeric(resultado_ab$beta.bray.gra), 2))
+
+colnames(data.frame_ab) <- c("Bray", "Balanceada", "Gradiente")
+
+dados_dis_ab <- data.frame(dados_ele, data.frame_ab)
+```
+
+-   Calculamos mais uma vez os modelos para avaliar as relações entre diferença da elevação e dissimilaridade das assembleias
+```{r}
+m1_bc <- lm(Bray ~ dados_ele, data = dados_dis_ab)
+summary(m1_bc)
+
+m2_bal <- lm(Balanceada ~ dados_ele, data = dados_dis_ab)
+summary(m2_bal)
+
+m3_gra <- lm(Gradiente ~ dados_ele, data = dados_dis_ab)
+summary(m3_gra)
+```
+
+-   Novamente vamos plotar os gráficos para interpretar visualmente as relações
+```{r}
+f1d <- ggplot(data = dados_dis_ab, aes(x = dados_ele,
+                                    y = Bray)) + 
+    geom_point(size = 4, 
+               shape = 21, 
+               fill = "#440154FF") +
+    geom_smooth(method = lm, 
+                se = FALSE, 
+                color = "black") +
+    labs(x = "Diferença elevação (m)", 
+         y = "Diversidade beta\n total (Bray-Curtis)")
+
+f1e <- ggplot(data = dados_dis_ab, aes(x = dados_ele,
+                                    y = Balanceada)) + 
+    geom_point(size = 4, 
+               shape = 21, 
+               fill = "#21908CFF") +
+    geom_smooth(method = lm, 
+                se = FALSE, 
+                color = "black") +
+    labs(x = "Diferença elevação (m)", 
+         y = "Componente de\n variação balanceada")
+
+f1f <- ggplot(data = dados_dis_ab, aes(x = dados_ele,
+                                    y = Gradiente)) + 
+    geom_point(size = 4, 
+               shape = 21, 
+               fill = "#FDE725FF") +
+    geom_smooth(method = lm, 
+                se = FALSE, 
+                color = "black") +
+    labs(x = "Diferença elevação (m)", 
+         y = "Componente de\n gradiente")
+```
+
+-   Agora junte os seis gráficos em uma única figura
+```{r}
+(f1a|f1b|f1c)/(f1d|f1e|f1f)
+```
+
+-   Uma outra forma de avaliar as diferenças na composição entre as assembleias e relacionar com as variações ambientais é utilizando o teste de Mantel. Esse teste avalia a relação entre duas matrizes de distância.
+
+-   Vamos primeiro calcular a dissimilaridade de Bray-Curtis com nossos dados de abundância
+```{r}
+dis_bray <- vegdist(composicao_especies, "bray")
+```
+
+-   Agora vamos calcular a distância abiental entre os pontos amostrais
+-   Primeiro vamos selecionar as colunas 4, 14 a 27
+-   Depois padronizar os valores (variáveis com diferentes medidas) 
+-   Calcular a dissimilaridade usando a distância euclidiana
+-   Certifique-se de salvar os resultados em um novo objeto
+```{r}
+dis_amb <- 
+  preditoras |> 
+  select(4, 14:17) |> 
+  decostand("standardize") |> 
+  vegdist("euclidian")
+```
+
+-   Agora podemos avaliar a relação entre as duas matrizes (distância ambiental e dissimilaridade)
+```{r}
+mantel(dis_amb, dis_bray)
+```
+
+-   Podemos criar um data frame em um novo objeto com as distâncias e plotar em um gráfico para vermos a relação usando a função melt do pacote reshape
+```{r}
+library(reshape)
+bray_amb <- data.frame(bray = melt(as.matrix(dis_bray))$value, 
+                              amb = melt(as.matrix(dis_amb))$value)
+```
+
+-   Agora plotamos o gráfico usando o objeto criado anteriormente
+```{r}
+f2a <- ggplot(bray_amb , aes(x = amb,
+                             y = bray)) +
+    geom_point(size = 4, shape = 21, fill = "darkorange", alpha = 0.7) +
+    labs(x = "Distância Ambiental", 
+         y = "Dissimilaridade (Bray-Curtis)") +
+  geom_smooth(method = lm, 
+                se = FALSE, 
+                color = "black")
+```
+
+-   Locais mais próximos tendem a possuir características mais similares, bem como composição similar
+-   Podemos usar o teste de Mantel para a valiar se diferenças na similaridade estão relacionadas com a diferença da distância entre os pontos
+
+-   Primeiro vamos calcular as distâncias entre os pontos utilizando as coordenadas no objeto preditoras. Para isso vamos utilizar a função rdist.earth do pacote fields (calcula em milhas ou quilômetros)
+```{r}
+library(fields)
+
+dist <- 
+  preditoras |> 
+  select(lon, lat) |> 
+  rdist.earth(miles=F) |> 
+  as.dist() 
+```
+
+-   Agora vamos avaliar a relação entre a distância e similaridade e similaridade ambiental e distancia
+```{r}
+mantel(dist, dis_bray)
+mantel(dist, dis_amb)
+```
+
+-   Podemos criar um data frame com as distâncias e depois usar para plotar os gráficos
+```{r}
+bray_amb_dist <- data.frame(bray = melt(as.matrix(dis_bray))$value,
+                            amb = melt(as.matrix(dis_amb))$value,
+                            dist =  melt(as.matrix(dist))$value)
+```
+
+-   Gráficos das três relações em uma figura 
+```{r}
+f2b <- ggplot(bray_amb_dist , aes(x = dist,
+                                  y = bray)) +
+    geom_point(size = 4, shape = 21, fill = "#BB3754FF", alpha = 0.7) +
+    labs(x = "Distância geográfica (Km)", 
+         y = "Dissimilaridade (Bray-Curtis)") #+
+  # geom_smooth(method = lm, 
+  #               se = FALSE, 
+  #               color = "black")
+
+f2c <- ggplot(bray_amb_dist , aes(x = dist,
+                                  y = amb)) +
+    geom_point(size = 4, shape = 21, fill = "#FCFFA4FF", alpha = 0.7) +
+    labs(x = "Distância geográfica (Km)", 
+         y = "Distância ambiental") +
+  geom_smooth(method = lm, 
+                se = FALSE, 
+                color = "black")
+
+f2a|f2b|f2c
+```
+
+-   Podemos avaliar a relação entre a dissimilaridade e a distância ambiental controlando pela distância geográfica
+-   Para isso vamos utilizar o teste de Mantel Parcial
+
+```{r}
+mantel.partial(dis_bray, dis_amb, dist)
+mantel(dis_bray, dis_amb)
+```
+
+-   Assim como calculamos a diversidade beta taxonômica, também podemos fazer para a funcional
+
+-   Primeiro vamos carregar a base de dados dos atributos das espécies
+```{r}
+traits <- read.table('atributos.txt', h = T)
+```
+
+-   Vamos padronizar os nomes das espécies nas nossas duas bases. Uma vez que a base dos atributos possui o nome completo, vamos utilizar essa informação e substituir no nome das colunas do nosso objeto da composição. Em seguida, adicione o nome das espécies às linhas de traits elimine a coluna com o nome das espécies
+```{r}
+colnames(composicao_especies) <- traits$Species
+colnames(composicao_pa)<- traits$Species
+rownames(traits) <- traits$Species
+traits <- traits[, -1]
+
+```
+
+```{r}
+library(FD)
+traits_gd <- as.matrix(gowdis(traits))
+
+func <- iNEXTbeta3D(data = t(composicao_especies), 
+            diversity = 'FD',
+            datatype = 'abundance',
+            base = "coverage",
+            FDdistM = traits_gd, 
+            FDtype = 'AUC', 
+            nboot = 10,
+            FDcut_number = 30)
+```
+
