@@ -1,0 +1,138 @@
+---
+title: "Diversidade beta"
+output: html_document
+date: "2024-05-22"
+---
+
+-   Carregar as base de dados 
+```{r}
+
+```
+
+-   Somar os valores de abundancia por ponto, dar nome as linhas da base de composção igual a coluna ponto e em seguida remover a coluna ponto da base
+```{r}
+
+```
+
+
+-   Criar novo objeto transformando os dados em presença e ausencia usando a função decostand do paote vegan
+```{r}
+
+```
+
+-   Calcular a diversidade beta com dados de presença e ausencia usando a função beta.pair do pacote betapart
+```{r}
+
+```
+
+-   Montar um data frame com os resultados de cada valor de dissimilaridade, dando nome às colunas (Sorensen, Substituição, Aninhamento)
+```{r}
+
+```
+
+-   Agora calcule a dissimilaridade da elevação entre os pontos usando a base de dados de preditoras
+```{r}
+
+```
+
+-   Junte os dois objetos (diversidade beta e elevação) em um novo data frame
+```{r}
+
+```
+
+-   Agora podemos avaliar a relação entre as partições da diversidade beta e as diferenças de elevação usando modelos lineares
+```{r}
+
+```
+
+-   Plote os gráficos das três relações em uma unica figura
+```{r}
+
+```
+
+-   Agora podemos fazer as mesmas análises utilizando os dadoa de abundância. Pra isso vamos utilizar a função beta.pair.abund e salvar os valores em um objeto. Lembrando que como os dados são de abundância, vamos calcular usando o índice de bray-curtis
+```{r}
+
+```
+
+-   Faça um data frame com os resultados alterando os nomes das colunas para Bray, Balanceada, Gradiente e junte os valores de diferençda de elevação gerado anteriormente
+```{r}
+
+```
+
+-   Calculamos mais uma vez os modelos para avaliar as relações entre diferença da elevação e dissimilaridade das assembleias
+```{r}
+
+```
+
+-   Novamente vamos plotar os gráficos para interpretar visualmente as relações
+```{r}
+
+```
+
+-   Agora junte os seis gráficos em uma única figura
+```{r}
+
+```
+
+-   Uma outra forma de avaliar as diferenças na composição entre as assembleias e relacionar com as variações ambientais é utilizando o teste de Mantel. Esse teste avalia a relação entre duas matrizes de distância.
+
+-   Vamos primeiro calcular a dissimilaridade de Bray-Curtis com nossos dados de abundância
+```{r}
+
+```
+
+-   Agora vamos calcular a distância abiental entre os pontos amostrais
+-   Primeiro vamos selecionar as colunas 4, 14 a 27
+-   Depois padronizar os valores (variáveis com diferentes medidas) 
+-   Calcular a dissimilaridade usando a distância euclidiana
+-   Certifique-se de salvar os resultados em um novo objeto
+```{r}
+
+```
+
+-   Agora podemos avaliar a relação entre as duas matrizes (distância ambiental e dissimilaridade)
+```{r}
+
+```
+
+-   Podemos criar um data frame em um novo objeto com as distâncias e plotar em um gráfico para vermos a relação usando a função melt do pacote reshape
+```{r}
+
+```
+
+-   Agora plotamos o gráfico usando o objeto criado anteriormente
+```{r}
+
+```
+
+-   Locais mais próximos tendem a possuir características mais similares, bem como composição similar
+-   Podemos usar o teste de Mantel para a valiar se diferenças na similaridade estão relacionadas com a diferença da distância entre os pontos
+
+-   Primeiro vamos calcular as distâncias entre os pontos utilizando as coordenadas no objeto preditoras. Para isso vamos utilizar a função rdist.earth do pacote fields (calcula em milhas ou quilômetros)
+```{r}
+
+```
+
+-   Agora vamos avaliar a relação entre a distância e similaridade e similaridade ambiental e distancia
+```{r}
+
+```
+
+-   Podemos criar um data frame com as distâncias e depois usar para plotar os gráficos
+```{r}
+
+```
+
+-   Gráficos das três relações em uma figura 
+```{r}
+
+```
+
+-   Podemos avaliar a relação entre a dissimilaridade e a distância ambiental controlando pela distância geográfica
+-   Para isso vamos utilizar o teste de Mantel Parcial
+
+```{r}
+
+```
+
