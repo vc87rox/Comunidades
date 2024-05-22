@@ -1,390 +1,851 @@
-"Parcela" "Ambiente" "Corpo" "Estacao" "Especie" "Abundancia"
-"A1-P01C" "C" "A" "Seca" "Rhinella mirandaribeiroi" 1
-"A1-P05C" "C" "A" "Seca" "Rhinella marina" 1
-"A1-P07C" "C" "A" "Seca" "Pithecopus hypochondrialis" 1
-"A1-P07C" "C" "A" "Seca" "Pseudopaludicola canga" 22
-"A1-P08C" "C" "A" "Seca" "Dendropsophus minutus" 2
-"A1-P08C" "C" "A" "Seca" "Scinax ruber" 1
-"A1-P08C" "C" "A" "Seca" "Trachycephalus typhonius" 3
-"A1-P09C" "C" "A" "Seca" "Dendropsophus minutus" 3
-"A1-P09C" "C" "A" "Seca" "Pithecopus hypochondrialis" 8
-"A1-P09C" "C" "A" "Seca" "Trachycephalus typhonius" 1
-"A1-P10C" "C" "A" "Seca" "Osteocephalus taurinus" 1
-"A1-P10C" "C" "A" "Seca" "Pithecopus hypochondrialis" 1
-"A1-P11FL" "F" "A" "Seca" "Adenomera andreae" 1
-"A1-P12FL" "F" "A" "Seca" "Osteocephalus taurinus" 1
-"A1-P13FL" "F" "A" "Seca" "Allobates carajas" 7
-"A1-P13FL" "F" "A" "Seca" "Ameerega flavopicta" 1
-"A1-P13FL" "F" "A" "Seca" "Osteocephalus taurinus" 2
-"A1-P13FL" "F" "A" "Seca" "Pristimantis aff. fenestratus" 10
-"A1-P13FL" "F" "A" "Seca" "Proceratophrys concavitympanum" 3
-"A1-P14FL" "F" "A" "Seca" "Allobates carajas" 1
-"A1-P14FL" "F" "A" "Seca" "Pipa arrabali" 1
-"A1-P14FL" "F" "A" "Seca" "Pristimantis aff. fenestratus" 3
-"A1-P18FL" "F" "A" "Seca" "Adenomera andreae" 2
-"A1.1" "" "A" "Seca" "Allobates carajas" 1
-"A1.2" "" "A" "Seca" "Pristimantis aff. fenestratus" 1
-"A1.3" "" "A" "Seca" "Pristimantis aff. fenestratus" 1
-"A1.4" "" "A" "Seca" "Scinax ruber" 1
-"A2-P16FL" "F" "A" "Seca" "Adenomera andreae" 2
-"A2-P16FL" "F" "A" "Seca" "Ameerega flavopicta" 1
-"A2-P16FL" "F" "A" "Seca" "Rhinella margaritifera" 1
-"A2-P16FL" "F" "A" "Seca" "Ameerega flavopicta" 2
-"A2-P16FL" "F" "A" "Seca" "Pithecopus hypochondrialis" 1
-"A2-P17FL" "F" "A" "Seca" "Adenomera andreae" 3
-"A2-P19FL" "F" "A" "Seca" "Adenomera andreae" 1
-"A2-P19FL" "F" "A" "Seca" "Proceratophrys concavitympanum" 1
-"A2-P20FL" "F" "A" "Seca" "Adenomera andreae" 3
-"A2-P20FL" "F" "A" "Seca" "Ameerega flavopicta" 3
-"A2-P20FL" "F" "A" "Seca" "Rhinella marina" 4
-"A2-P20FL" "F" "A" "Seca" "Allobates carajas" 50
-"A2-P20FL" "F" "A" "Seca" "Ameerega flavopicta" 7
-"A2-P20FL" "F" "A" "Seca" "Pristimantis aff. fenestratus" 14
-"A2-P23C" "C" "A" "Seca" "Leptodactylus fuscus" 6
-"A2-P23C" "C" "A" "Seca" "Leptodactylus paraensis" 2
-"A2-P23C" "C" "A" "Seca" "Pseudopaludicola canga" 24
-"A2-P28C" "C" "A" "Seca" "Dendropsophus minutus" 6
-"A2-P28C" "C" "A" "Seca" "Leptodactylus paraensis" 1
-"A2-P28C" "C" "A" "Seca" "Pithecopus hypochondrialis" 5
-"A2-P28C" "C" "A" "Seca" "Pseudopaludicola canga" 1
-"A2-P31FL" "F" "A" "Seca" "Adenomera andreae" 1
-"A2-P31FL" "F" "A" "Seca" "Allobates carajas" 8
-"A2-P31FL" "F" "A" "Seca" "Ameerega flavopicta" 12
-"A2-P31FL" "F" "A" "Seca" "Osteocephalus taurinus" 1
-"A2-P31FL" "F" "A" "Seca" "Pristimantis aff. fenestratus" 38
-"A2-P32FL" "F" "A" "Seca" "Allobates carajas" 29
-"A2-P32FL" "F" "A" "Seca" "Ameerega flavopicta" 4
-"A3-P35C" "C" "A" "Seca" "Leptodactylus fuscus" 1
-"A3-P35C" "C" "A" "Seca" "Pseudopaludicola canga" 10
-"A3-P39C" "C" "A" "Seca" "Leptodactylus paraensis" 1
-"A3-P39C" "C" "A" "Seca" "Pristimantis aff. fenestratus" 4
-"A3-P41C" "C" "A" "Seca" "Pristimantis aff. fenestratus" 3
-"A3-P45FL" "F" "A" "Seca" "Allobates carajas" 1
-"A3-P45FL" "F" "A" "Seca" "Pristimantis aff. fenestratus" 9
-"A3-P46FL" "F" "A" "Seca" "Adenomera andreae" 2
-"A3-P46FL" "F" "A" "Seca" "Ameerega flavopicta" 2
-"A3-P46FL" "F" "A" "Seca" "Osteocephalus taurinus" 1
-"A3-P46FL" "F" "A" "Seca" "Pristimantis aff. fenestratus" 30
-"A3-P47FL" "F" "A" "Seca" "Pristimantis aff. fenestratus" 1
-"A3-P47FL" "F" "A" "Seca" "Scinax ruber" 1
-"A3-P48FL" "F" "A" "Seca" "Scinax ruber" 2
-"B1-P51C" "C" "B" "Seca" "Leptodactylus paraensis" 1
-"B1-P58C" "C" "B" "Seca" "Leptodactylus paraensis" 4
-"B1-P59FL" "F" "B" "Seca" "Allobates carajas" 2
-"B1-P59FL" "F" "B" "Seca" "Ameerega flavopicta" 6
-"B1-P59FL" "F" "B" "Seca" "Osteocephalus taurinus" 2
-"B1-P59FL" "F" "B" "Seca" "Pristimantis aff. fenestratus" 11
-"B1-P60FL" "F" "B" "Seca" "Allobates carajas" 6
-"B1-P60FL" "F" "B" "Seca" "Osteocephalus taurinus" 3
-"B1-P60FL" "F" "B" "Seca" "Pipa arrabali" 1
-"B1-P60FL" "F" "B" "Seca" "Pristimantis aff. fenestratus" 13
-"B1-P61FL" "F" "B" "Seca" "Osteocephalus taurinus" 1
-"B1-P62FL" "F" "B" "Seca" "Boana cinerascens" 2
-"B1-P62FL" "F" "B" "Seca" "Osteocephalus taurinus" 2
-"B1-P62FL" "F" "B" "Seca" "Pristimantis aff. fenestratus" 3
-"B1-P62FL" "F" "B" "Seca" "Rhinella margaritifera" 1
-"B1-P62FL" "F" "B" "Seca" "Scinax fuscomarginatus" 1
-"B1-P63FL" "F" "B" "Seca" "Ameerega flavopicta" 5
-"B1-P63FL" "F" "B" "Seca" "Dendropsophus minutus" 1
-"B1-P63FL" "F" "B" "Seca" "Pipa arrabali" 1
-"B1-P63FL" "F" "B" "Seca" "Pristimantis aff. fenestratus" 27
-"B1-P63FL" "F" "B" "Seca" "Proceratophrys concavitympanum" 2
-"B1-P63FL" "F" "B" "Seca" "Scinax ruber" 1
-"B1.1" "" "B" "Seca" "Allobates carajas" 1
-"B1.2" "" "B" "Seca" "Ameerega flavopicta" 1
-"B2-P67C" "C" "B" "Seca" "Dendropsophus minutus" 25
-"B2-P67C" "C" "B" "Seca" "Leptodactylus fuscus" 4
-"B2-P67C" "C" "B" "Seca" "Leptodactylus paraensis" 4
-"B2-P73C" "C" "B" "Seca" "Leptodactylus paraensis" 1
-"B2-P75FL" "F" "B" "Seca" "Adenomera andreae" 3
-"B2-P76FL" "F" "B" "Seca" "Adenomera andreae" 9
-"B2-P77FL" "F" "B" "Seca" "Adenomera andreae" 2
-"B2-P77FL" "F" "B" "Seca" "Ameerega flavopicta" 1
-"B2-P78FL" "F" "B" "Seca" "Adenomera andreae" 8
-"B2-P79FL" "F" "B" "Seca" "Adenomera andreae" 2
-"B2-P79FL" "F" "B" "Seca" "Allobates carajas" 2
-"B2-P79FL" "F" "B" "Seca" "Proceratophrys concavitympanum" 2
-"B2-P79FL" "F" "B" "Seca" "Adenomera andreae" 1
-"B2-P79FL" "F" "B" "Seca" "Osteocephalus taurinus" 2
-"B2-P79FL" "F" "B" "Seca" "Pristimantis aff. fenestratus" 1
-"B2-P79FL" "F" "B" "Seca" "Proceratophrys concavitympanum" 5
-"B2-P80FL" "F" "B" "Seca" "Adenomera andreae" 1
-"B2-P80FL" "F" "B" "Seca" "Ameerega flavopicta" 1
-"B2-P80FL" "F" "B" "Seca" "Osteocephalus taurinus" 2
-"B2-P80FL" "F" "B" "Seca" "Pristimantis aff. fenestratus" 21
-"B2.1" "" "B" "Seca" "Ameerega flavopicta" 1
-"B2.2" "" "B" "Seca" "Adenomera andreae" 1
-"C-P84C" "C" "C" "Seca" "Pithecopus hypochondrialis" 3
-"C-P85C" "C" "C" "Seca" "Dendropsophus minutus" 19
-"C-P85C" "C" "C" "Seca" "Leptodactylus paraensis" 13
-"C-P86C" "C" "C" "Seca" "Boana boans" 1
-"C-P86C" "C" "C" "Seca" "Dendropsophus minutus" 6
-"C-P86C" "C" "C" "Seca" "Leptodactylus paraensis" 2
-"C-P86C" "C" "C" "Seca" "Pithecopus hypochondrialis" 2
-"C-P91FL" "F" "C" "Seca" "Rhinella margaritifera" 1
-"C-P92FL" "F" "C" "Seca" "Adenomera andreae" 1
-"C-P93FL" "F" "C" "Seca" "Adenomera andreae" 1
-"C-P94FL" "F" "C" "Seca" "Adenomera andreae" 1
-"C-P94FL" "F" "C" "Seca" "Adenomera andreae" 2
-"C-P95FL" "F" "C" "Seca" "Adenomera andreae" 1
-"C-P95FL" "F" "C" "Seca" "Ameerega flavopicta" 1
-"C-P95FL" "F" "C" "Seca" "Proceratophrys concavitympanum" 2
-"C-P95FL" "F" "C" "Seca" "Adenomera andreae" 1
-"C-P95FL" "F" "C" "Seca" "Scinax fuscomarginatus" 2
-"C-P96FL" "F" "C" "Seca" "Allobates carajas" 1
-"C-P96FL" "F" "C" "Seca" "Adenomera andreae" 1
-"C-P96FL" "F" "C" "Seca" "Allobates carajas" 2
-"C-P96FL" "F" "C" "Seca" "Osteocephalus taurinus" 1
-"C-P96FL" "F" "C" "Seca" "Pristimantis aff. fenestratus" 1
-"" "" "" "Chuvosa" "Proceratophrys concavitympanum" 1
-"" "" "" "Chuvosa" "Pseudopaludicola canga" 12
-"A1-P01C" "C" "A" "Chuvosa" "Adenomera kayapo" 6
-"A1-P01C" "C" "A" "Chuvosa" "Allobates carajas" 8
-"A1-P01C" "C" "A" "Chuvosa" "Boana multifasciata" 2
-"A1-P01C" "C" "A" "Chuvosa" "Dendropsophus minusculus" 12
-"A1-P01C" "C" "A" "Chuvosa" "Dendropsophus minutus" 21
-"A1-P01C" "C" "A" "Chuvosa" "Osteocephalus taurinus" 2
-"A1-P01C" "C" "A" "Chuvosa" "Physalaemus ephippifer" 3
-"A1-P01C" "C" "A" "Chuvosa" "Pithecopus hypochondrialis" 4
-"A1-P01C" "C" "A" "Chuvosa" "Pseudopaludicola canga" 30
-"A1-P01C" "C" "A" "Chuvosa" "Scinax fuscomarginatus" 33
-"A1-P01C" "C" "A" "Chuvosa" "Scinax ruber" 4
-"A1-P03C" "C" "A" "Chuvosa" "Adenomera kayapo" 1
-"A1-P03C" "C" "A" "Chuvosa" "Pristimantis aff. fenestratus" 2
-"A1-P03C" "C" "A" "Chuvosa" "Scinax fuscomarginatus" 1
-"A1-P04C" "C" "A" "Chuvosa" "Ameerega flavopicta" 1
-"A1-P04C" "C" "A" "Chuvosa" "Pithecopus hypochondrialis" 3
-"A1-P05C" "C" "A" "Chuvosa" "Adenomera kayapo" 4
-"A1-P05C" "C" "A" "Chuvosa" "Physalaemus ephippifer" 1
-"A1-P05C" "C" "A" "Chuvosa" "Pithecopus hypochondrialis" 4
-"A1-P05C" "C" "A" "Chuvosa" "Pseudopaludicola canga" 23
-"A1-P06C" "C" "A" "Chuvosa" "Adenomera kayapo" 5
-"A1-P06C" "C" "A" "Chuvosa" "Ameerega flavopicta" 8
-"A1-P06C" "C" "A" "Chuvosa" "Boana multifasciata" 1
-"A1-P06C" "C" "A" "Chuvosa" "Dendropsophus minutus" 1
-"A1-P06C" "C" "A" "Chuvosa" "Pristimantis aff. fenestratus" 2
-"A1-P07C" "C" "A" "Chuvosa" "Adenomera andreae" 1
-"A1-P07C" "C" "A" "Chuvosa" "Boana raniceps" 1
-"A1-P07C" "C" "A" "Chuvosa" "Dendropsophus minusculus" 35
-"A1-P07C" "C" "A" "Chuvosa" "Dendropsophus minutus" 5
-"A1-P07C" "C" "A" "Chuvosa" "Leptodactylus paraensis" 2
-"A1-P07C" "C" "A" "Chuvosa" "Physalaemus ephippifer" 1
-"A1-P07C" "C" "A" "Chuvosa" "Pithecopus hypochondrialis" 5
-"A1-P07C" "C" "A" "Chuvosa" "Pseudopaludicola canga" 1
-"A1-P07C" "C" "A" "Chuvosa" "Scinax fuscomarginatus" 11
-"A1-P08C" "C" "A" "Chuvosa" "Boana multifasciata" 2
-"A1-P08C" "C" "A" "Chuvosa" "Dendropsophus microcephalus" 9
-"A1-P08C" "C" "A" "Chuvosa" "Dendropsophus minutus" 12
-"A1-P08C" "C" "A" "Chuvosa" "Leptodactylus paraensis" 1
-"A1-P08C" "C" "A" "Chuvosa" "Pithecopus hypochondrialis" 9
-"A1-P08C" "C" "A" "Chuvosa" "Pseudopaludicola canga" 10
-"A1-P08C" "C" "A" "Chuvosa" "Scinax fuscomarginatus" 1
-"A1-P08C" "C" "A" "Chuvosa" "Scinax nebulosus" 3
-"A1-P08C" "C" "A" "Chuvosa" "Scinax ruber" 3
-"A1-P08C" "C" "A" "Chuvosa" "Trachycephalus typhonius" 1
-"A1-P09C" "C" "A" "Chuvosa" "Dendropsophus microcephalus" 5
-"A1-P09C" "C" "A" "Chuvosa" "Dendropsophus minutus" 10
-"A1-P09C" "C" "A" "Chuvosa" "Leptodactylus paraensis" 1
-"A1-P09C" "C" "A" "Chuvosa" "Pithecopus hypochondrialis" 6
-"A1-P09C" "C" "A" "Chuvosa" "Pseudopaludicola canga" 7
-"A1-P09C" "C" "A" "Chuvosa" "Scinax fuscomarginatus" 3
-"A1-P09C" "C" "A" "Chuvosa" "Scinax ruber" 5
-"A1-P10C" "C" "A" "Chuvosa" "Dendropsophus minutus" 2
-"A1-P10C" "C" "A" "Chuvosa" "Pithecopus hypochondrialis" 4
-"A1-P10C" "C" "A" "Chuvosa" "Pseudopaludicola canga" 10
-"A1-P10C" "C" "A" "Chuvosa" "Scinax ruber" 2
-"A1-P11FL" "F" "A" "Chuvosa" "Rhaebo guttatus" 1
-"A1-P12FL" "F" "A" "Chuvosa" "Adenomera andreae" 1
-"A1-P12FL" "F" "A" "Chuvosa" "Osteocephalus taurinus" 1
-"A1-P12FL" "F" "A" "Chuvosa" "Pithecopus hypochondrialis" 1
-"A1-P13FL" "F" "A" "Chuvosa" "Pristimantis aff. fenestratus" 1
-"A1-P18FL" "F" "A" "Chuvosa" "Adenomera andreae" 1
-"A1-P18FL" "F" "A" "Chuvosa" "Ameerega flavopicta" 1
-"A1-P18FL" "F" "A" "Chuvosa" "Adenomera andreae" 2
-"A2-P16FL" "F" "A" "Chuvosa" "Hyalinobatrachium iaspidiense" 2
-"A2-P16FL" "F" "A" "Chuvosa" "Pithecopus hypochondrialis" 1
-"A2-P17FL" "F" "A" "Chuvosa" "Adenomera kayapo" 1
-"A2-P17FL" "F" "A" "Chuvosa" "Ameerega flavopicta" 1
-"A2-P17FL" "F" "A" "Chuvosa" "Pithecopus hypochondrialis" 1
-"A2-P19FL" "F" "A" "Chuvosa" "Allobates carajas" 1
-"A2-P19FL" "F" "A" "Chuvosa" "Boana raniceps" 1
-"A2-P19FL" "F" "A" "Chuvosa" "Osteocephalus taurinus" 1
-"A2-P20FL" "F" "A" "Chuvosa" "Ameerega flavopicta" 1
-"A2-P20FL" "F" "A" "Chuvosa" "Boana boans" 1
-"A2-P22C" "C" "A" "Chuvosa" "Adenomera kayapo" 1
-"A2-P22C" "C" "A" "Chuvosa" "Ameerega flavopicta" 6
-"A2-P22C" "C" "A" "Chuvosa" "Dendropsophus minutus" 1
-"A2-P22C" "C" "A" "Chuvosa" "Pithecopus hypochondrialis" 2
-"A2-P22C" "C" "A" "Chuvosa" "Pristimantis aff. fenestratus" 1
-"A2-P23C" "C" "A" "Chuvosa" "Adenomera kayapo" 6
-"A2-P23C" "C" "A" "Chuvosa" "Allobates carajas" 3
-"A2-P23C" "C" "A" "Chuvosa" "Boana multifasciata" 3
-"A2-P23C" "C" "A" "Chuvosa" "Dendropsophus minusculus" 19
-"A2-P23C" "C" "A" "Chuvosa" "Dendropsophus minutus" 22
-"A2-P23C" "C" "A" "Chuvosa" "Leptodactylus paraensis" 1
-"A2-P23C" "C" "A" "Chuvosa" "Pithecopus hypochondrialis" 7
-"A2-P23C" "C" "A" "Chuvosa" "Pristimantis aff. fenestratus" 2
-"A2-P23C" "C" "A" "Chuvosa" "Pseudopaludicola canga" 23
-"A2-P23C" "C" "A" "Chuvosa" "Scinax fuscomarginatus" 31
-"A2-P24C" "C" "A" "Chuvosa" "Pithecopus hypochondrialis" 4
-"A2-P25C" "C" "A" "Chuvosa" "Ameerega flavopicta" 16
-"A2-P25C" "C" "A" "Chuvosa" "Boana multifasciata" 3
-"A2-P25C" "C" "A" "Chuvosa" "Dendropsophus minutus" 1
-"A2-P25C" "C" "A" "Chuvosa" "Leptodactylus paraensis" 1
-"A2-P25C" "C" "A" "Chuvosa" "Physalaemus ephippifer" 1
-"A2-P25C" "C" "A" "Chuvosa" "Pithecopus hypochondrialis" 7
-"A2-P25C" "C" "A" "Chuvosa" "Pristimantis aff. fenestratus" 3
-"A2-P25C" "C" "A" "Chuvosa" "Pseudopaludicola canga" 33
-"A2-P26C" "C" "A" "Chuvosa" "Ameerega flavopicta" 1
-"A2-P26C" "C" "A" "Chuvosa" "Pithecopus hypochondrialis" 4
-"A2-P26C" "C" "A" "Chuvosa" "Pseudopaludicola canga" 28
-"A2-P27C" "C" "A" "Chuvosa" "Ameerega flavopicta" 6
-"A2-P27C" "C" "A" "Chuvosa" "Leptodactylus paraensis" 1
-"A2-P27C" "C" "A" "Chuvosa" "Physalaemus ephippifer" 1
-"A2-P27C" "C" "A" "Chuvosa" "Pithecopus hypochondrialis" 3
-"A2-P27C" "C" "A" "Chuvosa" "Pseudopaludicola canga" 3
-"A2-P28C" "C" "A" "Chuvosa" "Allobates carajas" 8
-"A2-P28C" "C" "A" "Chuvosa" "Boana multifasciata" 2
-"A2-P28C" "C" "A" "Chuvosa" "Dendropsophus leucophyllatus" 4
-"A2-P28C" "C" "A" "Chuvosa" "Dendropsophus minusculus" 10
-"A2-P28C" "C" "A" "Chuvosa" "Dendropsophus minutus" 13
-"A2-P28C" "C" "A" "Chuvosa" "Leptodactylus paraensis" 3
-"A2-P28C" "C" "A" "Chuvosa" "Pithecopus hypochondrialis" 9
-"A2-P28C" "C" "A" "Chuvosa" "Pseudopaludicola canga" 16
-"A2-P28C" "C" "A" "Chuvosa" "Scinax fuscomarginatus" 17
-"A2-P28C" "C" "A" "Chuvosa" "Scinax ruber" 2
-"A2-P29C" "C" "A" "Chuvosa" "Pseudopaludicola canga" 3
-"A2-P31FL" "F" "A" "Chuvosa" "Proceratophrys concavitympanum" 1
-"A2-P31FL" "F" "A" "Chuvosa" "Rhaebo guttatus" 1
-"A3-P33C" "C" "A" "Chuvosa" "Boana multifasciata" 2
-"A3-P33C" "C" "A" "Chuvosa" "Pithecopus hypochondrialis" 7
-"A3-P34C" "C" "A" "Chuvosa" "Leptodactylus paraensis" 1
-"A3-P34C" "C" "A" "Chuvosa" "Pithecopus hypochondrialis" 5
-"A3-P34C" "C" "A" "Chuvosa" "Rhinella marina" 1
-"A3-P34C" "C" "A" "Chuvosa" "Scinax ruber" 1
-"A3-P35C" "C" "A" "Chuvosa" "Boana raniceps" 1
-"A3-P35C" "C" "A" "Chuvosa" "Dendropsophus minusculus" 3
-"A3-P35C" "C" "A" "Chuvosa" "Dendropsophus minutus" 13
-"A3-P35C" "C" "A" "Chuvosa" "Leptodactylus fuscus" 2
-"A3-P35C" "C" "A" "Chuvosa" "Leptodactylus paraensis" 2
-"A3-P35C" "C" "A" "Chuvosa" "Pithecopus hypochondrialis" 1
-"A3-P35C" "C" "A" "Chuvosa" "Pseudopaludicola canga" 73
-"A3-P35C" "C" "A" "Chuvosa" "Scinax fuscomarginatus" 9
-"A3-P35C" "C" "A" "Chuvosa" "Scinax ruber" 6
-"A3-P37C" "C" "A" "Chuvosa" "Adenomera kayapo" 2
-"A3-P37C" "C" "A" "Chuvosa" "Ameerega flavopicta" 1
-"A3-P37C" "C" "A" "Chuvosa" "Pithecopus hypochondrialis" 13
-"A3-P37C" "C" "A" "Chuvosa" "Pseudopaludicola canga" 1
-"A3-P38C" "C" "A" "Chuvosa" "Ameerega flavopicta" 2
-"A3-P38C" "C" "A" "Chuvosa" "Leptodactylus paraensis" 1
-"A3-P38C" "C" "A" "Chuvosa" "Pithecopus hypochondrialis" 5
-"A3-P38C" "C" "A" "Chuvosa" "Pseudopaludicola canga" 18
-"A3-P39C" "C" "A" "Chuvosa" "Leptodactylus paraensis" 1
-"A3-P41C" "C" "A" "Chuvosa" "Adenomera kayapo" 2
-"A3-P41C" "C" "A" "Chuvosa" "Dendropsophus minusculus" 15
-"A3-P41C" "C" "A" "Chuvosa" "Physalaemus ephippifer" 2
-"A3-P41C" "C" "A" "Chuvosa" "Pithecopus hypochondrialis" 9
-"A3-P41C" "C" "A" "Chuvosa" "Pseudopaludicola canga" 7
-"A3-P43FL" "F" "A" "Chuvosa" "Adenomera andreae" 1
-"A3-P44FL" "F" "A" "Chuvosa" "Adenomera kayapo" 1
-"A3-P46FL" "F" "A" "Chuvosa" "Pristimantis aff. fenestratus" 1
-"B1-P51C" "C" "B" "Chuvosa" "Rhinella mirandaribeiroi" 1
-"B1-P52C" "C" "B" "Chuvosa" "Ameerega flavopicta" 2
-"B1-P52C" "C" "B" "Chuvosa" "Dendropsophus marmoratus" 3
-"B1-P52C" "C" "B" "Chuvosa" "Leptodactylus paraensis" 1
-"B1-P53C" "C" "B" "Chuvosa" "Pithecopus hypochondrialis" 1
-"B1-P54C" "C" "B" "Chuvosa" "Leptodactylus paraensis" 1
-"B1-P55C" "C" "B" "Chuvosa" "Adenomera kayapo" 3
-"B1-P55C" "C" "B" "Chuvosa" "Pithecopus hypochondrialis" 4
-"B1-P55C" "C" "B" "Chuvosa" "Pristimantis aff. fenestratus" 3
-"B1-P56C" "C" "B" "Chuvosa" "Allobates carajas" 2
-"B1-P56C" "C" "B" "Chuvosa" "Dendropsophus minusculus" 2
-"B1-P56C" "C" "B" "Chuvosa" "Dendropsophus minutus" 2
-"B1-P56C" "C" "B" "Chuvosa" "Pithecopus hypochondrialis" 2
-"B1-P56C" "C" "B" "Chuvosa" "Pseudopaludicola canga" 31
-"B1-P56C" "C" "B" "Chuvosa" "Scinax fuscomarginatus" 3
-"B1-P57C" "C" "B" "Chuvosa" "Adenomera kayapo" 1
-"B1-P57C" "C" "B" "Chuvosa" "Pithecopus hypochondrialis" 2
-"B1-P58C" "C" "B" "Chuvosa" "Adenomera kayapo" 1
-"B1-P58C" "C" "B" "Chuvosa" "Ameerega flavopicta" 1
-"B1-P58C" "C" "B" "Chuvosa" "Leptodactylus paraensis" 2
-"B1-P58C" "C" "B" "Chuvosa" "Pithecopus hypochondrialis" 2
-"B1-P60FL" "F" "B" "Chuvosa" "Boana cinerascens" 1
-"B1-P60FL" "F" "B" "Chuvosa" "Hyalinobatrachium iaspidiense" 2
-"B1-P60FL" "F" "B" "Chuvosa" "Pristimantis aff. fenestratus" 2
-"B1-P61FL" "F" "B" "Chuvosa" "Pristimantis aff. fenestratus" 1
-"B1-P62FL" "F" "B" "Chuvosa" "Adenomera andreae" 2
-"B2-P65C" "C" "B" "Chuvosa" "Ameerega flavopicta" 1
-"B2-P65C" "C" "B" "Chuvosa" "Pristimantis aff. fenestratus" 1
-"B2-P67C" "C" "B" "Chuvosa" "Dendropsophus minutus" 11
-"B2-P67C" "C" "B" "Chuvosa" "Leptodactylus paraensis" 1
-"B2-P67C" "C" "B" "Chuvosa" "Pithecopus hypochondrialis" 10
-"B2-P67C" "C" "B" "Chuvosa" "Scinax fuscomarginatus" 6
-"B2-P69C" "C" "B" "Chuvosa" "Pithecopus hypochondrialis" 3
-"B2-P70C" "C" "B" "Chuvosa" "Leptodactylus paraensis" 2
-"B2-P70C" "C" "B" "Chuvosa" "Pithecopus hypochondrialis" 6
-"B2-P70C" "C" "B" "Chuvosa" "Pristimantis aff. fenestratus" 1
-"B2-P72C" "C" "B" "Chuvosa" "Adenomera kayapo" 1
-"B2-P73C" "C" "B" "Chuvosa" "Ameerega flavopicta" 1
-"B2-P73C" "C" "B" "Chuvosa" "Leptodactylus fuscus" 2
-"B2-P73C" "C" "B" "Chuvosa" "Leptodactylus paraensis" 1
-"B2-P73C" "C" "B" "Chuvosa" "Pithecopus hypochondrialis" 12
-"B2-P73C" "C" "B" "Chuvosa" "Pseudopaludicola canga" 1
-"B2-P74C" "C" "B" "Chuvosa" "Pithecopus hypochondrialis" 4
-"B2-P75FL" "F" "B" "Chuvosa" "Adenomera andreae" 1
-"B2-P76FL" "F" "B" "Chuvosa" "Pristimantis aff. fenestratus" 1
-"B2-P76FL" "F" "B" "Chuvosa" "Rhinella marina" 2
-"B2-P76FL" "F" "B" "Chuvosa" "Adenomera andreae" 9
-"B2-P77FL" "F" "B" "Chuvosa" "Rhaebo guttatus" 1
-"B2-P77FL" "F" "B" "Chuvosa" "Rhinella margaritifera" 1
-"B2-P77FL" "F" "B" "Chuvosa" "Rhinella marina" 8
-"B2-P77FL" "F" "B" "Chuvosa" "Adenomera andreae" 7
-"B2-P78FL" "F" "B" "Chuvosa" "Ctenophryne geayi" 1
-"B2-P78FL" "F" "B" "Chuvosa" "Rhinella marina" 1
-"B2-P79FL" "F" "B" "Chuvosa" "Rhinella margaritifera" 2
-"B2-P79FL" "F" "B" "Chuvosa" "Rhinella marina" 1
-"B2-P80FL" "F" "B" "Chuvosa" "Adenomera andreae" 2
-"B2-P80FL" "F" "B" "Chuvosa" "Pristimantis aff. fenestratus" 1
-"C-P82C" "C" "C" "Chuvosa" "Adenomera kayapo" 1
-"C-P82C" "C" "C" "Chuvosa" "Physalaemus ephippifer" 1
-"C-P84C" "C" "C" "Chuvosa" "Boana raniceps" 2
-"C-P84C" "C" "C" "Chuvosa" "Dendropsophus minutus" 2
-"C-P84C" "C" "C" "Chuvosa" "Leptodactylus fuscus" 1
-"C-P84C" "C" "C" "Chuvosa" "Pithecopus hypochondrialis" 2
-"C-P84C" "C" "C" "Chuvosa" "Pseudopaludicola canga" 15
-"C-P85C" "C" "C" "Chuvosa" "Dendropsophus minutus" 4
-"C-P85C" "C" "C" "Chuvosa" "Leptodactylus paraensis" 2
-"C-P85C" "C" "C" "Chuvosa" "Pithecopus hypochondrialis" 4
-"C-P85C" "C" "C" "Chuvosa" "Scinax fuscomarginatus" 7
-"C-P86C" "C" "C" "Chuvosa" "Dendropsophus melanargyreus" 35
-"C-P86C" "C" "C" "Chuvosa" "Dendropsophus minutus" 43
-"C-P86C" "C" "C" "Chuvosa" "Leptodactylus fuscus" 1
-"C-P86C" "C" "C" "Chuvosa" "Pithecopus hypochondrialis" 10
-"C-P86C" "C" "C" "Chuvosa" "Pseudopaludicola canga" 41
-"C-P86C" "C" "C" "Chuvosa" "Trachycephalus typhonius" 7
-"C-P88C" "C" "C" "Chuvosa" "Pseudopaludicola canga" 1
-"C-P89C" "C" "C" "Chuvosa" "Dendropsophus minutus" 1
-"C-P89C" "C" "C" "Chuvosa" "Pithecopus hypochondrialis" 8
-"C-P89C" "C" "C" "Chuvosa" "Pseudopaludicola canga" 1
-"C-P89C" "C" "C" "Chuvosa" "Trachycephalus typhonius" 1
-"C-P90C" "C" "C" "Chuvosa" "Rhaebo guttatus" 1
-"C-P92FL" "F" "C" "Chuvosa" "Rhinella marina" 3
-"C-P92FL" "F" "C" "Chuvosa" "Adenomera kayapo" 1
-"C-P92FL" "F" "C" "Chuvosa" "Pristimantis aff. fenestratus" 1
-"C-P93FL" "F" "C" "Chuvosa" "Rhinella margaritifera" 2
-"C-P93FL" "F" "C" "Chuvosa" "Rhinella marina" 4
-"C-P93FL" "F" "C" "Chuvosa" "Adenomera kayapo" 3
-"C-P93FL" "F" "C" "Chuvosa" "Leptodactylus paraensis" 1
-"C-P93FL" "F" "C" "Chuvosa" "Pristimantis aff. fenestratus" 1
-"C-P93FL" "F" "C" "Chuvosa" "Rhinella marina" 1
-"C-P94FL" "F" "C" "Chuvosa" "Rhinella marina" 1
-"C-P94FL" "F" "C" "Chuvosa" "Adenomera andreae" 2
-"C-P94FL" "F" "C" "Chuvosa" "Leptodactylus paraensis" 2
-"C-P94FL" "F" "C" "Chuvosa" "Pithecopus hypochondrialis" 1
-"C-P95FL" "F" "C" "Chuvosa" "Leptodactylus rhodomystax" 1
-"C-P95FL" "F" "C" "Chuvosa" "Proceratophrys concavitympanum" 2
-"C-P95FL" "F" "C" "Chuvosa" "Rhinella marina" 3
-"C-P95FL" "F" "C" "Chuvosa" "Adenomera andreae" 5
-"C-P96FL" "F" "C" "Chuvosa" "Rhinella marina" 1
-"C-P96FL" "F" "C" "Chuvosa" "Allobates carajas" 3
-"C-P96FL" "F" "C" "Chuvosa" "Proceratophrys concavitympanum" 1
+"Parcela" "Ambiente" "Corpo" "Compartimento" "Metodo" "Estacao" "Especie" "Grupo" "Abundancia"
+"A1-P01C" "C" "A" "A1" "BA" "Seca" "Rhinella mirandaribeiroi" "A" 1
+"A1-P01C" "C" "A" "A1" "BA" "Seca" "Tropidurus oreadicus" "R" 3
+"A1-P02C" "C" "A" "A1" "BA" "Seca" "ESO" "" 0
+"A1-P02C" "C" "A" "A1" "BA" "Seca" "Oxyrhopus trigeminus" "R" 1
+"A1-P03C" "C" "A" "A1" "BA" "Seca" "ESO" "" 0
+"A1-P04C" "C" "A" "A1" "BA" "Seca" "ESO" "" 0
+"A1-P04C" "C" "A" "A1" "BA" "Seca" "Tropidurus oreadicus" "R" 1
+"A1-P05C" "C" "A" "A1" "BA" "Seca" "ESO" "" 0
+"A1-P05C" "C" "A" "A1" "BA" "Seca" "Rhinella marina" "A" 1
+"A1-P05C" "C" "A" "A1" "BA" "Seca" "Tropidurus oreadicus" "R" 1
+"A1-P06C" "C" "A" "A1" "BA" "Seca" "ESO" "" 0
+"A1-P06C" "C" "A" "A1" "BA" "Seca" "Tropidurus oreadicus" "R" 1
+"A1-P07C" "C" "A" "A1" "BA" "Seca" "Kinosternon scorpioides" "R" 3
+"A1-P07C" "C" "A" "A1" "BA" "Seca" "Oxyrhopus trigeminus" "R" 1
+"A1-P07C" "C" "A" "A1" "BA" "Seca" "Pithecopus hypochondrialis" "A" 1
+"A1-P07C" "C" "A" "A1" "BA" "Seca" "Pseudopaludicola canga" "A" 22
+"A1-P08C" "C" "A" "A1" "BA" "Seca" "Dendropsophus minutus" "A" 2
+"A1-P08C" "C" "A" "A1" "BA" "Seca" "Scinax ruber" "A" 1
+"A1-P08C" "C" "A" "A1" "BA" "Seca" "Trachycephalus typhonius" "A" 3
+"A1-P08C" "C" "A" "A1" "BA" "Seca" "Tropidurus oreadicus" "R" 3
+"A1-P09C" "C" "A" "A1" "BA" "Seca" "Dendropsophus minutus" "A" 3
+"A1-P09C" "C" "A" "A1" "BA" "Seca" "ESO" "" 0
+"A1-P09C" "C" "A" "A1" "BA" "Seca" "Paleosuchus trigonatus" "R" 1
+"A1-P09C" "C" "A" "A1" "BA" "Seca" "Pithecopus hypochondrialis" "A" 8
+"A1-P09C" "C" "A" "A1" "BA" "Seca" "Trachycephalus typhonius" "A" 1
+"A1-P09C" "C" "A" "A1" "BA" "Seca" "Tropidurus oreadicus" "R" 1
+"A1-P10C" "C" "A" "A1" "BA" "Seca" "Osteocephalus taurinus" "A" 1
+"A1-P10C" "C" "A" "A1" "BA" "Seca" "Pithecopus hypochondrialis" "A" 1
+"A1-P10C" "C" "A" "A1" "BA" "Seca" "Tropidurus oreadicus" "R" 6
+"A1-P11FL" "F" "A" "A1" "BA" "Seca" "Adenomera andreae" "A" 1
+"A1-P11FL" "F" "A" "A1" "BA" "Seca" "Cercosaura ocellata" "R" 2
+"A1-P11FL" "F" "A" "A1" "BA" "Seca" "Chatogekko amazonicus" "R" 1
+"A1-P11FL" "F" "A" "A1" "BA" "Seca" "Dactyloa punctata" "R" 1
+"A1-P11FL" "F" "A" "A1" "BA" "Seca" "Kentropyx calcarata" "R" 2
+"A1-P12FL" "F" "A" "A1" "BA" "Seca" "Chatogekko amazonicus" "R" 3
+"A1-P12FL" "F" "A" "A1" "BA" "Seca" "Dipsas catesbyi" "R" 1
+"A1-P12FL" "F" "A" "A1" "BA" "Seca" "Osteocephalus taurinus" "A" 1
+"A1-P13FL" "F" "A" "A1" "BA" "Seca" "Allobates carajas" "A" 7
+"A1-P13FL" "F" "A" "A1" "BA" "Seca" "Ameerega flavopicta" "A" 1
+"A1-P13FL" "F" "A" "A1" "BA" "Seca" "Neusticurus bicarinatus" "R" 3
+"A1-P13FL" "F" "A" "A1" "BA" "Seca" "Osteocephalus taurinus" "A" 2
+"A1-P13FL" "F" "A" "A1" "BA" "Seca" "Potamites ecpleopus" "R" 8
+"A1-P13FL" "F" "A" "A1" "BA" "Seca" "Pristimantis aff. fenestratus" "A" 10
+"A1-P13FL" "F" "A" "A1" "BA" "Seca" "Proceratophrys concavitympanum" "A" 3
+"A1-P14FL" "F" "A" "A1" "BA" "Seca" "Allobates carajas" "A" 1
+"A1-P14FL" "F" "A" "A1" "BA" "Seca" "Chatogekko amazonicus" "R" 1
+"A1-P14FL" "F" "A" "A1" "BA" "Seca" "Chironius fuscus" "R" 2
+"A1-P14FL" "F" "A" "A1" "BA" "Seca" "Leptodeira annulata" "R" 1
+"A1-P14FL" "F" "A" "A1" "BA" "Seca" "Neusticurus bicarinatus" "R" 7
+"A1-P14FL" "F" "A" "A1" "BA" "Seca" "Pipa arrabali" "A" 1
+"A1-P14FL" "F" "A" "A1" "BA" "Seca" "Pristimantis aff. fenestratus" "A" 3
+"A1-P15FL" "F" "A" "A1" "BA" "Seca" "Chatogekko amazonicus" "R" 2
+"A1-P18FL" "F" "A" "A1" "AIQ" "Seca" "Adenomera andreae" "A" 2
+"A1-P18FL" "F" "A" "A1" "AIQ" "Seca" "Cercosaura ocellata" "R" 9
+"A1-P18FL" "F" "A" "A1" "AIQ" "Seca" "ESO" "" 0
+"A1-P18FL" "F" "A" "A1" "AIQ" "Seca" "Kentropyx calcarata" "R" 2
+"A1-P18FL" "F" "A" "A1" "BA" "Seca" "Dactyloa punctata" "R" 1
+"A1-P18FL" "F" "A" "A1" "BA" "Seca" "ESO" "" 0
+"A1-P18FL" "F" "A" "A1" "BA" "Seca" "Micrurus paraensis" "R" 1
+"A1.1" "" "A" "A" "O" "Seca" "Allobates carajas" "A" 1
+"A1.2" "" "A" "A" "O" "Seca" "Pristimantis aff. fenestratus" "A" 1
+"A1.3" "" "A" "A" "O" "Seca" "Pristimantis aff. fenestratus" "A" 1
+"A1.4" "" "A" "A" "O" "Seca" "Scinax ruber" "A" 1
+"A1.5" "" "A" "A" "O" "Seca" "Potamites ecpleopus" "R" 1
+"A1.6" "" "A" "A" "O" "Seca" "Leptodeira annulata" "R" 1
+"A2-P16FL" "F" "A" "A2" "AIQ" "Seca" "Adenomera andreae" "A" 2
+"A2-P16FL" "F" "A" "A2" "AIQ" "Seca" "Ameerega flavopicta" "A" 1
+"A2-P16FL" "F" "A" "A2" "AIQ" "Seca" "Cercosaura ocellata" "R" 2
+"A2-P16FL" "F" "A" "A2" "AIQ" "Seca" "Chatogekko amazonicus" "R" 2
+"A2-P16FL" "F" "A" "A2" "AIQ" "Seca" "Drymoluber dichrous" "R" 1
+"A2-P16FL" "F" "A" "A2" "AIQ" "Seca" "ESO" "" 0
+"A2-P16FL" "F" "A" "A2" "AIQ" "Seca" "Kentropyx calcarata" "R" 3
+"A2-P16FL" "F" "A" "A2" "AIQ" "Seca" "Rhinella margaritifera" "A" 1
+"A2-P16FL" "F" "A" "A2" "BA" "Seca" "Adelphostigma quadriocellata" "R" 1
+"A2-P16FL" "F" "A" "A2" "BA" "Seca" "Ameerega flavopicta" "A" 2
+"A2-P16FL" "F" "A" "A2" "BA" "Seca" "Cercosaura ocellata" "R" 1
+"A2-P16FL" "F" "A" "A2" "BA" "Seca" "Kentropyx calcarata" "R" 4
+"A2-P16FL" "F" "A" "A2" "BA" "Seca" "Pithecopus hypochondrialis" "A" 1
+"A2-P16FL" "F" "A" "A2" "BA" "Seca" "Plica umbra" "R" 1
+"A2-P17FL" "F" "A" "A2" "AIQ" "Seca" "Adenomera andreae" "A" 3
+"A2-P17FL" "F" "A" "A2" "AIQ" "Seca" "Cercosaura ocellata" "R" 3
+"A2-P17FL" "F" "A" "A2" "AIQ" "Seca" "ESO" "" 0
+"A2-P17FL" "F" "A" "A2" "AIQ" "Seca" "Kentropyx calcarata" "R" 1
+"A2-P17FL" "F" "A" "A2" "AIQ" "Seca" "Plica plica" "R" 1
+"A2-P17FL" "F" "A" "A2" "AIQ" "Seca" "Tretioscincus agilis" "R" 1
+"A2-P17FL" "F" "A" "A2" "BA" "Seca" "Chatogekko amazonicus" "R" 5
+"A2-P17FL" "F" "A" "A2" "BA" "Seca" "ESO" "" 0
+"A2-P19FL" "F" "A" "A2" "AIQ" "Seca" "Adenomera andreae" "A" 1
+"A2-P19FL" "F" "A" "A2" "AIQ" "Seca" "Cercosaura ocellata" "R" 3
+"A2-P19FL" "F" "A" "A2" "AIQ" "Seca" "Copeoglossum nigropunctatum" "R" 2
+"A2-P19FL" "F" "A" "A2" "AIQ" "Seca" "ESO" "" 0
+"A2-P19FL" "F" "A" "A2" "AIQ" "Seca" "Kentropyx calcarata" "R" 3
+"A2-P19FL" "F" "A" "A2" "AIQ" "Seca" "Leptodeira annulata" "R" 1
+"A2-P19FL" "F" "A" "A2" "AIQ" "Seca" "Proceratophrys concavitympanum" "A" 1
+"A2-P19FL" "F" "A" "A2" "AIQ" "Seca" "Tretioscincus agilis" "R" 2
+"A2-P19FL" "F" "A" "A2" "BA" "Seca" "Chatogekko amazonicus" "R" 1
+"A2-P19FL" "F" "A" "A2" "BA" "Seca" "Dipsas catesbyi" "R" 2
+"A2-P19FL" "F" "A" "A2" "BA" "Seca" "Imantodes cenchoa" "R" 1
+"A2-P19FL" "F" "A" "A2" "BA" "Seca" "Kentropyx calcarata" "R" 1
+"A2-P19FL" "F" "A" "A2" "BA" "Seca" "Lachesis muta" "R" 1
+"A2-P19FL" "F" "A" "A2" "BA" "Seca" "Potamites ecpleopus" "R" 1
+"A2-P19FL" "F" "A" "A2" "BA" "Seca" "Sibon nebulatus" "R" 1
+"A2-P20FL" "F" "A" "A2" "AIQ" "Seca" "Adenomera andreae" "A" 3
+"A2-P20FL" "F" "A" "A2" "AIQ" "Seca" "Ameerega flavopicta" "A" 3
+"A2-P20FL" "F" "A" "A2" "AIQ" "Seca" "Copeoglossum nigropunctatum" "R" 2
+"A2-P20FL" "F" "A" "A2" "AIQ" "Seca" "ESO" "" 0
+"A2-P20FL" "F" "A" "A2" "AIQ" "Seca" "Kentropyx calcarata" "R" 3
+"A2-P20FL" "F" "A" "A2" "AIQ" "Seca" "Rhinella marina" "A" 4
+"A2-P20FL" "F" "A" "A2" "AIQ" "Seca" "Tretioscincus agilis" "R" 1
+"A2-P20FL" "F" "A" "A2" "BA" "Seca" "Allobates carajas" "A" 50
+"A2-P20FL" "F" "A" "A2" "BA" "Seca" "Ameerega flavopicta" "A" 7
+"A2-P20FL" "F" "A" "A2" "BA" "Seca" "Leptodeira annulata" "R" 1
+"A2-P20FL" "F" "A" "A2" "BA" "Seca" "Potamites ecpleopus" "R" 2
+"A2-P20FL" "F" "A" "A2" "BA" "Seca" "Pristimantis aff. fenestratus" "A" 14
+"A2-P21C" "C" "A" "A2" "BA" "Seca" "ESO" "" 0
+"A2-P21C" "C" "A" "A2" "BA" "Seca" "Tropidurus oreadicus" "R" 1
+"A2-P22C" "C" "A" "A2" "BA" "Seca" "ESO" "" 0
+"A2-P22C" "C" "A" "A2" "BA" "Seca" "Oxybelis aeneus" "R" 1
+"A2-P23C" "C" "A" "A2" "BA" "Seca" "Ameiva ameiva" "R" 2
+"A2-P23C" "C" "A" "A2" "BA" "Seca" "Leptodactylus fuscus" "A" 6
+"A2-P23C" "C" "A" "A2" "BA" "Seca" "Leptodactylus paraensis" "A" 2
+"A2-P23C" "C" "A" "A2" "BA" "Seca" "Pseudopaludicola canga" "A" 24
+"A2-P24C" "C" "A" "A2" "BA" "Seca" "ESO" "" 0
+"A2-P24C" "C" "A" "A2" "BA" "Seca" "Tropidurus oreadicus" "R" 3
+"A2-P25C" "C" "A" "A2" "BA" "Seca" "Tropidurus oreadicus" "R" 3
+"A2-P26C" "C" "A" "A2" "BA" "Seca" "ESO" "" 0
+"A2-P26C" "C" "A" "A2" "BA" "Seca" "Tropidurus oreadicus" "R" 1
+"A2-P27C" "C" "A" "A2" "BA" "Seca" "ESO" "" 0
+"A2-P28C" "C" "A" "A2" "BA" "Seca" "Caiman crocodilus" "R" 1
+"A2-P28C" "C" "A" "A2" "BA" "Seca" "Dendropsophus minutus" "A" 6
+"A2-P28C" "C" "A" "A2" "BA" "Seca" "Kinosternon scorpioides" "R" 1
+"A2-P28C" "C" "A" "A2" "BA" "Seca" "Leptodactylus paraensis" "A" 1
+"A2-P28C" "C" "A" "A2" "BA" "Seca" "Pithecopus hypochondrialis" "A" 5
+"A2-P28C" "C" "A" "A2" "BA" "Seca" "Pseudopaludicola canga" "A" 1
+"A2-P29C" "C" "A" "A2" "BA" "Seca" "ESO" "" 0
+"A2-P29C" "C" "A" "A2" "BA" "Seca" "Tropidurus oreadicus" "R" 3
+"A2-P30C" "C" "A" "A2" "BA" "Seca" "ESO" "" 0
+"A2-P30C" "C" "A" "A2" "BA" "Seca" "Tropidurus oreadicus" "R" 1
+"A2-P31FL" "F" "A" "A2" "BA" "Seca" "Adenomera andreae" "A" 1
+"A2-P31FL" "F" "A" "A2" "BA" "Seca" "Allobates carajas" "A" 8
+"A2-P31FL" "F" "A" "A2" "BA" "Seca" "Ameerega flavopicta" "A" 12
+"A2-P31FL" "F" "A" "A2" "BA" "Seca" "Cercosaura ocellata" "R" 1
+"A2-P31FL" "F" "A" "A2" "BA" "Seca" "Chatogekko amazonicus" "R" 2
+"A2-P31FL" "F" "A" "A2" "BA" "Seca" "Chelonoidis denticulatus" "R" 1
+"A2-P31FL" "F" "A" "A2" "BA" "Seca" "Norops fuscoauratus" "R" 1
+"A2-P31FL" "F" "A" "A2" "BA" "Seca" "Osteocephalus taurinus" "A" 1
+"A2-P31FL" "F" "A" "A2" "BA" "Seca" "Potamites ecpleopus" "R" 1
+"A2-P31FL" "F" "A" "A2" "BA" "Seca" "Pristimantis aff. fenestratus" "A" 38
+"A2-P32FL" "F" "A" "A2" "BA" "Seca" "Allobates carajas" "A" 29
+"A2-P32FL" "F" "A" "A2" "BA" "Seca" "Ameerega flavopicta" "A" 4
+"A2-P32FL" "F" "A" "A2" "BA" "Seca" "Dactyloa punctata" "R" 1
+"A2-P32FL" "F" "A" "A2" "BA" "Seca" "Dipsas catesbyi" "R" 1
+"A3-P33C" "C" "A" "A3" "BA" "Seca" "ESO" "" 0
+"A3-P33C" "C" "A" "A3" "BA" "Seca" "Tropidurus oreadicus" "R" 1
+"A3-P34C" "C" "A" "A3" "BA" "Seca" "ESO" "" 0
+"A3-P35C" "C" "A" "A3" "BA" "Seca" "Ameiva ameiva" "R" 2
+"A3-P35C" "C" "A" "A3" "BA" "Seca" "Leptodactylus fuscus" "A" 1
+"A3-P35C" "C" "A" "A3" "BA" "Seca" "Pseudopaludicola canga" "A" 10
+"A3-P35C" "C" "A" "A3" "BA" "Seca" "Tropidurus oreadicus" "R" 5
+"A3-P36C" "C" "A" "A3" "BA" "Seca" "ESO" "" 0
+"A3-P37C" "C" "A" "A3" "BA" "Seca" "Oxybelis aeneus" "R" 1
+"A3-P37C" "C" "A" "A3" "BA" "Seca" "Tropidurus oreadicus" "R" 1
+"A3-P38C" "C" "A" "A3" "BA" "Seca" "ESO" "" 0
+"A3-P38C" "C" "A" "A3" "BA" "Seca" "Tropidurus oreadicus" "R" 1
+"A3-P39C" "C" "A" "A3" "BA" "Seca" "Helicops angulatus" "R" 1
+"A3-P39C" "C" "A" "A3" "BA" "Seca" "Leptodactylus paraensis" "A" 1
+"A3-P39C" "C" "A" "A3" "BA" "Seca" "Pristimantis aff. fenestratus" "A" 4
+"A3-P39C" "C" "A" "A3" "BA" "Seca" "Tropidurus oreadicus" "R" 14
+"A3-P40C" "C" "A" "A3" "BA" "Seca" "ESO" "" 0
+"A3-P40C" "C" "A" "A3" "BA" "Seca" "Tropidurus oreadicus" "R" 1
+"A3-P41C" "C" "A" "A3" "BA" "Seca" "Leptodeira annulata" "R" 1
+"A3-P41C" "C" "A" "A3" "BA" "Seca" "Pristimantis aff. fenestratus" "A" 3
+"A3-P41C" "C" "A" "A3" "BA" "Seca" "Tropidurus oreadicus" "R" 3
+"A3-P42C" "C" "A" "A3" "BA" "Seca" "ESO" "" 0
+"A3-P43FL" "F" "A" "A3" "BA" "Seca" "ESO" "" 0
+"A3-P44FL" "F" "A" "A3" "BA" "Seca" "Adelphostigma occipitalis" "R" 1
+"A3-P44FL" "F" "A" "A3" "BA" "Seca" "Cercosaura ocellata" "R" 3
+"A3-P44FL" "F" "A" "A3" "BA" "Seca" "ESO" "" 0
+"A3-P45FL" "F" "A" "A3" "BA" "Seca" "Allobates carajas" "A" 1
+"A3-P45FL" "F" "A" "A3" "BA" "Seca" "Cercosaura ocellata" "R" 2
+"A3-P45FL" "F" "A" "A3" "BA" "Seca" "Pristimantis aff. fenestratus" "A" 9
+"A3-P46FL" "F" "A" "A3" "BA" "Seca" "Adenomera andreae" "A" 2
+"A3-P46FL" "F" "A" "A3" "BA" "Seca" "Ameerega flavopicta" "A" 2
+"A3-P46FL" "F" "A" "A3" "BA" "Seca" "Cercosaura ocellata" "R" 1
+"A3-P46FL" "F" "A" "A3" "BA" "Seca" "Chatogekko amazonicus" "R" 1
+"A3-P46FL" "F" "A" "A3" "BA" "Seca" "Copeoglossum nigropunctatum" "R" 2
+"A3-P46FL" "F" "A" "A3" "BA" "Seca" "Neusticurus bicarinatus" "R" 3
+"A3-P46FL" "F" "A" "A3" "BA" "Seca" "Osteocephalus taurinus" "A" 1
+"A3-P46FL" "F" "A" "A3" "BA" "Seca" "Plica plica" "R" 1
+"A3-P46FL" "F" "A" "A3" "BA" "Seca" "Plica umbra" "R" 1
+"A3-P46FL" "F" "A" "A3" "BA" "Seca" "Potamites ecpleopus" "R" 2
+"A3-P46FL" "F" "A" "A3" "BA" "Seca" "Pristimantis aff. fenestratus" "A" 30
+"A3-P47FL" "F" "A" "A3" "BA" "Seca" "Cercosaura ocellata" "R" 1
+"A3-P47FL" "F" "A" "A3" "BA" "Seca" "Chatogekko amazonicus" "R" 1
+"A3-P47FL" "F" "A" "A3" "BA" "Seca" "Neusticurus bicarinatus" "R" 1
+"A3-P47FL" "F" "A" "A3" "BA" "Seca" "Pristimantis aff. fenestratus" "A" 1
+"A3-P47FL" "F" "A" "A3" "BA" "Seca" "Scinax ruber" "A" 1
+"A3-P48FL" "F" "A" "A3" "BA" "Seca" "Cercosaura ocellata" "R" 4
+"A3-P48FL" "F" "A" "A3" "BA" "Seca" "Scinax ruber" "A" 2
+"B1-P49C" "C" "B" "B1" "BA" "Seca" "Oxyrhopus trigeminus" "R" 1
+"B1-P49C" "C" "B" "B1" "BA" "Seca" "Tropidurus oreadicus" "R" 1
+"B1-P50C" "C" "B" "B1" "BA" "Seca" "ESO" "" 0
+"B1-P50C" "C" "B" "B1" "BA" "Seca" "Tropidurus oreadicus" "R" 1
+"B1-P51C" "C" "B" "B1" "BA" "Seca" "Leptodactylus paraensis" "A" 1
+"B1-P51C" "C" "B" "B1" "BA" "Seca" "Tropidurus oreadicus" "R" 3
+"B1-P52C" "C" "B" "B1" "BA" "Seca" "ESO" "" 0
+"B1-P53C" "C" "B" "B1" "BA" "Seca" "ESO" "" 0
+"B1-P54C" "C" "B" "B1" "BA" "Seca" "Tropidurus oreadicus" "R" 2
+"B1-P55C" "C" "B" "B1" "BA" "Seca" "ESO" "" 0
+"B1-P55C" "C" "B" "B1" "BA" "Seca" "Tropidurus oreadicus" "R" 1
+"B1-P56C" "C" "B" "B1" "BA" "Seca" "Chironius flavolineatus" "R" 1
+"B1-P56C" "C" "B" "B1" "BA" "Seca" "ESO" "" 0
+"B1-P57C" "C" "B" "B1" "BA" "Seca" "ESO" "" 0
+"B1-P58C" "C" "B" "B1" "BA" "Seca" "Leptodactylus paraensis" "A" 4
+"B1-P58C" "C" "B" "B1" "BA" "Seca" "Tropidurus oreadicus" "R" 4
+"B1-P59FL" "F" "B" "B1" "BA" "Seca" "Allobates carajas" "A" 2
+"B1-P59FL" "F" "B" "B1" "BA" "Seca" "Ameerega flavopicta" "A" 6
+"B1-P59FL" "F" "B" "B1" "BA" "Seca" "Chatogekko amazonicus" "R" 9
+"B1-P59FL" "F" "B" "B1" "BA" "Seca" "Leptodeira annulata" "R" 1
+"B1-P59FL" "F" "B" "B1" "BA" "Seca" "Osteocephalus taurinus" "A" 2
+"B1-P59FL" "F" "B" "B1" "BA" "Seca" "Pristimantis aff. fenestratus" "A" 11
+"B1-P60FL" "F" "B" "B1" "BA" "Seca" "Allobates carajas" "A" 6
+"B1-P60FL" "F" "B" "B1" "BA" "Seca" "Chatogekko amazonicus" "R" 4
+"B1-P60FL" "F" "B" "B1" "BA" "Seca" "Neusticurus bicarinatus" "R" 1
+"B1-P60FL" "F" "B" "B1" "BA" "Seca" "Norops fuscoauratus" "R" 1
+"B1-P60FL" "F" "B" "B1" "BA" "Seca" "Osteocephalus taurinus" "A" 3
+"B1-P60FL" "F" "B" "B1" "BA" "Seca" "Oxyrhopus petolarius" "R" 1
+"B1-P60FL" "F" "B" "B1" "BA" "Seca" "Pipa arrabali" "A" 1
+"B1-P60FL" "F" "B" "B1" "BA" "Seca" "Potamites ecpleopus" "R" 4
+"B1-P60FL" "F" "B" "B1" "BA" "Seca" "Pristimantis aff. fenestratus" "A" 13
+"B1-P61FL" "F" "B" "B1" "BA" "Seca" "Chatogekko amazonicus" "R" 12
+"B1-P61FL" "F" "B" "B1" "BA" "Seca" "Osteocephalus taurinus" "A" 1
+"B1-P62FL" "F" "B" "B1" "BA" "Seca" "Anilius scytale" "R" 1
+"B1-P62FL" "F" "B" "B1" "BA" "Seca" "Boana cinerascens" "A" 2
+"B1-P62FL" "F" "B" "B1" "BA" "Seca" "Chatogekko amazonicus" "R" 1
+"B1-P62FL" "F" "B" "B1" "BA" "Seca" "Osteocephalus taurinus" "A" 2
+"B1-P62FL" "F" "B" "B1" "BA" "Seca" "Pristimantis aff. fenestratus" "A" 3
+"B1-P62FL" "F" "B" "B1" "BA" "Seca" "Rhinella margaritifera" "A" 1
+"B1-P62FL" "F" "B" "B1" "BA" "Seca" "Scinax fuscomarginatus" "A" 1
+"B1-P63FL" "F" "B" "B1" "BA" "Seca" "Ameerega flavopicta" "A" 5
+"B1-P63FL" "F" "B" "B1" "BA" "Seca" "Cercosaura ocellata" "R" 1
+"B1-P63FL" "F" "B" "B1" "BA" "Seca" "Chatogekko amazonicus" "R" 1
+"B1-P63FL" "F" "B" "B1" "BA" "Seca" "Dendropsophus minutus" "A" 1
+"B1-P63FL" "F" "B" "B1" "BA" "Seca" "Neusticurus bicarinatus" "R" 6
+"B1-P63FL" "F" "B" "B1" "BA" "Seca" "Pipa arrabali" "A" 1
+"B1-P63FL" "F" "B" "B1" "BA" "Seca" "Potamites ecpleopus" "R" 8
+"B1-P63FL" "F" "B" "B1" "BA" "Seca" "Pristimantis aff. fenestratus" "A" 27
+"B1-P63FL" "F" "B" "B1" "BA" "Seca" "Proceratophrys concavitympanum" "A" 2
+"B1-P63FL" "F" "B" "B1" "BA" "Seca" "Scinax ruber" "A" 1
+"B1-P64FL" "F" "B" "B1" "BA" "Seca" "ESO" "" 0
+"B1.1" "" "B" "B" "O" "Seca" "Allobates carajas" "A" 1
+"B1.2" "" "B" "B" "O" "Seca" "Ameerega flavopicta" "A" 1
+"B1.3" "" "B" "B" "O" "Seca" "Dipsas catesbyi" "R" 1
+"B2-P65C" "C" "B" "B2" "BA" "Seca" "ESO" "" 0
+"B2-P66C" "C" "B" "B2" "BA" "Seca" "ESO" "" 0
+"B2-P67C" "C" "B" "B2" "BA" "Seca" "Caiman crocodilus" "R" 8
+"B2-P67C" "C" "B" "B2" "BA" "Seca" "Dendropsophus minutus" "A" 25
+"B2-P67C" "C" "B" "B2" "BA" "Seca" "Leptodactylus fuscus" "A" 4
+"B2-P67C" "C" "B" "B2" "BA" "Seca" "Leptodactylus paraensis" "A" 4
+"B2-P67C" "C" "B" "B2" "BA" "Seca" "Tropidurus oreadicus" "R" 17
+"B2-P68C" "C" "B" "B2" "BA" "Seca" "ESO" "" 0
+"B2-P68C" "C" "B" "B2" "BA" "Seca" "Tropidurus oreadicus" "R" 5
+"B2-P69C" "C" "B" "B2" "BA" "Seca" "ESO" "" 0
+"B2-P69C" "C" "B" "B2" "BA" "Seca" "Tropidurus oreadicus" "R" 1
+"B2-P70C" "C" "B" "B2" "BA" "Seca" "Tropidurus oreadicus" "R" 2
+"B2-P71C" "C" "B" "B2" "BA" "Seca" "Oxybelis aeneus" "R" 1
+"B2-P71C" "C" "B" "B2" "BA" "Seca" "Tropidurus oreadicus" "R" 2
+"B2-P72C" "C" "B" "B2" "BA" "Seca" "Ameiva ameiva" "R" 1
+"B2-P72C" "C" "B" "B2" "BA" "Seca" "ESO" "" 0
+"B2-P72C" "C" "B" "B2" "BA" "Seca" "Tropidurus oreadicus" "R" 4
+"B2-P73C" "C" "B" "B2" "BA" "Seca" "ESO" "" 0
+"B2-P73C" "C" "B" "B2" "BA" "Seca" "Leptodactylus paraensis" "A" 1
+"B2-P74C" "C" "B" "B2" "BA" "Seca" "ESO" "" 0
+"B2-P74C" "C" "B" "B2" "BA" "Seca" "Tropidurus oreadicus" "R" 2
+"B2-P75FL" "F" "B" "B2" "AIQ" "Seca" "Adenomera andreae" "A" 3
+"B2-P75FL" "F" "B" "B2" "AIQ" "Seca" "Cercosaura ocellata" "R" 1
+"B2-P75FL" "F" "B" "B2" "AIQ" "Seca" "ESO" "" 0
+"B2-P75FL" "F" "B" "B2" "BA" "Seca" "ESO" "" 0
+"B2-P76FL" "F" "B" "B2" "AIQ" "Seca" "Adenomera andreae" "A" 9
+"B2-P76FL" "F" "B" "B2" "AIQ" "Seca" "Cercosaura ocellata" "R" 4
+"B2-P76FL" "F" "B" "B2" "AIQ" "Seca" "ESO" "" 0
+"B2-P76FL" "F" "B" "B2" "BA" "Seca" "Cercosaura ocellata" "R" 1
+"B2-P76FL" "F" "B" "B2" "BA" "Seca" "ESO" "" 0
+"B2-P77FL" "F" "B" "B2" "AIQ" "Seca" "Adenomera andreae" "A" 2
+"B2-P77FL" "F" "B" "B2" "AIQ" "Seca" "Ameerega flavopicta" "A" 1
+"B2-P77FL" "F" "B" "B2" "AIQ" "Seca" "Cercosaura ocellata" "R" 3
+"B2-P77FL" "F" "B" "B2" "AIQ" "Seca" "ESO" "" 0
+"B2-P77FL" "F" "B" "B2" "BA" "Seca" "ESO" "" 0
+"B2-P77FL" "F" "B" "B2" "BA" "Seca" "Norops fuscoauratus" "R" 1
+"B2-P77FL" "F" "B" "B2" "BA" "Seca" "Thecadactylus rapicauda" "R" 1
+"B2-P78FL" "F" "B" "B2" "AIQ" "Seca" "Adenomera andreae" "A" 8
+"B2-P78FL" "F" "B" "B2" "AIQ" "Seca" "Cercosaura ocellata" "R" 2
+"B2-P78FL" "F" "B" "B2" "AIQ" "Seca" "ESO" "" 0
+"B2-P78FL" "F" "B" "B2" "BA" "Seca" "ESO" "" 0
+"B2-P79FL" "F" "B" "B2" "AIQ" "Seca" "Adenomera andreae" "A" 2
+"B2-P79FL" "F" "B" "B2" "AIQ" "Seca" "Allobates carajas" "A" 2
+"B2-P79FL" "F" "B" "B2" "AIQ" "Seca" "Cercosaura ocellata" "R" 10
+"B2-P79FL" "F" "B" "B2" "AIQ" "Seca" "Chatogekko amazonicus" "R" 1
+"B2-P79FL" "F" "B" "B2" "AIQ" "Seca" "ESO" "" 0
+"B2-P79FL" "F" "B" "B2" "AIQ" "Seca" "Proceratophrys concavitympanum" "A" 2
+"B2-P79FL" "F" "B" "B2" "BA" "Seca" "Adenomera andreae" "A" 1
+"B2-P79FL" "F" "B" "B2" "BA" "Seca" "Dipsas catesbyi" "R" 1
+"B2-P79FL" "F" "B" "B2" "BA" "Seca" "Osteocephalus taurinus" "A" 2
+"B2-P79FL" "F" "B" "B2" "BA" "Seca" "Pristimantis aff. fenestratus" "A" 1
+"B2-P79FL" "F" "B" "B2" "BA" "Seca" "Proceratophrys concavitympanum" "A" 5
+"B2-P80FL" "F" "B" "B2" "BA" "Seca" "Adenomera andreae" "A" 1
+"B2-P80FL" "F" "B" "B2" "BA" "Seca" "Ameerega flavopicta" "A" 1
+"B2-P80FL" "F" "B" "B2" "BA" "Seca" "Bothrops taeniatus" "R" 1
+"B2-P80FL" "F" "B" "B2" "BA" "Seca" "Osteocephalus taurinus" "A" 2
+"B2-P80FL" "F" "B" "B2" "BA" "Seca" "Potamites ecpleopus" "R" 1
+"B2-P80FL" "F" "B" "B2" "BA" "Seca" "Pristimantis aff. fenestratus" "A" 21
+"B2.1" "" "B" "B" "O" "Seca" "Ameerega flavopicta" "A" 1
+"B2.10" "" "B" "B" "O" "Seca" "Oxybelis aeneus" "R" 1
+"B2.11" "" "B" "B" "O" "Seca" "Spilotes sulphureus" "R" 1
+"B2.12" "" "B" "B" "O" "Seca" "Bothrops taeniatus" "R" 1
+"B2.13" "" "B" "B" "O" "Seca" "Bothrops bilineatus" "R" 1
+"B2.2" "" "B" "B" "O" "Seca" "Adenomera andreae" "A" 1
+"B2.3" "" "B" "B" "O" "Seca" "Dactyloa punctata" "R" 1
+"B2.4" "" "B" "B" "O" "Seca" "Dactyloa punctata" "R" 1
+"B2.5" "" "B" "B" "O" "Seca" "Plica umbra" "R" 1
+"B2.6" "" "B" "B" "O" "Seca" "Boa constrictor" "R" 1
+"B2.7" "" "B" "B" "O" "Seca" "Chironius scurrulus" "R" 1
+"B2.8" "" "B" "B" "O" "Seca" "Erythrolamprus poecilogyrus" "R" 1
+"B2.9" "" "B" "B" "O" "Seca" "Oxybelis aeneus" "R" 1
+"C-P81C" "C" "C" "C" "BA" "Seca" "ESO" "" 0
+"C-P81C" "C" "C" "C" "BA" "Seca" "Tropidurus oreadicus" "R" 1
+"C-P82C" "C" "C" "C" "BA" "Seca" "Tropidurus oreadicus" "R" 1
+"C-P83C" "C" "C" "C" "BA" "Seca" "ESO" "" 0
+"C-P84C" "C" "C" "C" "BA" "Seca" "Pithecopus hypochondrialis" "A" 3
+"C-P84C" "C" "C" "C" "BA" "Seca" "Tropidurus oreadicus" "R" 3
+"C-P85C" "C" "C" "C" "BA" "Seca" "Caiman crocodilus" "R" 5
+"C-P85C" "C" "C" "C" "BA" "Seca" "Dendropsophus minutus" "A" 19
+"C-P85C" "C" "C" "C" "BA" "Seca" "Leptodactylus paraensis" "A" 13
+"C-P85C" "C" "C" "C" "BA" "Seca" "Tropidurus oreadicus" "R" 7
+"C-P85C" "C" "C" "C" "BA" "Seca" "Tupinambis teguixin" "R" 1
+"C-P86C" "C" "C" "C" "BA" "Seca" "Boana boans" "A" 1
+"C-P86C" "C" "C" "C" "BA" "Seca" "Caiman crocodilus" "R" 7
+"C-P86C" "C" "C" "C" "BA" "Seca" "Dendropsophus minutus" "A" 6
+"C-P86C" "C" "C" "C" "BA" "Seca" "Gonatodes humeralis" "R" 1
+"C-P86C" "C" "C" "C" "BA" "Seca" "Leptodactylus paraensis" "A" 2
+"C-P86C" "C" "C" "C" "BA" "Seca" "Pithecopus hypochondrialis" "A" 2
+"C-P86C" "C" "C" "C" "BA" "Seca" "Tropidurus oreadicus" "R" 4
+"C-P87C" "C" "C" "C" "BA" "Seca" "ESO" "" 0
+"C-P87C" "C" "C" "C" "BA" "Seca" "Tropidurus oreadicus" "R" 1
+"C-P88C" "C" "C" "C" "BA" "Seca" "Tropidurus oreadicus" "R" 2
+"C-P89C" "C" "C" "C" "BA" "Seca" "Leptodeira annulata" "R" 1
+"C-P89C" "C" "C" "C" "BA" "Seca" "Tropidurus oreadicus" "R" 2
+"C-P90C" "C" "C" "C" "BA" "Seca" "ESO" "" 0
+"C-P91FL" "F" "C" "C" "BA" "Seca" "Cercosaura ocellata" "R" 1
+"C-P91FL" "F" "C" "C" "BA" "Seca" "Chatogekko amazonicus" "R" 3
+"C-P91FL" "F" "C" "C" "BA" "Seca" "ESO" "" 0
+"C-P91FL" "F" "C" "C" "BA" "Seca" "Rhinella margaritifera" "A" 1
+"C-P92FL" "F" "C" "C" "AIQ" "Seca" "Adenomera andreae" "A" 1
+"C-P92FL" "F" "C" "C" "AIQ" "Seca" "Cercosaura ocellata" "R" 6
+"C-P92FL" "F" "C" "C" "AIQ" "Seca" "Copeoglossum nigropunctatum" "R" 1
+"C-P92FL" "F" "C" "C" "AIQ" "Seca" "ESO" "" 0
+"C-P92FL" "F" "C" "C" "BA" "Seca" "Chatogekko amazonicus" "R" 1
+"C-P92FL" "F" "C" "C" "BA" "Seca" "ESO" "" 0
+"C-P93FL" "F" "C" "C" "AIQ" "Seca" "Adenomera andreae" "A" 1
+"C-P93FL" "F" "C" "C" "AIQ" "Seca" "Cercosaura ocellata" "R" 2
+"C-P93FL" "F" "C" "C" "AIQ" "Seca" "Chatogekko amazonicus" "R" 1
+"C-P93FL" "F" "C" "C" "AIQ" "Seca" "Copeoglossum nigropunctatum" "R" 2
+"C-P93FL" "F" "C" "C" "AIQ" "Seca" "ESO" "" 0
+"C-P93FL" "F" "C" "C" "BA" "Seca" "Chatogekko amazonicus" "R" 2
+"C-P93FL" "F" "C" "C" "BA" "Seca" "ESO" "" 0
+"C-P94FL" "F" "C" "C" "AIQ" "Seca" "Adenomera andreae" "A" 1
+"C-P94FL" "F" "C" "C" "AIQ" "Seca" "Copeoglossum nigropunctatum" "R" 2
+"C-P94FL" "F" "C" "C" "AIQ" "Seca" "ESO" "" 0
+"C-P94FL" "F" "C" "C" "AIQ" "Seca" "Micrurus paraensis" "R" 1
+"C-P94FL" "F" "C" "C" "BA" "Seca" "Adenomera andreae" "A" 2
+"C-P94FL" "F" "C" "C" "BA" "Seca" "Chatogekko amazonicus" "R" 1
+"C-P95FL" "F" "C" "C" "AIQ" "Seca" "Adenomera andreae" "A" 1
+"C-P95FL" "F" "C" "C" "AIQ" "Seca" "Ameerega flavopicta" "A" 1
+"C-P95FL" "F" "C" "C" "AIQ" "Seca" "ESO" "" 0
+"C-P95FL" "F" "C" "C" "AIQ" "Seca" "Leptodeira annulata" "R" 1
+"C-P95FL" "F" "C" "C" "AIQ" "Seca" "Proceratophrys concavitympanum" "A" 2
+"C-P95FL" "F" "C" "C" "BA" "Seca" "Adenomera andreae" "A" 1
+"C-P95FL" "F" "C" "C" "BA" "Seca" "Chatogekko amazonicus" "R" 1
+"C-P95FL" "F" "C" "C" "BA" "Seca" "ESO" "" 0
+"C-P95FL" "F" "C" "C" "BA" "Seca" "Micrurus paraensis" "R" 1
+"C-P95FL" "F" "C" "C" "BA" "Seca" "Scinax fuscomarginatus" "A" 2
+"C-P96FL" "F" "C" "C" "AIQ" "Seca" "Allobates carajas" "A" 1
+"C-P96FL" "F" "C" "C" "AIQ" "Seca" "ESO" "" 0
+"C-P96FL" "F" "C" "C" "BA" "Seca" "Adenomera andreae" "A" 1
+"C-P96FL" "F" "C" "C" "BA" "Seca" "Allobates carajas" "A" 2
+"C-P96FL" "F" "C" "C" "BA" "Seca" "Chatogekko amazonicus" "R" 3
+"C-P96FL" "F" "C" "C" "BA" "Seca" "Chironius exoletus" "R" 1
+"C-P96FL" "F" "C" "C" "BA" "Seca" "Osteocephalus taurinus" "A" 1
+"C-P96FL" "F" "C" "C" "BA" "Seca" "Pristimantis aff. fenestratus" "A" 1
+"C-P96FL" "F" "C" "C" "BA" "Seca" "Siphlophis worontzowi" "R" 1
+"" "" "" "" "O" "Chuvosa" "Amphisbaena amazonica" "R" 1
+"" "" "" "" "O" "Chuvosa" "Anilius scytale" "R" 1
+"" "" "" "" "O" "Chuvosa" "Drymoluber dichrous" "R" 2
+"" "" "" "" "O" "Chuvosa" "Drymoluber dichrous" "R" 1
+"" "" "" "" "O" "Chuvosa" "Erythrolamprus aesculapii" "R" 1
+"" "" "" "" "O" "Chuvosa" "Erythrolamprus poecilogyrus" "R" 2
+"" "" "" "" "O" "Chuvosa" "Helicops angulatus" "R" 1
+"" "" "" "" "O" "Chuvosa" "Imantodes cenchoa" "R" 1
+"" "" "" "" "O" "Chuvosa" "Mastigodryas boddaerti" "R" 1
+"" "" "" "" "O" "Chuvosa" "Oxyrhopus trigeminus" "R" 1
+"" "" "" "" "O" "Chuvosa" "Phrynonax poecilonotus" "R" 1
+"" "" "" "" "O" "Chuvosa" "Proceratophrys concavitympanum" "A" 1
+"" "" "" "" "O" "Chuvosa" "Pseudoboa nigra" "R" 1
+"" "" "" "" "O" "Chuvosa" "Pseudopaludicola canga" "A" 12
+"" "" "" "" "O" "Chuvosa" "Rhinobothryum lentiginosum" "R" 1
+"" "" "" "" "O" "Chuvosa" "Spilotes pullatus" "R" 1
+"" "" "" "" "O" "Chuvosa" "Xenodon rabdocephalus" "R" 2
+"A1-P01C" "C" "A" "A1" "BA" "Chuvosa" "Adenomera kayapo" "A" 6
+"A1-P01C" "C" "A" "A1" "BA" "Chuvosa" "Allobates carajas" "A" 8
+"A1-P01C" "C" "A" "A1" "BA" "Chuvosa" "Boana multifasciata" "A" 2
+"A1-P01C" "C" "A" "A1" "BA" "Chuvosa" "Caiman crocodilus" "R" 8
+"A1-P01C" "C" "A" "A1" "BA" "Chuvosa" "Dendropsophus minusculus" "A" 12
+"A1-P01C" "C" "A" "A1" "BA" "Chuvosa" "Dendropsophus minutus" "A" 21
+"A1-P01C" "C" "A" "A1" "BA" "Chuvosa" "Osteocephalus taurinus" "A" 2
+"A1-P01C" "C" "A" "A1" "BA" "Chuvosa" "Physalaemus ephippifer" "A" 3
+"A1-P01C" "C" "A" "A1" "BA" "Chuvosa" "Pithecopus hypochondrialis" "A" 4
+"A1-P01C" "C" "A" "A1" "BA" "Chuvosa" "Pseudopaludicola canga" "A" 30
+"A1-P01C" "C" "A" "A1" "BA" "Chuvosa" "Scinax fuscomarginatus" "A" 33
+"A1-P01C" "C" "A" "A1" "BA" "Chuvosa" "Scinax ruber" "A" 4
+"A1-P02C" "C" "A" "A1" "BA" "Chuvosa" "ESO" "" 0
+"A1-P03C" "C" "A" "A1" "BA" "Chuvosa" "Adenomera kayapo" "A" 1
+"A1-P03C" "C" "A" "A1" "BA" "Chuvosa" "Leptodeira annulata" "R" 1
+"A1-P03C" "C" "A" "A1" "BA" "Chuvosa" "Pristimantis aff. fenestratus" "A" 2
+"A1-P03C" "C" "A" "A1" "BA" "Chuvosa" "Scinax fuscomarginatus" "A" 1
+"A1-P04C" "C" "A" "A1" "BA" "Chuvosa" "Ameerega flavopicta" "A" 1
+"A1-P04C" "C" "A" "A1" "BA" "Chuvosa" "ESO" "" 0
+"A1-P04C" "C" "A" "A1" "BA" "Chuvosa" "Pithecopus hypochondrialis" "A" 3
+"A1-P05C" "C" "A" "A1" "BA" "Chuvosa" "Adenomera kayapo" "A" 4
+"A1-P05C" "C" "A" "A1" "BA" "Chuvosa" "Chironius flavolineatus" "R" 1
+"A1-P05C" "C" "A" "A1" "BA" "Chuvosa" "Physalaemus ephippifer" "A" 1
+"A1-P05C" "C" "A" "A1" "BA" "Chuvosa" "Pithecopus hypochondrialis" "A" 4
+"A1-P05C" "C" "A" "A1" "BA" "Chuvosa" "Pseudopaludicola canga" "A" 23
+"A1-P06C" "C" "A" "A1" "BA" "Chuvosa" "Adenomera kayapo" "A" 5
+"A1-P06C" "C" "A" "A1" "BA" "Chuvosa" "Ameerega flavopicta" "A" 8
+"A1-P06C" "C" "A" "A1" "BA" "Chuvosa" "Boana multifasciata" "A" 1
+"A1-P06C" "C" "A" "A1" "BA" "Chuvosa" "Dendropsophus minutus" "A" 1
+"A1-P06C" "C" "A" "A1" "BA" "Chuvosa" "Pristimantis aff. fenestratus" "A" 2
+"A1-P07C" "C" "A" "A1" "BA" "Chuvosa" "Adenomera andreae" "A" 1
+"A1-P07C" "C" "A" "A1" "BA" "Chuvosa" "Boana raniceps" "A" 1
+"A1-P07C" "C" "A" "A1" "BA" "Chuvosa" "Dendropsophus minusculus" "A" 35
+"A1-P07C" "C" "A" "A1" "BA" "Chuvosa" "Dendropsophus minutus" "A" 5
+"A1-P07C" "C" "A" "A1" "BA" "Chuvosa" "Leptodactylus paraensis" "A" 2
+"A1-P07C" "C" "A" "A1" "BA" "Chuvosa" "Leptodeira annulata" "R" 1
+"A1-P07C" "C" "A" "A1" "BA" "Chuvosa" "Physalaemus ephippifer" "A" 1
+"A1-P07C" "C" "A" "A1" "BA" "Chuvosa" "Pithecopus hypochondrialis" "A" 5
+"A1-P07C" "C" "A" "A1" "BA" "Chuvosa" "Pseudopaludicola canga" "A" 1
+"A1-P07C" "C" "A" "A1" "BA" "Chuvosa" "Scinax fuscomarginatus" "A" 11
+"A1-P08C" "C" "A" "A1" "BA" "Chuvosa" "Boana multifasciata" "A" 2
+"A1-P08C" "C" "A" "A1" "BA" "Chuvosa" "Chironius scurrulus" "R" 1
+"A1-P08C" "C" "A" "A1" "BA" "Chuvosa" "Dendropsophus microcephalus" "A" 9
+"A1-P08C" "C" "A" "A1" "BA" "Chuvosa" "Dendropsophus minutus" "A" 12
+"A1-P08C" "C" "A" "A1" "BA" "Chuvosa" "Leptodactylus paraensis" "A" 1
+"A1-P08C" "C" "A" "A1" "BA" "Chuvosa" "Leptodeira annulata" "R" 1
+"A1-P08C" "C" "A" "A1" "BA" "Chuvosa" "Pithecopus hypochondrialis" "A" 9
+"A1-P08C" "C" "A" "A1" "BA" "Chuvosa" "Pseudopaludicola canga" "A" 10
+"A1-P08C" "C" "A" "A1" "BA" "Chuvosa" "Scinax fuscomarginatus" "A" 1
+"A1-P08C" "C" "A" "A1" "BA" "Chuvosa" "Scinax nebulosus" "A" 3
+"A1-P08C" "C" "A" "A1" "BA" "Chuvosa" "Scinax ruber" "A" 3
+"A1-P08C" "C" "A" "A1" "BA" "Chuvosa" "Trachycephalus typhonius" "A" 1
+"A1-P09C" "C" "A" "A1" "BA" "Chuvosa" "Caiman crocodilus" "R" 3
+"A1-P09C" "C" "A" "A1" "BA" "Chuvosa" "Dendropsophus microcephalus" "A" 5
+"A1-P09C" "C" "A" "A1" "BA" "Chuvosa" "Dendropsophus minutus" "A" 10
+"A1-P09C" "C" "A" "A1" "BA" "Chuvosa" "Leptodactylus paraensis" "A" 1
+"A1-P09C" "C" "A" "A1" "BA" "Chuvosa" "Pithecopus hypochondrialis" "A" 6
+"A1-P09C" "C" "A" "A1" "BA" "Chuvosa" "Polychrus acutirostris" "R" 2
+"A1-P09C" "C" "A" "A1" "BA" "Chuvosa" "Pseudopaludicola canga" "A" 7
+"A1-P09C" "C" "A" "A1" "BA" "Chuvosa" "Scinax fuscomarginatus" "A" 3
+"A1-P09C" "C" "A" "A1" "BA" "Chuvosa" "Scinax ruber" "A" 5
+"A1-P10C" "C" "A" "A1" "BA" "Chuvosa" "Dendropsophus minutus" "A" 2
+"A1-P10C" "C" "A" "A1" "BA" "Chuvosa" "Paleosuchus trigonatus" "R" 1
+"A1-P10C" "C" "A" "A1" "BA" "Chuvosa" "Pithecopus hypochondrialis" "A" 4
+"A1-P10C" "C" "A" "A1" "BA" "Chuvosa" "Pseudopaludicola canga" "A" 10
+"A1-P10C" "C" "A" "A1" "BA" "Chuvosa" "Scinax ruber" "A" 2
+"A1-P11FL" "F" "A" "A1" "BA" "Chuvosa" "ESO" "" 0
+"A1-P11FL" "F" "A" "A1" "BA" "Chuvosa" "Rhaebo guttatus" "A" 1
+"A1-P12FL" "F" "A" "A1" "BA" "Chuvosa" "Adenomera andreae" "A" 1
+"A1-P12FL" "F" "A" "A1" "BA" "Chuvosa" "ESO" "" 0
+"A1-P12FL" "F" "A" "A1" "BA" "Chuvosa" "Osteocephalus taurinus" "A" 1
+"A1-P12FL" "F" "A" "A1" "BA" "Chuvosa" "Pithecopus hypochondrialis" "A" 1
+"A1-P13FL" "F" "A" "A1" "BA" "Chuvosa" "Potamites ecpleopus" "R" 3
+"A1-P13FL" "F" "A" "A1" "BA" "Chuvosa" "Pristimantis aff. fenestratus" "A" 1
+"A1-P14FL" "F" "A" "A1" "BA" "Chuvosa" "ESO" "" 0
+"A1-P14FL" "F" "A" "A1" "BA" "Chuvosa" "Imantodes cenchoa" "R" 1
+"A1-P15FL" "F" "A" "A1" "BA" "Chuvosa" "Chatogekko amazonicus" "R" 1
+"A1-P15FL" "F" "A" "A1" "BA" "Chuvosa" "ESO" "" 0
+"A1-P18FL" "F" "A" "A1" "AIQ" "Chuvosa" "Adenomera andreae" "A" 1
+"A1-P18FL" "F" "A" "A1" "AIQ" "Chuvosa" "Ameerega flavopicta" "A" 1
+"A1-P18FL" "F" "A" "A1" "AIQ" "Chuvosa" "Cercosaura ocellata" "R" 1
+"A1-P18FL" "F" "A" "A1" "AIQ" "Chuvosa" "Copeoglossum nigropunctatum" "R" 2
+"A1-P18FL" "F" "A" "A1" "AIQ" "Chuvosa" "ESO" "" 0
+"A1-P18FL" "F" "A" "A1" "AIQ" "Chuvosa" "Kentropyx calcarata" "R" 6
+"A1-P18FL" "F" "A" "A1" "BA" "Chuvosa" "Adenomera andreae" "A" 2
+"A1-P18FL" "F" "A" "A1" "BA" "Chuvosa" "Chatogekko amazonicus" "R" 1
+"A1-P18FL" "F" "A" "A1" "BA" "Chuvosa" "ESO" "" 0
+"A2-P16FL" "F" "A" "A2" "AIQ" "Chuvosa" "Copeoglossum nigropunctatum" "R" 1
+"A2-P16FL" "F" "A" "A2" "AIQ" "Chuvosa" "ESO" "" 0
+"A2-P16FL" "F" "A" "A2" "AIQ" "Chuvosa" "Enyalius leechii" "R" 1
+"A2-P16FL" "F" "A" "A2" "AIQ" "Chuvosa" "Kentropyx calcarata" "R" 5
+"A2-P16FL" "F" "A" "A2" "AIQ" "Chuvosa" "Potamites ecpleopus" "R" 2
+"A2-P16FL" "F" "A" "A2" "AIQ" "Chuvosa" "Tretioscincus agilis" "R" 1
+"A2-P16FL" "F" "A" "A2" "BA" "Chuvosa" "Dipsas catesbyi" "R" 1
+"A2-P16FL" "F" "A" "A2" "BA" "Chuvosa" "ESO" "" 0
+"A2-P16FL" "F" "A" "A2" "BA" "Chuvosa" "Hyalinobatrachium iaspidiense" "A" 2
+"A2-P16FL" "F" "A" "A2" "BA" "Chuvosa" "Pithecopus hypochondrialis" "A" 1
+"A2-P17FL" "F" "A" "A2" "AIQ" "Chuvosa" "Adenomera kayapo" "A" 1
+"A2-P17FL" "F" "A" "A2" "AIQ" "Chuvosa" "Ameerega flavopicta" "A" 1
+"A2-P17FL" "F" "A" "A2" "AIQ" "Chuvosa" "Amerotyphlops reticulatus" "R" 1
+"A2-P17FL" "F" "A" "A2" "AIQ" "Chuvosa" "Copeoglossum nigropunctatum" "R" 1
+"A2-P17FL" "F" "A" "A2" "AIQ" "Chuvosa" "ESO" "" 0
+"A2-P17FL" "F" "A" "A2" "AIQ" "Chuvosa" "Kentropyx calcarata" "R" 8
+"A2-P17FL" "F" "A" "A2" "AIQ" "Chuvosa" "Oxyrhopus petolarius" "R" 1
+"A2-P17FL" "F" "A" "A2" "AIQ" "Chuvosa" "Plica umbra" "R" 1
+"A2-P17FL" "F" "A" "A2" "BA" "Chuvosa" "Enyalius leechii" "R" 1
+"A2-P17FL" "F" "A" "A2" "BA" "Chuvosa" "Pithecopus hypochondrialis" "A" 1
+"A2-P19FL" "F" "A" "A2" "AIQ" "Chuvosa" "ESO" "" 0
+"A2-P19FL" "F" "A" "A2" "AIQ" "Chuvosa" "Kentropyx calcarata" "R" 10
+"A2-P19FL" "F" "A" "A2" "AIQ" "Chuvosa" "Potamites ecpleopus" "R" 2
+"A2-P19FL" "F" "A" "A2" "BA" "Chuvosa" "Allobates carajas" "A" 1
+"A2-P19FL" "F" "A" "A2" "BA" "Chuvosa" "Boana raniceps" "A" 1
+"A2-P19FL" "F" "A" "A2" "BA" "Chuvosa" "Dipsas catesbyi" "R" 2
+"A2-P19FL" "F" "A" "A2" "BA" "Chuvosa" "Osteocephalus taurinus" "A" 1
+"A2-P20FL" "F" "A" "A2" "AIQ" "Chuvosa" "ESO" "" 0
+"A2-P20FL" "F" "A" "A2" "AIQ" "Chuvosa" "Kentropyx calcarata" "R" 6
+"A2-P20FL" "F" "A" "A2" "AIQ" "Chuvosa" "Potamites ecpleopus" "R" 2
+"A2-P20FL" "F" "A" "A2" "BA" "Chuvosa" "Ameerega flavopicta" "A" 1
+"A2-P20FL" "F" "A" "A2" "BA" "Chuvosa" "Boana boans" "A" 1
+"A2-P20FL" "F" "A" "A2" "BA" "Chuvosa" "ESO" "" 0
+"A2-P21C" "C" "A" "A2" "BA" "Chuvosa" "ESO" "" 0
+"A2-P21C" "C" "A" "A2" "BA" "Chuvosa" "Polychrus acutirostris" "R" 1
+"A2-P22C" "C" "A" "A2" "BA" "Chuvosa" "Adenomera kayapo" "A" 1
+"A2-P22C" "C" "A" "A2" "BA" "Chuvosa" "Ameerega flavopicta" "A" 6
+"A2-P22C" "C" "A" "A2" "BA" "Chuvosa" "Dendropsophus minutus" "A" 1
+"A2-P22C" "C" "A" "A2" "BA" "Chuvosa" "Pithecopus hypochondrialis" "A" 2
+"A2-P22C" "C" "A" "A2" "BA" "Chuvosa" "Pristimantis aff. fenestratus" "A" 1
+"A2-P23C" "C" "A" "A2" "BA" "Chuvosa" "Adenomera kayapo" "A" 6
+"A2-P23C" "C" "A" "A2" "BA" "Chuvosa" "Allobates carajas" "A" 3
+"A2-P23C" "C" "A" "A2" "BA" "Chuvosa" "Boana multifasciata" "A" 3
+"A2-P23C" "C" "A" "A2" "BA" "Chuvosa" "Dendropsophus minusculus" "A" 19
+"A2-P23C" "C" "A" "A2" "BA" "Chuvosa" "Dendropsophus minutus" "A" 22
+"A2-P23C" "C" "A" "A2" "BA" "Chuvosa" "Kinosternon scorpioides" "R" 7
+"A2-P23C" "C" "A" "A2" "BA" "Chuvosa" "Leptodactylus paraensis" "A" 1
+"A2-P23C" "C" "A" "A2" "BA" "Chuvosa" "Phrynops geoffroanus" "R" 6
+"A2-P23C" "C" "A" "A2" "BA" "Chuvosa" "Pithecopus hypochondrialis" "A" 7
+"A2-P23C" "C" "A" "A2" "BA" "Chuvosa" "Pristimantis aff. fenestratus" "A" 2
+"A2-P23C" "C" "A" "A2" "BA" "Chuvosa" "Pseudopaludicola canga" "A" 23
+"A2-P23C" "C" "A" "A2" "BA" "Chuvosa" "Scinax fuscomarginatus" "A" 31
+"A2-P23C" "C" "A" "A2" "BA" "Chuvosa" "Tropidurus oreadicus" "R" 1
+"A2-P24C" "C" "A" "A2" "BA" "Chuvosa" "ESO" "" 0
+"A2-P24C" "C" "A" "A2" "BA" "Chuvosa" "Pithecopus hypochondrialis" "A" 4
+"A2-P25C" "C" "A" "A2" "BA" "Chuvosa" "Ameerega flavopicta" "A" 16
+"A2-P25C" "C" "A" "A2" "BA" "Chuvosa" "Boana multifasciata" "A" 3
+"A2-P25C" "C" "A" "A2" "BA" "Chuvosa" "Dendropsophus minutus" "A" 1
+"A2-P25C" "C" "A" "A2" "BA" "Chuvosa" "Leptodactylus paraensis" "A" 1
+"A2-P25C" "C" "A" "A2" "BA" "Chuvosa" "Physalaemus ephippifer" "A" 1
+"A2-P25C" "C" "A" "A2" "BA" "Chuvosa" "Pithecopus hypochondrialis" "A" 7
+"A2-P25C" "C" "A" "A2" "BA" "Chuvosa" "Pristimantis aff. fenestratus" "A" 3
+"A2-P25C" "C" "A" "A2" "BA" "Chuvosa" "Pseudopaludicola canga" "A" 33
+"A2-P25C" "C" "A" "A2" "BA" "Chuvosa" "Tropidurus oreadicus" "R" 4
+"A2-P26C" "C" "A" "A2" "BA" "Chuvosa" "Ameerega flavopicta" "A" 1
+"A2-P26C" "C" "A" "A2" "BA" "Chuvosa" "Oxyrhopus trigeminus" "R" 1
+"A2-P26C" "C" "A" "A2" "BA" "Chuvosa" "Pithecopus hypochondrialis" "A" 4
+"A2-P26C" "C" "A" "A2" "BA" "Chuvosa" "Pseudopaludicola canga" "A" 28
+"A2-P26C" "C" "A" "A2" "BA" "Chuvosa" "Tropidurus oreadicus" "R" 2
+"A2-P27C" "C" "A" "A2" "BA" "Chuvosa" "Ameerega flavopicta" "A" 6
+"A2-P27C" "C" "A" "A2" "BA" "Chuvosa" "Leptodactylus paraensis" "A" 1
+"A2-P27C" "C" "A" "A2" "BA" "Chuvosa" "Physalaemus ephippifer" "A" 1
+"A2-P27C" "C" "A" "A2" "BA" "Chuvosa" "Pithecopus hypochondrialis" "A" 3
+"A2-P27C" "C" "A" "A2" "BA" "Chuvosa" "Pseudopaludicola canga" "A" 3
+"A2-P27C" "C" "A" "A2" "BA" "Chuvosa" "Tropidurus oreadicus" "R" 1
+"A2-P28C" "C" "A" "A2" "BA" "Chuvosa" "Allobates carajas" "A" 8
+"A2-P28C" "C" "A" "A2" "BA" "Chuvosa" "Boana multifasciata" "A" 2
+"A2-P28C" "C" "A" "A2" "BA" "Chuvosa" "Dendropsophus leucophyllatus" "A" 4
+"A2-P28C" "C" "A" "A2" "BA" "Chuvosa" "Dendropsophus minusculus" "A" 10
+"A2-P28C" "C" "A" "A2" "BA" "Chuvosa" "Dendropsophus minutus" "A" 13
+"A2-P28C" "C" "A" "A2" "BA" "Chuvosa" "Leptodactylus paraensis" "A" 3
+"A2-P28C" "C" "A" "A2" "BA" "Chuvosa" "Pithecopus hypochondrialis" "A" 9
+"A2-P28C" "C" "A" "A2" "BA" "Chuvosa" "Pseudopaludicola canga" "A" 16
+"A2-P28C" "C" "A" "A2" "BA" "Chuvosa" "Scinax fuscomarginatus" "A" 17
+"A2-P28C" "C" "A" "A2" "BA" "Chuvosa" "Scinax ruber" "A" 2
+"A2-P29C" "C" "A" "A2" "BA" "Chuvosa" "Ameiva ameiva" "R" 1
+"A2-P29C" "C" "A" "A2" "BA" "Chuvosa" "ESO" "" 0
+"A2-P29C" "C" "A" "A2" "BA" "Chuvosa" "Pseudopaludicola canga" "A" 3
+"A2-P29C" "C" "A" "A2" "BA" "Chuvosa" "Tropidurus oreadicus" "R" 3
+"A2-P30C" "C" "A" "A2" "BA" "Chuvosa" "ESO" "" 0
+"A2-P31FL" "F" "A" "A2" "BA" "Chuvosa" "Phrynonax poecilonotus" "R" 1
+"A2-P31FL" "F" "A" "A2" "BA" "Chuvosa" "Proceratophrys concavitympanum" "A" 1
+"A2-P31FL" "F" "A" "A2" "BA" "Chuvosa" "Rhaebo guttatus" "A" 1
+"A2-P32FL" "F" "A" "A2" "BA" "Chuvosa" "ESO" "" 0
+"A2-P32FL" "F" "A" "A2" "BA" "Chuvosa" "Xenopholis scalaris" "R" 1
+"A3-P33C" "C" "A" "A3" "BA" "Chuvosa" "Boana multifasciata" "A" 2
+"A3-P33C" "C" "A" "A3" "BA" "Chuvosa" "ESO" "" 0
+"A3-P33C" "C" "A" "A3" "BA" "Chuvosa" "Norops brasiliensis" "R" 1
+"A3-P33C" "C" "A" "A3" "BA" "Chuvosa" "Pithecopus hypochondrialis" "A" 7
+"A3-P34C" "C" "A" "A3" "BA" "Chuvosa" "ESO" "" 0
+"A3-P34C" "C" "A" "A3" "BA" "Chuvosa" "Leptodactylus paraensis" "A" 1
+"A3-P34C" "C" "A" "A3" "BA" "Chuvosa" "Leptodeira annulata" "R" 1
+"A3-P34C" "C" "A" "A3" "BA" "Chuvosa" "Pithecopus hypochondrialis" "A" 5
+"A3-P34C" "C" "A" "A3" "BA" "Chuvosa" "Rhinella marina" "A" 1
+"A3-P34C" "C" "A" "A3" "BA" "Chuvosa" "Scinax ruber" "A" 1
+"A3-P35C" "C" "A" "A3" "BA" "Chuvosa" "Ameiva ameiva" "R" 2
+"A3-P35C" "C" "A" "A3" "BA" "Chuvosa" "Boana raniceps" "A" 1
+"A3-P35C" "C" "A" "A3" "BA" "Chuvosa" "Caiman crocodilus" "R" 1
+"A3-P35C" "C" "A" "A3" "BA" "Chuvosa" "Chironius flavolineatus" "R" 1
+"A3-P35C" "C" "A" "A3" "BA" "Chuvosa" "Dendropsophus minusculus" "A" 3
+"A3-P35C" "C" "A" "A3" "BA" "Chuvosa" "Dendropsophus minutus" "A" 13
+"A3-P35C" "C" "A" "A3" "BA" "Chuvosa" "Dryophylax hypoconia" "R" 1
+"A3-P35C" "C" "A" "A3" "BA" "Chuvosa" "Eunectes murinus" "R" 1
+"A3-P35C" "C" "A" "A3" "BA" "Chuvosa" "Leptodactylus fuscus" "A" 2
+"A3-P35C" "C" "A" "A3" "BA" "Chuvosa" "Leptodactylus paraensis" "A" 2
+"A3-P35C" "C" "A" "A3" "BA" "Chuvosa" "Leptodeira annulata" "R" 1
+"A3-P35C" "C" "A" "A3" "BA" "Chuvosa" "Pithecopus hypochondrialis" "A" 1
+"A3-P35C" "C" "A" "A3" "BA" "Chuvosa" "Polychrus acutirostris" "R" 1
+"A3-P35C" "C" "A" "A3" "BA" "Chuvosa" "Pseudopaludicola canga" "A" 73
+"A3-P35C" "C" "A" "A3" "BA" "Chuvosa" "Scinax fuscomarginatus" "A" 9
+"A3-P35C" "C" "A" "A3" "BA" "Chuvosa" "Scinax ruber" "A" 6
+"A3-P35C" "C" "A" "A3" "BA" "Chuvosa" "Tropidurus oreadicus" "R" 1
+"A3-P36C" "C" "A" "A3" "BA" "Chuvosa" "ESO" "" 0
+"A3-P36C" "C" "A" "A3" "BA" "Chuvosa" "Tropidurus oreadicus" "R" 1
+"A3-P37C" "C" "A" "A3" "BA" "Chuvosa" "Adenomera kayapo" "A" 2
+"A3-P37C" "C" "A" "A3" "BA" "Chuvosa" "Ameerega flavopicta" "A" 1
+"A3-P37C" "C" "A" "A3" "BA" "Chuvosa" "Pithecopus hypochondrialis" "A" 13
+"A3-P37C" "C" "A" "A3" "BA" "Chuvosa" "Pseudopaludicola canga" "A" 1
+"A3-P38C" "C" "A" "A3" "BA" "Chuvosa" "Ameerega flavopicta" "A" 2
+"A3-P38C" "C" "A" "A3" "BA" "Chuvosa" "Leptodactylus paraensis" "A" 1
+"A3-P38C" "C" "A" "A3" "BA" "Chuvosa" "Pithecopus hypochondrialis" "A" 5
+"A3-P38C" "C" "A" "A3" "BA" "Chuvosa" "Pseudopaludicola canga" "A" 18
+"A3-P39C" "C" "A" "A3" "BA" "Chuvosa" "Ameiva ameiva" "R" 1
+"A3-P39C" "C" "A" "A3" "BA" "Chuvosa" "Leptodactylus paraensis" "A" 1
+"A3-P39C" "C" "A" "A3" "BA" "Chuvosa" "Leptodeira annulata" "R" 1
+"A3-P39C" "C" "A" "A3" "BA" "Chuvosa" "Tropidurus oreadicus" "R" 3
+"A3-P40C" "C" "A" "A3" "BA" "Chuvosa" "ESO" "" 0
+"A3-P40C" "C" "A" "A3" "BA" "Chuvosa" "Oxybelis aeneus" "R" 1
+"A3-P41C" "C" "A" "A3" "BA" "Chuvosa" "Adenomera kayapo" "A" 2
+"A3-P41C" "C" "A" "A3" "BA" "Chuvosa" "Dendropsophus minusculus" "A" 15
+"A3-P41C" "C" "A" "A3" "BA" "Chuvosa" "Paleosuchus trigonatus" "R" 1
+"A3-P41C" "C" "A" "A3" "BA" "Chuvosa" "Physalaemus ephippifer" "A" 2
+"A3-P41C" "C" "A" "A3" "BA" "Chuvosa" "Pithecopus hypochondrialis" "A" 9
+"A3-P41C" "C" "A" "A3" "BA" "Chuvosa" "Pseudopaludicola canga" "A" 7
+"A3-P42C" "C" "A" "A3" "BA" "Chuvosa" "ESO" "" 0
+"A3-P42C" "C" "A" "A3" "BA" "Chuvosa" "Tropidurus oreadicus" "R" 3
+"A3-P43FL" "F" "A" "A3" "BA" "Chuvosa" "Adenomera andreae" "A" 1
+"A3-P43FL" "F" "A" "A3" "BA" "Chuvosa" "ESO" "" 0
+"A3-P44FL" "F" "A" "A3" "BA" "Chuvosa" "Adenomera kayapo" "A" 1
+"A3-P44FL" "F" "A" "A3" "BA" "Chuvosa" "ESO" "" 0
+"A3-P45FL" "F" "A" "A3" "BA" "Chuvosa" "Chatogekko amazonicus" "R" 2
+"A3-P45FL" "F" "A" "A3" "BA" "Chuvosa" "ESO" "" 0
+"A3-P46FL" "F" "A" "A3" "BA" "Chuvosa" "Chatogekko amazonicus" "R" 1
+"A3-P46FL" "F" "A" "A3" "BA" "Chuvosa" "Pristimantis aff. fenestratus" "A" 1
+"A3-P47FL" "F" "A" "A3" "BA" "Chuvosa" "ESO" "" 0
+"A3-P48FL" "F" "A" "A3" "BA" "Chuvosa" "ESO" "" 0
+"B1-P49C" "C" "B" "B1" "BA" "Chuvosa" "Tropidurus oreadicus" "R" 4
+"B1-P50C" "C" "B" "B1" "BA" "Chuvosa" "ESO" "" 0
+"B1-P50C" "C" "B" "B1" "BA" "Chuvosa" "Tropidurus oreadicus" "R" 1
+"B1-P51C" "C" "B" "B1" "BA" "Chuvosa" "Rhinella mirandaribeiroi" "A" 1
+"B1-P52C" "C" "B" "B1" "BA" "Chuvosa" "Ameerega flavopicta" "A" 2
+"B1-P52C" "C" "B" "B1" "BA" "Chuvosa" "Dendropsophus marmoratus" "A" 3
+"B1-P52C" "C" "B" "B1" "BA" "Chuvosa" "Leptodactylus paraensis" "A" 1
+"B1-P53C" "C" "B" "B1" "BA" "Chuvosa" "ESO" "" 0
+"B1-P53C" "C" "B" "B1" "BA" "Chuvosa" "Pithecopus hypochondrialis" "A" 1
+"B1-P54C" "C" "B" "B1" "BA" "Chuvosa" "Leptodactylus paraensis" "A" 1
+"B1-P54C" "C" "B" "B1" "BA" "Chuvosa" "Tropidurus oreadicus" "R" 4
+"B1-P55C" "C" "B" "B1" "BA" "Chuvosa" "Adenomera kayapo" "A" 3
+"B1-P55C" "C" "B" "B1" "BA" "Chuvosa" "ESO" "" 0
+"B1-P55C" "C" "B" "B1" "BA" "Chuvosa" "Pithecopus hypochondrialis" "A" 4
+"B1-P55C" "C" "B" "B1" "BA" "Chuvosa" "Pristimantis aff. fenestratus" "A" 3
+"B1-P56C" "C" "B" "B1" "BA" "Chuvosa" "Allobates carajas" "A" 2
+"B1-P56C" "C" "B" "B1" "BA" "Chuvosa" "Dendropsophus minusculus" "A" 2
+"B1-P56C" "C" "B" "B1" "BA" "Chuvosa" "Dendropsophus minutus" "A" 2
+"B1-P56C" "C" "B" "B1" "BA" "Chuvosa" "Dryophylax hypoconia" "R" 1
+"B1-P56C" "C" "B" "B1" "BA" "Chuvosa" "Erythrolamprus carajasensis" "R" 1
+"B1-P56C" "C" "B" "B1" "BA" "Chuvosa" "Helicops angulatus" "R" 1
+"B1-P56C" "C" "B" "B1" "BA" "Chuvosa" "Leptodeira annulata" "R" 5
+"B1-P56C" "C" "B" "B1" "BA" "Chuvosa" "Paleosuchus trigonatus" "R" 1
+"B1-P56C" "C" "B" "B1" "BA" "Chuvosa" "Pithecopus hypochondrialis" "A" 2
+"B1-P56C" "C" "B" "B1" "BA" "Chuvosa" "Pseudopaludicola canga" "A" 31
+"B1-P56C" "C" "B" "B1" "BA" "Chuvosa" "Scinax fuscomarginatus" "A" 3
+"B1-P57C" "C" "B" "B1" "BA" "Chuvosa" "Adenomera kayapo" "A" 1
+"B1-P57C" "C" "B" "B1" "BA" "Chuvosa" "ESO" "" 0
+"B1-P57C" "C" "B" "B1" "BA" "Chuvosa" "Pithecopus hypochondrialis" "A" 2
+"B1-P57C" "C" "B" "B1" "BA" "Chuvosa" "Tropidurus oreadicus" "R" 1
+"B1-P58C" "C" "B" "B1" "BA" "Chuvosa" "Adenomera kayapo" "A" 1
+"B1-P58C" "C" "B" "B1" "BA" "Chuvosa" "Ameerega flavopicta" "A" 1
+"B1-P58C" "C" "B" "B1" "BA" "Chuvosa" "Leptodactylus paraensis" "A" 2
+"B1-P58C" "C" "B" "B1" "BA" "Chuvosa" "Pithecopus hypochondrialis" "A" 2
+"B1-P58C" "C" "B" "B1" "BA" "Chuvosa" "Tropidurus oreadicus" "R" 4
+"B1-P59FL" "F" "B" "B1" "BA" "Chuvosa" "Chatogekko amazonicus" "R" 2
+"B1-P59FL" "F" "B" "B1" "BA" "Chuvosa" "Potamites ecpleopus" "R" 2
+"B1-P60FL" "F" "B" "B1" "BA" "Chuvosa" "Boana cinerascens" "A" 1
+"B1-P60FL" "F" "B" "B1" "BA" "Chuvosa" "Chatogekko amazonicus" "R" 1
+"B1-P60FL" "F" "B" "B1" "BA" "Chuvosa" "Chironius scurrulus" "R" 1
+"B1-P60FL" "F" "B" "B1" "BA" "Chuvosa" "Helicops angulatus" "R" 1
+"B1-P60FL" "F" "B" "B1" "BA" "Chuvosa" "Hyalinobatrachium iaspidiense" "A" 2
+"B1-P60FL" "F" "B" "B1" "BA" "Chuvosa" "Potamites ecpleopus" "R" 2
+"B1-P60FL" "F" "B" "B1" "BA" "Chuvosa" "Pristimantis aff. fenestratus" "A" 2
+"B1-P61FL" "F" "B" "B1" "BA" "Chuvosa" "Chatogekko amazonicus" "R" 6
+"B1-P61FL" "F" "B" "B1" "BA" "Chuvosa" "Pristimantis aff. fenestratus" "A" 1
+"B1-P62FL" "F" "B" "B1" "BA" "Chuvosa" "Adenomera andreae" "A" 2
+"B1-P62FL" "F" "B" "B1" "BA" "Chuvosa" "Chelonoidis denticulatus" "R" 1
+"B1-P62FL" "F" "B" "B1" "BA" "Chuvosa" "Lachesis muta" "R" 1
+"B2-P65C" "C" "B" "B2" "BA" "Chuvosa" "Ameerega flavopicta" "A" 1
+"B2-P65C" "C" "B" "B2" "BA" "Chuvosa" "Pristimantis aff. fenestratus" "A" 1
+"B2-P65C" "C" "B" "B2" "BA" "Chuvosa" "Tropidurus oreadicus" "R" 1
+"B2-P66C" "C" "B" "B2" "BA" "Chuvosa" "ESO" "" 0
+"B2-P67C" "C" "B" "B2" "BA" "Chuvosa" "Dendropsophus minutus" "A" 11
+"B2-P67C" "C" "B" "B2" "BA" "Chuvosa" "Leptodactylus paraensis" "A" 1
+"B2-P67C" "C" "B" "B2" "BA" "Chuvosa" "Leptodeira annulata" "R" 1
+"B2-P67C" "C" "B" "B2" "BA" "Chuvosa" "Pithecopus hypochondrialis" "A" 10
+"B2-P67C" "C" "B" "B2" "BA" "Chuvosa" "Scinax fuscomarginatus" "A" 6
+"B2-P67C" "C" "B" "B2" "BA" "Chuvosa" "Tropidurus oreadicus" "R" 1
+"B2-P68C" "C" "B" "B2" "BA" "Chuvosa" "ESO" "" 0
+"B2-P68C" "C" "B" "B2" "BA" "Chuvosa" "Tropidurus oreadicus" "R" 1
+"B2-P69C" "C" "B" "B2" "BA" "Chuvosa" "Dipsas catesbyi" "R" 1
+"B2-P69C" "C" "B" "B2" "BA" "Chuvosa" "Dryophylax hypoconia" "R" 1
+"B2-P69C" "C" "B" "B2" "BA" "Chuvosa" "Pithecopus hypochondrialis" "A" 3
+"B2-P69C" "C" "B" "B2" "BA" "Chuvosa" "Tropidurus oreadicus" "R" 2
+"B2-P70C" "C" "B" "B2" "BA" "Chuvosa" "Leptodactylus paraensis" "A" 2
+"B2-P70C" "C" "B" "B2" "BA" "Chuvosa" "Pithecopus hypochondrialis" "A" 6
+"B2-P70C" "C" "B" "B2" "BA" "Chuvosa" "Pristimantis aff. fenestratus" "A" 1
+"B2-P70C" "C" "B" "B2" "BA" "Chuvosa" "Tropidurus oreadicus" "R" 6
+"B2-P71C" "C" "B" "B2" "BA" "Chuvosa" "ESO" "" 0
+"B2-P72C" "C" "B" "B2" "BA" "Chuvosa" "Adenomera kayapo" "A" 1
+"B2-P72C" "C" "B" "B2" "BA" "Chuvosa" "ESO" "" 0
+"B2-P72C" "C" "B" "B2" "BA" "Chuvosa" "Polychrus acutirostris" "R" 1
+"B2-P72C" "C" "B" "B2" "BA" "Chuvosa" "Tropidurus oreadicus" "R" 1
+"B2-P73C" "C" "B" "B2" "BA" "Chuvosa" "Ameerega flavopicta" "A" 1
+"B2-P73C" "C" "B" "B2" "BA" "Chuvosa" "Chironius flavolineatus" "R" 1
+"B2-P73C" "C" "B" "B2" "BA" "Chuvosa" "Leptodactylus fuscus" "A" 2
+"B2-P73C" "C" "B" "B2" "BA" "Chuvosa" "Leptodactylus paraensis" "A" 1
+"B2-P73C" "C" "B" "B2" "BA" "Chuvosa" "Pithecopus hypochondrialis" "A" 12
+"B2-P73C" "C" "B" "B2" "BA" "Chuvosa" "Pseudopaludicola canga" "A" 1
+"B2-P73C" "C" "B" "B2" "BA" "Chuvosa" "Tropidurus oreadicus" "R" 2
+"B2-P74C" "C" "B" "B2" "BA" "Chuvosa" "ESO" "" 0
+"B2-P74C" "C" "B" "B2" "BA" "Chuvosa" "Pithecopus hypochondrialis" "A" 4
+"B2-P75FL" "F" "B" "B2" "AIQ" "Chuvosa" "Adenomera andreae" "A" 1
+"B2-P75FL" "F" "B" "B2" "AIQ" "Chuvosa" "Amerotyphlops reticulatus" "R" 1
+"B2-P75FL" "F" "B" "B2" "AIQ" "Chuvosa" "ESO" "" 0
+"B2-P75FL" "F" "B" "B2" "AIQ" "Chuvosa" "Kentropyx calcarata" "R" 1
+"B2-P75FL" "F" "B" "B2" "BA" "Chuvosa" "ESO" "" 0
+"B2-P76FL" "F" "B" "B2" "AIQ" "Chuvosa" "Copeoglossum nigropunctatum" "R" 1
+"B2-P76FL" "F" "B" "B2" "AIQ" "Chuvosa" "Dactyloa punctata" "R" 1
+"B2-P76FL" "F" "B" "B2" "AIQ" "Chuvosa" "ESO" "" 0
+"B2-P76FL" "F" "B" "B2" "AIQ" "Chuvosa" "Pristimantis aff. fenestratus" "A" 1
+"B2-P76FL" "F" "B" "B2" "AIQ" "Chuvosa" "Rhinella marina" "A" 2
+"B2-P76FL" "F" "B" "B2" "BA" "Chuvosa" "Adenomera andreae" "A" 9
+"B2-P76FL" "F" "B" "B2" "BA" "Chuvosa" "Cercosaura ocellata" "R" 1
+"B2-P76FL" "F" "B" "B2" "BA" "Chuvosa" "ESO" "" 0
+"B2-P77FL" "F" "B" "B2" "AIQ" "Chuvosa" "Amphisbaena amazonica" "R" 1
+"B2-P77FL" "F" "B" "B2" "AIQ" "Chuvosa" "ESO" "" 0
+"B2-P77FL" "F" "B" "B2" "AIQ" "Chuvosa" "Plica plica" "R" 1
+"B2-P77FL" "F" "B" "B2" "AIQ" "Chuvosa" "Rhaebo guttatus" "A" 1
+"B2-P77FL" "F" "B" "B2" "AIQ" "Chuvosa" "Rhinella margaritifera" "A" 1
+"B2-P77FL" "F" "B" "B2" "AIQ" "Chuvosa" "Rhinella marina" "A" 8
+"B2-P77FL" "F" "B" "B2" "BA" "Chuvosa" "Adenomera andreae" "A" 7
+"B2-P77FL" "F" "B" "B2" "BA" "Chuvosa" "Dactyloa punctata" "R" 1
+"B2-P77FL" "F" "B" "B2" "BA" "Chuvosa" "ESO" "" 0
+"B2-P78FL" "F" "B" "B2" "AIQ" "Chuvosa" "Cercosaura ocellata" "R" 1
+"B2-P78FL" "F" "B" "B2" "AIQ" "Chuvosa" "Ctenophryne geayi" "A" 1
+"B2-P78FL" "F" "B" "B2" "AIQ" "Chuvosa" "ESO" "" 0
+"B2-P78FL" "F" "B" "B2" "AIQ" "Chuvosa" "Enyalius leechii" "R" 1
+"B2-P78FL" "F" "B" "B2" "AIQ" "Chuvosa" "Rhinella marina" "A" 1
+"B2-P78FL" "F" "B" "B2" "BA" "Chuvosa" "ESO" "" 0
+"B2-P78FL" "F" "B" "B2" "BA" "Chuvosa" "Imantodes cenchoa" "R" 1
+"B2-P78FL" "F" "B" "B2" "BA" "Chuvosa" "Leptodeira annulata" "R" 1
+"B2-P79FL" "F" "B" "B2" "AIQ" "Chuvosa" "ESO" "" 0
+"B2-P79FL" "F" "B" "B2" "AIQ" "Chuvosa" "Potamites ecpleopus" "R" 3
+"B2-P79FL" "F" "B" "B2" "AIQ" "Chuvosa" "Rhinella margaritifera" "A" 2
+"B2-P79FL" "F" "B" "B2" "AIQ" "Chuvosa" "Rhinella marina" "A" 1
+"B2-P79FL" "F" "B" "B2" "BA" "Chuvosa" "ESO" "" 0
+"B2-P79FL" "F" "B" "B2" "BA" "Chuvosa" "Imantodes cenchoa" "R" 1
+"B2-P79FL" "F" "B" "B2" "BA" "Chuvosa" "Oxyrhopus petolarius" "R" 1
+"B2-P79FL" "F" "B" "B2" "BA" "Chuvosa" "Potamites ecpleopus" "R" 1
+"B2-P80FL" "F" "B" "B2" "BA" "Chuvosa" "Adenomera andreae" "A" 2
+"B2-P80FL" "F" "B" "B2" "BA" "Chuvosa" "Bothrops bilineatus" "R" 1
+"B2-P80FL" "F" "B" "B2" "BA" "Chuvosa" "Potamites ecpleopus" "R" 2
+"B2-P80FL" "F" "B" "B2" "BA" "Chuvosa" "Pristimantis aff. fenestratus" "A" 1
+"C-P81C" "C" "C" "C" "BA" "Chuvosa" "ESO" "" 0
+"C-P82C" "C" "C" "C" "BA" "Chuvosa" "Adenomera kayapo" "A" 1
+"C-P82C" "C" "C" "C" "BA" "Chuvosa" "Physalaemus ephippifer" "A" 1
+"C-P82C" "C" "C" "C" "BA" "Chuvosa" "Tropidurus oreadicus" "R" 1
+"C-P83C" "C" "C" "C" "BA" "Chuvosa" "ESO" "" 0
+"C-P84C" "C" "C" "C" "BA" "Chuvosa" "Boana raniceps" "A" 2
+"C-P84C" "C" "C" "C" "BA" "Chuvosa" "Dendropsophus minutus" "A" 2
+"C-P84C" "C" "C" "C" "BA" "Chuvosa" "Leptodactylus fuscus" "A" 1
+"C-P84C" "C" "C" "C" "BA" "Chuvosa" "Pithecopus hypochondrialis" "A" 2
+"C-P84C" "C" "C" "C" "BA" "Chuvosa" "Pseudopaludicola canga" "A" 15
+"C-P84C" "C" "C" "C" "BA" "Chuvosa" "Tropidurus oreadicus" "R" 2
+"C-P85C" "C" "C" "C" "BA" "Chuvosa" "Dendropsophus minutus" "A" 4
+"C-P85C" "C" "C" "C" "BA" "Chuvosa" "Leptodactylus paraensis" "A" 2
+"C-P85C" "C" "C" "C" "BA" "Chuvosa" "Pithecopus hypochondrialis" "A" 4
+"C-P85C" "C" "C" "C" "BA" "Chuvosa" "Scinax fuscomarginatus" "A" 7
+"C-P85C" "C" "C" "C" "BA" "Chuvosa" "Tropidurus oreadicus" "R" 6
+"C-P86C" "C" "C" "C" "BA" "Chuvosa" "Dendropsophus melanargyreus" "A" 35
+"C-P86C" "C" "C" "C" "BA" "Chuvosa" "Dendropsophus minutus" "A" 43
+"C-P86C" "C" "C" "C" "BA" "Chuvosa" "Dipsas catesbyi" "R" 1
+"C-P86C" "C" "C" "C" "BA" "Chuvosa" "Leptodactylus fuscus" "A" 1
+"C-P86C" "C" "C" "C" "BA" "Chuvosa" "Leptodeira annulata" "R" 1
+"C-P86C" "C" "C" "C" "BA" "Chuvosa" "Paleosuchus trigonatus" "R" 6
+"C-P86C" "C" "C" "C" "BA" "Chuvosa" "Pithecopus hypochondrialis" "A" 10
+"C-P86C" "C" "C" "C" "BA" "Chuvosa" "Pseudopaludicola canga" "A" 41
+"C-P86C" "C" "C" "C" "BA" "Chuvosa" "Trachycephalus typhonius" "A" 7
+"C-P86C" "C" "C" "C" "BA" "Chuvosa" "Tropidurus oreadicus" "R" 4
+"C-P87C" "C" "C" "C" "BA" "Chuvosa" "Tropidurus oreadicus" "R" 2
+"C-P88C" "C" "C" "C" "BA" "Chuvosa" "Chironius flavolineatus" "R" 1
+"C-P88C" "C" "C" "C" "BA" "Chuvosa" "Pseudopaludicola canga" "A" 1
+"C-P88C" "C" "C" "C" "BA" "Chuvosa" "Tropidurus oreadicus" "R" 2
+"C-P89C" "C" "C" "C" "BA" "Chuvosa" "Dendropsophus minutus" "A" 1
+"C-P89C" "C" "C" "C" "BA" "Chuvosa" "Pithecopus hypochondrialis" "A" 8
+"C-P89C" "C" "C" "C" "BA" "Chuvosa" "Pseudopaludicola canga" "A" 1
+"C-P89C" "C" "C" "C" "BA" "Chuvosa" "Trachycephalus typhonius" "A" 1
+"C-P90C" "C" "C" "C" "BA" "Chuvosa" "ESO" "" 0
+"C-P90C" "C" "C" "C" "BA" "Chuvosa" "Rhaebo guttatus" "A" 1
+"C-P91FL" "F" "C" "C" "BA" "Chuvosa" "Chatogekko amazonicus" "R" 7
+"C-P91FL" "F" "C" "C" "BA" "Chuvosa" "ESO" "" 0
+"C-P92FL" "F" "C" "C" "AIQ" "Chuvosa" "ESO" "" 0
+"C-P92FL" "F" "C" "C" "AIQ" "Chuvosa" "Plica umbra" "R" 1
+"C-P92FL" "F" "C" "C" "AIQ" "Chuvosa" "Rhinella marina" "A" 3
+"C-P92FL" "F" "C" "C" "BA" "Chuvosa" "Adenomera kayapo" "A" 1
+"C-P92FL" "F" "C" "C" "BA" "Chuvosa" "Chatogekko amazonicus" "R" 2
+"C-P92FL" "F" "C" "C" "BA" "Chuvosa" "ESO" "" 0
+"C-P92FL" "F" "C" "C" "BA" "Chuvosa" "Pristimantis aff. fenestratus" "A" 1
+"C-P93FL" "F" "C" "C" "AIQ" "Chuvosa" "Arthrosaura reticulata" "R" 1
+"C-P93FL" "F" "C" "C" "AIQ" "Chuvosa" "ESO" "" 0
+"C-P93FL" "F" "C" "C" "AIQ" "Chuvosa" "Rhinella margaritifera" "A" 2
+"C-P93FL" "F" "C" "C" "AIQ" "Chuvosa" "Rhinella marina" "A" 4
+"C-P93FL" "F" "C" "C" "BA" "Chuvosa" "Adenomera kayapo" "A" 3
+"C-P93FL" "F" "C" "C" "BA" "Chuvosa" "Chatogekko amazonicus" "R" 8
+"C-P93FL" "F" "C" "C" "BA" "Chuvosa" "Leptodactylus paraensis" "A" 1
+"C-P93FL" "F" "C" "C" "BA" "Chuvosa" "Pristimantis aff. fenestratus" "A" 1
+"C-P93FL" "F" "C" "C" "BA" "Chuvosa" "Rhinella marina" "A" 1
+"C-P94FL" "F" "C" "C" "AIQ" "Chuvosa" "Cercosaura ocellata" "R" 1
+"C-P94FL" "F" "C" "C" "AIQ" "Chuvosa" "ESO" "" 0
+"C-P94FL" "F" "C" "C" "AIQ" "Chuvosa" "Rhinella marina" "A" 1
+"C-P94FL" "F" "C" "C" "BA" "Chuvosa" "Adenomera andreae" "A" 2
+"C-P94FL" "F" "C" "C" "BA" "Chuvosa" "Chatogekko amazonicus" "R" 4
+"C-P94FL" "F" "C" "C" "BA" "Chuvosa" "Leptodactylus paraensis" "A" 2
+"C-P94FL" "F" "C" "C" "BA" "Chuvosa" "Pithecopus hypochondrialis" "A" 1
+"C-P95FL" "F" "C" "C" "AIQ" "Chuvosa" "ESO" "" 0
+"C-P95FL" "F" "C" "C" "AIQ" "Chuvosa" "Leptodactylus rhodomystax" "A" 1
+"C-P95FL" "F" "C" "C" "AIQ" "Chuvosa" "Proceratophrys concavitympanum" "A" 2
+"C-P95FL" "F" "C" "C" "AIQ" "Chuvosa" "Rhinella marina" "A" 3
+"C-P95FL" "F" "C" "C" "BA" "Chuvosa" "Adenomera andreae" "A" 5
+"C-P95FL" "F" "C" "C" "BA" "Chuvosa" "ESO" "" 0
+"C-P96FL" "F" "C" "C" "AIQ" "Chuvosa" "ESO" "" 0
+"C-P96FL" "F" "C" "C" "AIQ" "Chuvosa" "Kentropyx calcarata" "R" 2
+"C-P96FL" "F" "C" "C" "AIQ" "Chuvosa" "Rhinella marina" "A" 1
+"C-P96FL" "F" "C" "C" "BA" "Chuvosa" "Allobates carajas" "A" 3
+"C-P96FL" "F" "C" "C" "BA" "Chuvosa" "Dactyloa punctata" "R" 1
+"C-P96FL" "F" "C" "C" "BA" "Chuvosa" "Dipsas catesbyi" "R" 1
+"C-P96FL" "F" "C" "C" "BA" "Chuvosa" "Norops fuscoauratus" "R" 1
+"C-P96FL" "F" "C" "C" "BA" "Chuvosa" "Proceratophrys concavitympanum" "A" 1
